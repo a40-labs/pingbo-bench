@@ -8,7 +8,7 @@ import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 
 import { mcnemarExact } from "../vendor/paired_compare.js";
-import { consensusAt, reportOrder, replySeparation } from "../vendor/reply_arbiter.js";
+import { consensusAt, reportOrder, replySeparation, separationContrast } from "../vendor/reply_arbiter.js";
 import type { ReplyRow } from "../vendor/reply_behaviour.js";
 import { parseSappelliCsv } from "../vendor/sappelli.js";
 import { lanes, progression } from "../harness/figures/extract.js";
@@ -124,10 +124,16 @@ function field(value: unknown, dotted: string): unknown {
 }
 
 type Setting = "cards" | "ships" | "both";
+/**
+ * Was this email on the list? A failed call wrote no card, so a lane it still carries is a leftover
+ * and cannot show anything — every published failed row has a null judgment anyway, and the guard is
+ * what makes that a property of the reading rather than of this particular data. The second read is
+ * a separate Step 0 run that did not fail, so it still places a row the pipeline lost.
+ */
 const SHOWN: Record<Setting, (v: PipelineVerdict, step0: string | null) => boolean> = {
-  cards: (v) => v.judgment === "compose",
-  ships: (v) => v.judgment === "compose" || v.judgment === "external",
-  both: (v, s0) => v.judgment === "compose" || v.judgment === "external" || (s0 !== null && REPLY_LABELS.includes(s0))
+  cards: (v) => !failed(v) && v.judgment === "compose",
+  ships: (v) => !failed(v) && (v.judgment === "compose" || v.judgment === "external"),
+  both: (v, s0) => SHOWN.ships(v, s0) || (s0 !== null && REPLY_LABELS.includes(s0))
 };
 
 function needsYouList(ctx: Context, model: string, setting: Setting): { shown: number; caught: number } {
@@ -154,6 +160,30 @@ function failed(v: PromptVerdict | PipelineVerdict): boolean {
 
 function replyRows(ctx: Context): ReplyRow[] {
   return ctx.results.json<{ rows: ReplyRow[] }>("reply-behaviour/rows.json").rows;
+}
+
+/**
+ * The behaviour rows in report order, marked observable under one rule, beside the two labels a
+ * row can be read with: the dataset's, and the majority of the eight best four-way models. The
+ * alignment is asserted here rather than assumed — a verdict list is written in id order and
+ * `rows.json` in probe-file order, and reading one against the other silently pairs an answer
+ * with another email's behaviour.
+ */
+function replySides(
+  ctx: Context,
+  rule: string
+): { rows: ReplyRow[]; gold: (i: number) => string | null; consensus: (i: number) => string | null } {
+  const rows = reportOrder(replyRows(ctx)).map((r) => ({ ...r, observable: observableUnder(r, rule) }));
+  const labels = ctx.labels();
+  rows.forEach((r, i) => {
+    if (r.id !== labels[i]?.id) throw new Error(`reply-behaviour row ${i} is ${r.id}, labels.csv has ${labels[i]?.id}`);
+  });
+  const top = ctx.fourWayTop(8);
+  return {
+    rows,
+    gold: (i) => (rows[i] as ReplyRow).gold,
+    consensus: (i) => consensusAt(top.map((t) => t.verdicts[i]?.answer ?? null)).label
+  };
 }
 
 export const METRICS: Record<string, Metric> = {
@@ -373,20 +403,19 @@ export const METRICS: Record<string, Metric> = {
   /** Did a recipient reply, split by whether the label (the dataset's, or the eight-model majority
    *  of the subject-and-body Step 0 run) expects one. Same code path as the published scorer. */
   "reply.separation": (ctx, a) => {
-    const rule = str(a, "rule");
-    const rows = reportOrder(replyRows(ctx)).map((r) => ({ ...r, observable: observableUnder(r, rule) }));
-    const labels = ctx.labels();
-    rows.forEach((r, i) => {
-      if (r.id !== labels[i]?.id) throw new Error(`reply-behaviour row ${i} is ${r.id}, labels.csv has ${labels[i]?.id}`);
-    });
-    const indices = rows.map((_, i) => i);
-    const top = ctx.fourWayTop(8);
-    const labelOf =
-      a.source === "gold"
-        ? (i: number): string | null => (rows[i] as ReplyRow).gold
-        : (i: number): string | null => consensusAt(top.map((t) => t.verdicts[i]?.answer ?? null)).label;
-    const d = replySeparation(rows, indices, labelOf, SEED);
+    const { rows, gold, consensus } = replySides(ctx, str(a, "rule"));
+    const d = replySeparation(rows, rows.map((_, i) => i), a.source === "gold" ? gold : consensus, SEED);
     return 100 * ({ expects: d.a.rate, none: d.b.rate, diff: d.diff, lo: d.ci.lo, hi: d.ci.hi }[str(a, "field") as "diff"]);
+  },
+  /**
+   * The dataset's gap MINUS the eight models', on the same emails. The two gaps above are estimated
+   * apart, so neither their values nor their intervals answer which is larger; this resamples the
+   * rows and recomputes both gaps per draw, and `lo`/`hi` bound that difference.
+   */
+  "reply.contrast": (ctx, a) => {
+    const { rows, gold, consensus } = replySides(ctx, str(a, "rule"));
+    const d = separationContrast(rows, rows.map((_, i) => i), gold, consensus, SEED);
+    return 100 * ({ gold: d.a, models: d.b, diff: d.diff, lo: d.ci.lo, hi: d.ci.hi }[str(a, "field") as "diff"]);
   },
 
   "annotations.count": (ctx, a) => {

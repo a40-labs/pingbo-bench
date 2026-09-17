@@ -278,6 +278,71 @@ export function replySeparation(
   return proportionDifference(expects, doesNot, seed);
 }
 
+export interface SeparationContrast {
+  /** Rows the comparison ran over: the observable ones, whatever either side could label. */
+  n: number;
+  a: number;
+  b: number;
+  diff: number;
+  ci: { lo: number; hi: number };
+}
+
+/**
+ * One label set's separation against another's, ON THE SAME ROWS. `replySeparation` estimates each
+ * side apart, and two intervals that overlap are NOT a test of the difference between them — the
+ * question "is this gap the larger one" has to be asked of a statistic that carries its own
+ * interval. So each draw resamples the rows once and recomputes both gaps from that one draw.
+ *
+ * A row neither side can label leaves both arms; a row only one side can label — a tie in a model
+ * consensus — leaves that side alone, exactly as it does in the separate gaps, so the point
+ * estimates here reproduce `replySeparation`'s.
+ */
+export function separationContrast(
+  rows: readonly ReplyRow[],
+  indices: readonly number[],
+  labelA: (i: number) => string | null,
+  labelB: (i: number) => string | null,
+  seed: number,
+  resamples = 10_000
+): SeparationContrast {
+  const pool = indices.filter((i) => (rows[i] as ReplyRow).observable);
+  const gap = (draw: readonly number[], labelOf: (i: number) => string | null): number | null => {
+    let expectsN = 0;
+    let expectsK = 0;
+    let noneN = 0;
+    let noneK = 0;
+    for (const i of draw) {
+      const label = labelOf(i);
+      if (label === null || EXPECTED_BUCKET[label] === undefined) continue;
+      const hit = (rows[i] as ReplyRow).repliedByRecipient ? 1 : 0;
+      if (EXPECTED_BUCKET[label] === "none") {
+        noneN += 1;
+        noneK += hit;
+      } else {
+        expectsN += 1;
+        expectsK += hit;
+      }
+    }
+    if (expectsN === 0 || noneN === 0) return null;
+    return expectsK / expectsN - noneK / noneN;
+  };
+  const a = gap(pool, labelA);
+  const b = gap(pool, labelB);
+  if (a === null || b === null) throw new Error("a contrast needs both sides to fill both arms");
+  const rand = mulberry32(seed);
+  const diffs: number[] = [];
+  for (let r = 0; r < resamples; r += 1) {
+    const draw: number[] = [];
+    for (let k = 0; k < pool.length; k += 1) draw.push(pool[Math.floor(rand() * pool.length)] as number);
+    const ga = gap(draw, labelA);
+    const gb = gap(draw, labelB);
+    if (ga !== null && gb !== null) diffs.push(ga - gb);
+  }
+  diffs.sort((x, y) => x - y);
+  const at = (q: number): number => diffs[Math.min(diffs.length - 1, Math.floor(q * diffs.length))] ?? 0;
+  return { n: pool.length, a, b, diff: a - b, ci: { lo: at(0.025), hi: at(0.975) } };
+}
+
 /** The behaviour rows in the order a report's `verdicts[]` are written: the runner sorts by id
  *  over the probe-file order, so the same comparator over the same input reproduces it. */
 export function reportOrder(rows: readonly ReplyRow[]): ReplyRow[] {

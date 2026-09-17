@@ -1,6 +1,6 @@
 # Claims
 
-Every number in [How Pingbo Decides What Matters](https://pingbo.ai/blog/measuring-which-emails-need-you), release v1: 585 claims, 577 reproducible, 2 not reproducible, 6 context.
+Every number in [How Pingbo Decides What Matters](https://pingbo.ai/blog/measuring-which-emails-need-you), release v1: 594 claims, 587 reproducible, 1 not reproducible, 6 context.
 Generated from `claims/claims.json`; `npm run verify` checks them all.
 
 | Status | Meaning |
@@ -137,9 +137,18 @@ Generated from `claims/claims.json`; `npm run verify` checks them all.
 | `reply.gold.looseGap` | the gap narrows to 14.3 points | 14.3 | Appendix | reproducible | `npm run verify -- --id reply.gold.looseGap` |
 | `reply.gold.looseLo` | with an interval of 6.2 | 6.2 | Appendix | reproducible | `npm run verify -- --id reply.gold.looseLo` |
 | `reply.gold.looseHi` | to 22.4 | 22.4 | Appendix | reproducible | `npm run verify -- --id reply.gold.looseHi` |
-| `reply.consensus.gap` | The eight models' majority answers showed smaller gaps, 23.0 | 23.0 | Appendix | reproducible | `npm run verify -- --id reply.consensus.gap` |
-| `reply.consensus.looseGap` | and 5.5 points | 5.5 | Appendix | reproducible | `npm run verify -- --id reply.consensus.looseGap` |
-| `reply.sameEmails` | compared on the same emails, the dataset's larger gap holds up only when all 491 are counted |  | Appendix | not-reproducible | No stored paired test of the dataset's gap against the models' gap exists, and the article gives no number for it; the two gaps and their intervals above are reproducible. |
+| `reply.consensus.rosterGap` | smaller gaps on the same emails: 14.8 points on the 209 | 14.8 | Appendix | reproducible | `npm run verify -- --id reply.consensus.rosterGap` |
+| `reply.consensus.gap` | 23.0 on the 257 | 23.0 | Appendix | reproducible | `npm run verify -- --id reply.consensus.gap` |
+| `reply.consensus.looseGap` | 5.5 on all 491 | 5.5 | Appendix | reproducible | `npm run verify -- --id reply.consensus.looseGap` |
+| `reply.contrast.roster` | the dataset's gap is the larger one on all three sets, by 12.1 | 12.1 | Appendix | reproducible | `npm run verify -- --id reply.contrast.roster` |
+| `reply.contrast.strict` | 10.6 | 10.6 | Appendix | reproducible | `npm run verify -- --id reply.contrast.strict` |
+| `reply.contrast.loose` | and 8.8 points | 8.8 | Appendix | reproducible | `npm run verify -- --id reply.contrast.loose` |
+| `reply.contrast.looseLo` | an interval that stays above zero: 3.0 | 3.0 | Appendix | reproducible | `npm run verify -- --id reply.contrast.looseLo` |
+| `reply.contrast.looseHi` | to 14.7 on all 491 | 14.7 | Appendix | reproducible | `npm run verify -- --id reply.contrast.looseHi` |
+| `reply.contrast.rosterLo` | on the two smaller sets, 0.6 | 0.6 | Appendix | reproducible | `npm run verify -- --id reply.contrast.rosterLo` |
+| `reply.contrast.rosterHi` | to 24.2 | 24.2 | Appendix | reproducible | `npm run verify -- --id reply.contrast.rosterHi` |
+| `reply.contrast.strictLo` | and 0.3 | 0.3 | Appendix | reproducible | `npm run verify -- --id reply.contrast.strictLo` |
+| `reply.contrast.strictHi` | to 21.2, which clear zero only just | 21.2 | Appendix | reproducible | `npm run verify -- --id reply.contrast.strictHi` |
 | `doubt.flips` | On 24 of the 100 adjudicated emails the judge's answer flips whether a reply is owed | 24 | Appendix | reproducible | `npm run verify -- --id doubt.flips` |
 | `doubt.rows` | those 24 cover 26 of the 508 rows we score | 26 | Appendix | reproducible | `npm run verify -- --id doubt.rows` |
 | `doubt.share` | 5.1% of them | 5.1 | Appendix | reproducible | `npm run verify -- --id doubt.share` |

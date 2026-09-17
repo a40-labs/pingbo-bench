@@ -127,6 +127,17 @@ A check of the two-way labels against what recipients did.
   33.6 (21.0 to 45.6) on the strict set,
   and 14.3 (6.2 to
   22.4) on the loose set.
+- Which of those two gaps is the larger is a question about their **difference**, and two intervals
+  that overlap do not answer it. So the difference carries an interval of its own, from a bootstrap
+  that resamples the emails once per draw and recomputes both gaps from that same draw
+  (`reply.contrast`, 10,000 resamples, seed 1610). The dataset's gap is the larger one on all three
+  sets: by 12.1 points on the roster set
+  (0.6 to 24.2),
+  10.6 on the strict set (0.3 to
+  21.2), and 8.8 on the loose set
+  (3.0 to 14.7). On the two smaller sets
+  the interval clears zero by a fraction of a point, so the direction is what holds there, not the
+  size.
 - Per-email rows (counts, latencies, buckets; no addresses or text) are in
   `results/v1/reply-behaviour/`.
 
@@ -181,9 +192,10 @@ A check of the two-way labels against what recipients did.
   answers (6.7%), two of `qwen3.6-35b-a3b-mxfp4` on 14 (2.8%). Those repeats are not published
   results. Every result here is a single run.
 - **Not reproducible from stored data.** "A fifth of the quotes came from beneath the separator"
-  (Step 3) rests on replies that were not stored. "Compared on the same emails, the larger gap
-  holds up only when all 491 are counted" (appendix) has no stored paired test. Both are listed in
-  CLAIMS.md with their reasons.
+  (Step 3) rests on replies that were not stored. It is listed in CLAIMS.md with its reason. The
+  appendix's comparison of the two gaps was the second such claim until this release, when the
+  paired test above replaced it — and it came out the other way: the sentence had said the larger
+  gap holds up only on the loose set, and the difference clears zero on all three.
 - **Reply behaviour is a heuristic, and one of its rules reads the outcome.** The matcher cannot
   show a message went back to the sender, and 72 of its 115 matches rest on a subject alone. The
   strict observability set adds 257 − 209 = 48 emails that
