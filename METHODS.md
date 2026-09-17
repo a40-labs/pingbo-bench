@@ -163,12 +163,13 @@ A check of the two-way labels against what recipients did.
 
 - **Label noise.** The annotators agreed on the four-way label 44%
   of the time and on the two-way question 70%. The judge disagreed
-  with 24 of the 100 two-way labels it re-read. Those
-  24 rows are 4.7% of the 508 graded here.
-  That is a count of rows found in doubt, not an error rate: the 100 were
-  chosen for disagreement, the judge is another model, and the remaining
-  408 emails were never re-read. Nothing here says how many labels are wrong,
-  in either direction. No score near the top should be read as exact.
+  with 24 of the 100 two-way labels it re-read. A few
+  emails appear more than once in the graded set, so those 24 emails cover
+  26 of the 508 rows scored here,
+  5.1% of them. That is a count of what was found in doubt, not an error rate:
+  the 100 were chosen for disagreement, the judge is another model, and
+  the remaining 395 emails were never read again. Nothing here says how many
+  labels are wrong, in either direction. No score near the top should be read as exact.
 - **The re-judging says who disagreed, not who was right.** The re-read emails are the sharpest
   disagreements in the set, not a sample of it, and the judge is a model of the same kind as the
   ones whose answers it was weighing. It records that a third reader sided with the models on most

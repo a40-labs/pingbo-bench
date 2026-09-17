@@ -305,9 +305,27 @@ export const METRICS: Record<string, Metric> = {
       return verdict !== undefined && toBinary(verdict) !== toBinary(s.gold);
     }).length;
   },
-  "adjudication.replyFlipShare": (ctx) => pct(num("adjudication.replyFlips", ctx), ctx.labels().length),
-  /** Emails nobody re-read: the graded set less the sheets that were adjudicated. */
-  "adjudication.unread": (ctx) => ctx.labels().length - num("adjudication.count", ctx),
+  /** Rows the disagreed-with emails cover. A few emails appear more than once in the graded set,
+   *  so a count of emails and a count of rows are different numbers. */
+  "adjudication.replyFlipRows": (ctx) => {
+    const { key, verdicts } = ctx.adjudication();
+    const flipped = new Set(
+      Object.entries(key.sheets)
+        .filter(([sid, s]) => {
+          const verdict = verdicts[sid];
+          return verdict !== undefined && toBinary(verdict) !== toBinary(s.gold);
+        })
+        .map(([, s]) => s.id)
+    );
+    return ctx.labels().filter((r) => flipped.has(r.id)).length;
+  },
+  "adjudication.replyFlipShare": (ctx) => pct(num("adjudication.replyFlipRows", ctx), ctx.labels().length),
+  /** Emails nobody re-read: the distinct emails of the graded set, less the ones adjudicated. */
+  "adjudication.unread": (ctx) => {
+    const { key } = ctx.adjudication();
+    const read = new Set(Object.values(key.sheets).map((s) => s.id));
+    return new Set(ctx.labels().map((r) => r.id).filter((id) => !read.has(id))).size;
+  },
 
   /**
    * How many emails a reply could have been seen for. `strict` is the published rule — a recipient

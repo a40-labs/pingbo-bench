@@ -1521,19 +1521,27 @@
   },
   {
    "status": "reproducible",
-   "id": "doubt.share",
-   "text": "Those 24 are 4.7% of the 508 we grade on",
+   "id": "doubt.rows",
+   "text": "those 24 cover 26 of the 508 rows we score",
    "where": "Appendix",
-   "value": 4.7,
+   "value": 26,
+   "metric": "adjudication.replyFlipRows"
+  },
+  {
+   "status": "reproducible",
+   "id": "doubt.share",
+   "text": "5.1% of them",
+   "where": "Appendix",
+   "value": 5.1,
    "decimals": 1,
    "metric": "adjudication.replyFlipShare"
   },
   {
    "status": "reproducible",
    "id": "doubt.unread",
-   "text": "the other 408 emails were never re-read",
+   "text": "the other 395 emails were never read again",
    "where": "Appendix; METHODS",
-   "value": 408,
+   "value": 395,
    "metric": "adjudication.unread"
   },
   {

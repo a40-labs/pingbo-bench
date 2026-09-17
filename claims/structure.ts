@@ -9,7 +9,7 @@
  * falsified pin or a metric that has gone missing cannot pass by going unread.
  */
 import type { Context } from "./recompute.js";
-import type { ArmDir, PipelineVerdict, PromptVerdict } from "../harness/results.js";
+import { NEEDS_REPLY, type ArmDir, type PipelineVerdict, type PromptVerdict } from "../harness/results.js";
 import { toBinary } from "../harness/scoring/binary.js";
 
 export interface StructuralProblem {
@@ -49,6 +49,27 @@ const REQUIRED_COUNTS = {
   prompt: ["confusion"],
   pipeline: ["support", "home", "judgment", "errorsByCode", "refusals"]
 } as const;
+
+/** Count a field's values across the rows, skipping nulls. */
+function tally(verdicts: ReadonlyArray<Record<string, unknown>>, field: string): Record<string, number> {
+  const out: Record<string, number> = {};
+  for (const v of verdicts) {
+    const value = v[field];
+    if (typeof value !== "string") continue;
+    out[value] = (out[value] ?? 0) + 1;
+  }
+  return out;
+}
+
+/** Two count blocks agree when they carry the same keys with the same counts; a key counted zero
+ *  is the same as a key left out, which is how the runs write them. */
+function sameCounts(want: Record<string, number>, got: Record<string, unknown>): boolean {
+  const keys = new Set([...Object.keys(want), ...Object.keys(got)]);
+  for (const key of keys) {
+    if ((want[key] ?? 0) !== ((got[key] as number) ?? 0)) return false;
+  }
+  return true;
+}
 
 export function validateReports(ctx: Context): StructureReport {
   const labels = ctx.labels();
@@ -143,9 +164,57 @@ export function validateReports(ctx: Context): StructureReport {
       if (typeof metrics.accuracy !== "number" || Math.abs(metrics.accuracy - correct / verdicts.length) > 1e-9) {
         say(`metrics accuracy ${JSON.stringify(metrics.accuracy)}, the answers give ${correct / verdicts.length}`);
       }
-      const refusals = verdicts.filter((v) => (v as PipelineVerdict).error?.refusal !== undefined).length;
-      const counted = Object.values((metrics.refusals ?? {}) as Record<string, number>).reduce((a, b) => a + b, 0);
-      if (!prompt && refusals !== counted) say(`metrics refusals count ${counted}, the rows give ${refusals}`);
+      // Every aggregate is recomputed from the rows, not merely type-checked: a count that is
+      // negative, empty, or filed under the wrong key is as wrong as a missing one.
+      const rowsOf = verdicts as unknown as Array<Record<string, unknown>>;
+      const decided = verdicts.filter((v) => v.answer !== null).length;
+      if (metrics.decided !== decided) say(`metrics decided ${JSON.stringify(metrics.decided)}, the rows give ${decided}`);
+      if (metrics.unparsed !== verdicts.length - decided) {
+        say(`metrics unparsed ${JSON.stringify(metrics.unparsed)}, the rows give ${verdicts.length - decided}`);
+      }
+      if (prompt) {
+        const confusion: Record<string, Record<string, number>> = {};
+        for (const v of verdicts) {
+          const row = (confusion[v.gold] ??= {});
+          // The runs file an answer that parsed as nothing under this key.
+          const answer = v.answer ?? "<unparsed>";
+          row[answer] = (row[answer] ?? 0) + 1;
+        }
+        const got = (metrics.confusion ?? {}) as Record<string, Record<string, number>>;
+        const golds = new Set([...Object.keys(confusion), ...Object.keys(got)]);
+        for (const gold of golds) {
+          if (!sameCounts(confusion[gold] ?? {}, got[gold] ?? {})) say(`metrics confusion.${gold} does not match the rows`);
+        }
+      } else {
+        const needsYou = labels.filter((l) => l.label2 === NEEDS_REPLY).length;
+        const support = { needsYou, waiting: labels.length - needsYou };
+        if (!sameCounts(support, (metrics.support ?? {}) as Record<string, unknown>)) {
+          say(`metrics support ${JSON.stringify(metrics.support)}, the labels give ${JSON.stringify(support)}`);
+        }
+        if (metrics.floorCount !== support.waiting) say(`metrics floorCount ${JSON.stringify(metrics.floorCount)}, the labels give ${support.waiting}`);
+        for (const [field, name] of [
+          ["home", "home"],
+          ["judgment", "judgment"]
+        ] as const) {
+          if (!sameCounts(tally(rowsOf, field), (metrics[name] ?? {}) as Record<string, unknown>)) {
+            say(`metrics ${name} ${JSON.stringify(metrics[name])} does not match the rows`);
+          }
+        }
+        const codes: Record<string, number> = {};
+        const refusals: Record<string, number> = {};
+        for (const v of verdicts) {
+          const error = (v as PipelineVerdict).error;
+          if (error === undefined) continue;
+          codes[error.code] = (codes[error.code] ?? 0) + 1;
+          if (error.refusal !== undefined) refusals[error.refusal] = (refusals[error.refusal] ?? 0) + 1;
+        }
+        if (!sameCounts(codes, (metrics.errorsByCode ?? {}) as Record<string, unknown>)) {
+          say(`metrics errorsByCode ${JSON.stringify(metrics.errorsByCode)} does not match the rows`);
+        }
+        if (!sameCounts(refusals, (metrics.refusals ?? {}) as Record<string, unknown>)) {
+          say(`metrics refusals ${JSON.stringify(metrics.refusals)} does not match the rows`);
+        }
+      }
     }
   }
   return { files, rows, problems };

@@ -1,6 +1,6 @@
 # Claims
 
-Every number in [How Pingbo Decides What Matters](https://pingbo.ai/blog/measuring-which-emails-need-you), release v1: 578 claims, 570 reproducible, 2 not reproducible, 6 context.
+Every number in [How Pingbo Decides What Matters](https://pingbo.ai/blog/measuring-which-emails-need-you), release v1: 579 claims, 571 reproducible, 2 not reproducible, 6 context.
 Generated from `claims/claims.json`; `npm run verify` checks them all.
 
 | Status | Meaning |
@@ -135,8 +135,9 @@ Generated from `claims/claims.json`; `npm run verify` checks them all.
 | `reply.consensus.looseGap` | and 5.5 points | 5.5 | Appendix | reproducible | `npm run verify -- --id reply.consensus.looseGap` |
 | `reply.sameEmails` | compared on the same emails, the dataset's larger gap holds up only when all 491 are counted |  | Appendix | not-reproducible | No stored paired test of the dataset's gap against the models' gap exists, and the article gives no number for it; the two gaps and their intervals above are reproducible. |
 | `doubt.flips` | On 24 of the 100 adjudicated emails the judge's answer flips whether a reply is owed | 24 | Appendix | reproducible | `npm run verify -- --id doubt.flips` |
-| `doubt.share` | Those 24 are 4.7% of the 508 we grade on | 4.7 | Appendix | reproducible | `npm run verify -- --id doubt.share` |
-| `doubt.unread` | the other 408 emails were never re-read | 408 | Appendix; METHODS | reproducible | `npm run verify -- --id doubt.unread` |
+| `doubt.rows` | those 24 cover 26 of the 508 rows we score | 26 | Appendix | reproducible | `npm run verify -- --id doubt.rows` |
+| `doubt.share` | 5.1% of them | 5.1 | Appendix | reproducible | `npm run verify -- --id doubt.share` |
+| `doubt.unread` | the other 395 emails were never read again | 395 | Appendix; METHODS | reproducible | `npm run verify -- --id doubt.unread` |
 | `files.probesV2` | the 508-email test set (probes.v2.json) | d8e205c5a66a60d8cbe0126d79b0a2b0712cc149bf1edbc3c00feeaad4346a53 | Every Step 0 to 3 result | reproducible, needs `build:data` | `npm run verify -- --id files.probesV2` |
 | `files.probesV1` | the subject-and-body test set (probes.json) | ef51dae101dcd3e8bbd500b2e2d3d69644bfd9b22832f88d5c4b4e736a69b3aa | Appendix (four-way reading) | reproducible, needs `build:data` | `npm run verify -- --id files.probesV1` |
 | `files.sheets` | the 100 blind adjudication sheets | 8dcee2a474383e2e0b03a06a6d66decd3f386438123c09aea78f8d38edba0dba | Appendix | reproducible, needs `build:data` | `npm run verify -- --id files.sheets` |

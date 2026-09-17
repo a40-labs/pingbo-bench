@@ -37,7 +37,9 @@ export interface BinaryStats {
   hits: boolean[];
 }
 
-export function binaryStats(verdicts: ReadonlyArray<{ id: string; gold: string; answer: string | null }>): BinaryStats {
+export function binaryStats(
+  verdicts: ReadonlyArray<{ id: string; gold: string; answer: string | null; error?: unknown }>
+): BinaryStats {
   let needsYou = 0;
   let waiting = 0;
   let needsYouHit = 0;
@@ -46,7 +48,10 @@ export function binaryStats(verdicts: ReadonlyArray<{ id: string; gold: string; 
   for (const v of verdicts) {
     const gold = toBinary(v.gold);
     if (gold === null) throw new Error(`gold "${v.gold}" on ${v.id} is not a four-way label`);
-    const hit = toBinary(v.answer) === gold;
+    // A row whose call failed is wrong however its answer reads, as METHODS states. Published
+    // rows that failed carry no answer, so this changes no published score; it keeps the scorer
+    // and the validator saying the same thing about a row scored from your own run.
+    const hit = v.error === undefined && toBinary(v.answer) === gold;
     hits.push(hit);
     if (gold === NEEDS_YOU) {
       needsYou += 1;
