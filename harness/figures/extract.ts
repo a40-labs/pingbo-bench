@@ -68,8 +68,13 @@ export function lanes(results: Results, model: string): LaneRow {
       shown: shown.length
     };
   };
-  const cards = (v: (typeof e2e)[number]): boolean => v.judgment === "compose";
-  const ships = (v: (typeof e2e)[number]): boolean => v.judgment === "compose" || v.judgment === "external";
+  // A failed call wrote no card, so a lane it still carries shows nothing. Every published failed
+  // row has a null judgment anyway; the guard is what makes that a property of the reading rather
+  // than of this data. The second read is a separate Step 0 run and did not fail, so it still
+  // places a row the pipeline lost.
+  const ran = (v: (typeof e2e)[number]): boolean => v.error === undefined;
+  const cards = (v: (typeof e2e)[number]): boolean => ran(v) && v.judgment === "compose";
+  const ships = (v: (typeof e2e)[number]): boolean => ran(v) && (v.judgment === "compose" || v.judgment === "external");
   const both = (v: (typeof e2e)[number]): boolean => {
     const answer = step0[v.position]?.answer ?? null;
     return ships(v) || (answer !== null && REPLY_LABELS.includes(answer));

@@ -1557,8 +1557,22 @@
   },
   {
    "status": "reproducible",
+   "id": "reply.consensus.rosterGap",
+   "text": "smaller gaps on the same emails: 14.8 points on the 209",
+   "where": "Appendix",
+   "value": 14.8,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "roster",
+    "source": "consensus",
+    "field": "diff"
+   }
+  },
+  {
+   "status": "reproducible",
    "id": "reply.consensus.gap",
-   "text": "The eight models' majority answers showed smaller gaps, 23.0",
+   "text": "23.0 on the 257",
    "where": "Appendix",
    "value": 23,
    "decimals": 1,
@@ -1572,7 +1586,7 @@
   {
    "status": "reproducible",
    "id": "reply.consensus.looseGap",
-   "text": "and 5.5 points",
+   "text": "5.5 on all 491",
    "where": "Appendix",
    "value": 5.5,
    "decimals": 1,
@@ -1584,11 +1598,121 @@
    }
   },
   {
-   "id": "reply.sameEmails",
-   "text": "compared on the same emails, the dataset's larger gap holds up only when all 491 are counted",
+   "status": "reproducible",
+   "id": "reply.contrast.roster",
+   "text": "the dataset's gap is the larger one on all three sets, by 12.1",
    "where": "Appendix",
-   "status": "not-reproducible",
-   "reason": "No stored paired test of the dataset's gap against the models' gap exists, and the article gives no number for it; the two gaps and their intervals above are reproducible."
+   "value": 12.1,
+   "decimals": 1,
+   "metric": "reply.contrast",
+   "args": {
+    "rule": "roster",
+    "field": "diff"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.contrast.strict",
+   "text": "10.6",
+   "where": "Appendix",
+   "value": 10.6,
+   "decimals": 1,
+   "metric": "reply.contrast",
+   "args": {
+    "rule": "strict",
+    "field": "diff"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.contrast.loose",
+   "text": "and 8.8 points",
+   "where": "Appendix",
+   "value": 8.8,
+   "decimals": 1,
+   "metric": "reply.contrast",
+   "args": {
+    "rule": "loose",
+    "field": "diff"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.contrast.looseLo",
+   "text": "an interval that stays above zero: 3.0",
+   "where": "Appendix",
+   "value": 3,
+   "decimals": 1,
+   "metric": "reply.contrast",
+   "args": {
+    "rule": "loose",
+    "field": "lo"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.contrast.looseHi",
+   "text": "to 14.7 on all 491",
+   "where": "Appendix",
+   "value": 14.7,
+   "decimals": 1,
+   "metric": "reply.contrast",
+   "args": {
+    "rule": "loose",
+    "field": "hi"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.contrast.rosterLo",
+   "text": "on the two smaller sets, 0.6",
+   "where": "Appendix",
+   "value": 0.6,
+   "decimals": 1,
+   "metric": "reply.contrast",
+   "args": {
+    "rule": "roster",
+    "field": "lo"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.contrast.rosterHi",
+   "text": "to 24.2",
+   "where": "Appendix",
+   "value": 24.2,
+   "decimals": 1,
+   "metric": "reply.contrast",
+   "args": {
+    "rule": "roster",
+    "field": "hi"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.contrast.strictLo",
+   "text": "and 0.3",
+   "where": "Appendix",
+   "value": 0.3,
+   "decimals": 1,
+   "metric": "reply.contrast",
+   "args": {
+    "rule": "strict",
+    "field": "lo"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.contrast.strictHi",
+   "text": "to 21.2, which clear zero only just",
+   "where": "Appendix",
+   "value": 21.2,
+   "decimals": 1,
+   "metric": "reply.contrast",
+   "args": {
+    "rule": "strict",
+    "field": "hi"
+   }
   },
   {
    "status": "reproducible",
