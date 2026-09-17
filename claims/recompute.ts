@@ -146,6 +146,12 @@ function observableUnder(row: ReplyRow, rule: string): boolean {
   throw new Error(`no observability rule ${rule}`);
 }
 
+/** A row whose call failed. METHODS scores it wrong, so no count here may credit it. A Step 0 row
+ *  carries no error field and so never fails this test. */
+function failed(v: PromptVerdict | PipelineVerdict): boolean {
+  return "error" in v && (v as PipelineVerdict).error !== undefined;
+}
+
 function replyRows(ctx: Context): ReplyRow[] {
   return ctx.results.json<{ rows: ReplyRow[] }>("reply-behaviour/rows.json").rows;
 }
@@ -189,19 +195,21 @@ export const METRICS: Record<string, Metric> = {
     return 100 * binaryStats(verdicts).needsYouRecall;
   },
   /** Of the rows a step answers "needs you", the share that really owe a reply. The companion of
-   *  `step.needsYouRecall`: a stricter rule trades one for the other. */
+   *  `step.needsYouRecall`: a stricter rule trades one for the other. A row whose call failed
+   *  answered nothing the product would act on, so it is not among the rows shown — the same rule
+   *  the scorer and the validator apply when they count it wrong. */
   "step.needsYouPrecision": (ctx, a) => {
     const step = str(a, "step") as StepId;
     const verdicts = step === "step0" ? ctx.results.prompt("step0", str(a, "model")).verdicts : ctx.results.pipeline(step, str(a, "model")).verdicts;
-    const shown = verdicts.filter((v) => toBinary(v.answer) === NEEDS_YOU);
+    const shown = verdicts.filter((v) => !failed(v) && toBinary(v.answer) === NEEDS_YOU);
     return shown.length === 0 ? 0 : pct(shown.filter((v) => REPLY_LABELS.includes(v.gold)).length, shown.length);
   },
-  /** Emails that owe a reply and land in one lane at a pipeline step. */
+  /** Emails that owe a reply and land in one lane at a pipeline step; a failed row lands nowhere. */
   "step.owedInLane": (ctx, a) => {
     const step = str(a, "step") as "step1" | "step2" | "step3";
     return ctx.results
       .pipeline(step, str(a, "model"))
-      .verdicts.filter((v) => REPLY_LABELS.includes(v.gold) && v.judgment === str(a, "lane")).length;
+      .verdicts.filter((v) => !failed(v) && REPLY_LABELS.includes(v.gold) && v.judgment === str(a, "lane")).length;
   },
   /** Emails that owe a reply, carried a reply card at `from`, and do not at `to`; `field: "toAct"`
    *  counts the ones that became a To Act card instead. */
@@ -211,8 +219,8 @@ export const METRICS: Record<string, Metric> = {
     const after = ctx.results.pipeline(str(a, "to") as "step1" | "step2" | "step3", model).verdicts;
     const lost = before
       .map((v, i) => ({ v, i }))
-      .filter(({ v, i }) => REPLY_LABELS.includes(v.gold) && v.judgment === "compose" && after[i]?.judgment !== "compose");
-    return a.field === "toAct" ? lost.filter(({ i }) => after[i]?.judgment === "external").length : lost.length;
+      .filter(({ v, i }) => !failed(v) && REPLY_LABELS.includes(v.gold) && v.judgment === "compose" && !(after[i] !== undefined && !failed(after[i]) && after[i]?.judgment === "compose"));
+    return a.field === "toAct" ? lost.filter(({ i }) => after[i] !== undefined && !failed(after[i]) && after[i]?.judgment === "external").length : lost.length;
   },
   /** Verdicts at a pipeline step matching every `where` [field, value] pair and no `not` pair. */
   "verdicts.count": (ctx, a) => {
