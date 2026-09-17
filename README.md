@@ -6,8 +6,10 @@ for 508 annotated work emails from the Enron corpus, at four steps from a bare
 prompt to the pipeline Pingbo ships. Every number the article states is in `claims/`, with the
 code that recomputes it.
 
-This is release **v1**, a frozen export. The benchmark is developed elsewhere; this
-repository changes only by a new release.
+This is release **v1**, a frozen export. Every file in it is generated: the benchmark is
+developed in A40 Labs' product repository, exported whole, then left alone. That is what keeps a
+number checkable, because the files it was checked against never change. A correction arrives as
+the next release. If you find a mistake, please open an issue.
 
 ## Headline results
 
