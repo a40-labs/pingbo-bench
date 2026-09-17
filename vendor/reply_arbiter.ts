@@ -338,8 +338,12 @@ export function separationContrast(
     const gb = gap(draw, labelB);
     if (ga !== null && gb !== null) diffs.push(ga - gb);
   }
+  // With nothing to take percentiles of, a fallback would answer `lo = hi = 0`: a zero-width
+  // interval sitting exactly on the value the interval exists to rule out, which reads as
+  // certainty that the two gaps are identical. Refuse instead.
+  if (diffs.length === 0) throw new Error("no resample of this set could be scored, so the difference has no interval");
   diffs.sort((x, y) => x - y);
-  const at = (q: number): number => diffs[Math.min(diffs.length - 1, Math.floor(q * diffs.length))] ?? 0;
+  const at = (q: number): number => diffs[Math.min(diffs.length - 1, Math.floor(q * diffs.length))] as number;
   return { n: pool.length, a, b, diff: a - b, ci: { lo: at(0.025), hi: at(0.975) } };
 }
 
