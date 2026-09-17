@@ -1,6 +1,6 @@
 # Claims
 
-Every number in [How Pingbo Decides What Matters](https://pingbo.ai/blog/measuring-which-emails-need-you), release v1: 579 claims, 571 reproducible, 2 not reproducible, 6 context.
+Every number in [How Pingbo Decides What Matters](https://pingbo.ai/blog/measuring-which-emails-need-you), release v1: 585 claims, 577 reproducible, 2 not reproducible, 6 context.
 Generated from `claims/claims.json`; `npm run verify` checks them all.
 
 | Status | Meaning |
@@ -59,6 +59,12 @@ Generated from `claims/claims.json`; `npm run verify` checks them all.
 | `qwen.gapAfter` | to 2.8 | 2.8 | Step 3 | reproducible | `npm run verify -- --id qwen.gapAfter` |
 | `qwen.recallBefore` | dropped the catch rate from 68.2% | 68.2 | Step 3 | reproducible | `npm run verify -- --id qwen.recallBefore` |
 | `qwen.recallAfter` | to 62.0% | 62.0 | Step 3 | reproducible | `npm run verify -- --id qwen.recallAfter` |
+| `qwen.precisionBefore` | raising the share of reply cards really owed from 61.6% | 61.6 | Step 3 | reproducible | `npm run verify -- --id qwen.precisionBefore` |
+| `qwen.precisionAfter` | to 76.6% | 76.6 | Step 3 | reproducible | `npm run verify -- --id qwen.precisionAfter` |
+| `qwen.cardsLost` | the 19 owed replies that lost their reply card | 19 | Step 3 | reproducible | `npm run verify -- --id qwen.cardsLost` |
+| `qwen.cardsToAct` | 18 became To Act cards | 18 | Step 3 | reproducible | `npm run verify -- --id qwen.cardsToAct` |
+| `qwen.waitingBefore` | what reached Waiting fell from 13 | 13 | Step 3 | reproducible | `npm run verify -- --id qwen.waitingBefore` |
+| `qwen.waitingAfter` | to 10 | 10 | Step 3 | reproducible | `npm run verify -- --id qwen.waitingAfter` |
 | `apple.step0` | Asked the bare question it scores 70.1% | 70.1 | Step 3 | reproducible | `npm run verify -- --id apple.step0` |
 | `apple.step1.belowFloor` | inside the harness it falls below the floor at every step | 0 | Step 3 | reproducible | `npm run verify -- --id apple.step1.belowFloor` |
 | `apple.step2.belowFloor` | inside the harness it falls below the floor at every step | 0 | Step 3 | reproducible | `npm run verify -- --id apple.step2.belowFloor` |

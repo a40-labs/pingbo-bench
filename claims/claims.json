@@ -549,6 +549,85 @@
   },
   {
    "status": "reproducible",
+   "id": "qwen.precisionBefore",
+   "text": "raising the share of reply cards really owed from 61.6%",
+   "where": "Step 3",
+   "value": 61.6,
+   "decimals": 1,
+   "metric": "step.needsYouPrecision",
+   "args": {
+    "step": "step2",
+    "model": "qwen3.6-35b-a3b-mxfp4"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "qwen.precisionAfter",
+   "text": "to 76.6%",
+   "where": "Step 3",
+   "value": 76.6,
+   "decimals": 1,
+   "metric": "step.needsYouPrecision",
+   "args": {
+    "step": "step3",
+    "model": "qwen3.6-35b-a3b-mxfp4"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "qwen.cardsLost",
+   "text": "the 19 owed replies that lost their reply card",
+   "where": "Step 3",
+   "value": 19,
+   "metric": "step.cardLost",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "from": "step2",
+    "to": "step3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "qwen.cardsToAct",
+   "text": "18 became To Act cards",
+   "where": "Step 3",
+   "value": 18,
+   "metric": "step.cardLost",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "from": "step2",
+    "to": "step3",
+    "field": "toAct"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "qwen.waitingBefore",
+   "text": "what reached Waiting fell from 13",
+   "where": "Step 3",
+   "value": 13,
+   "metric": "step.owedInLane",
+   "args": {
+    "step": "step2",
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "lane": "waiting"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "qwen.waitingAfter",
+   "text": "to 10",
+   "where": "Step 3",
+   "value": 10,
+   "metric": "step.owedInLane",
+   "args": {
+    "step": "step3",
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "lane": "waiting"
+   }
+  },
+  {
+   "status": "reproducible",
    "id": "apple.step0",
    "text": "Asked the bare question it scores 70.1%",
    "where": "Step 3",
