@@ -1,0 +1,218 @@
+{
+ "version": "v1",
+ "article": {
+  "title": "How Pingbo Decides What Matters",
+  "url": "https://pingbo.ai/blog/measuring-which-emails-need-you",
+  "publishedOn": "2026-09-17"
+ },
+ "seed": 1610,
+ "sample": 508,
+ "models": [
+  {
+   "id": "gpt-5.6-luna",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "gpt-5.6-sol",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "gpt-5.6-terra",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "gpt-5.5",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "gpt-5.4",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "gpt-5.4-mini",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "gpt-5.4-nano",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "gpt-5.2",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "gpt-5.1",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "gpt-5",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "gpt-5-mini",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "gpt-5-nano",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "gpt-4.1",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "gpt-4.1-mini",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "gpt-4.1-nano",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "gpt-4o-mini",
+   "group": "openai",
+   "small": false
+  },
+  {
+   "id": "claude-opus-5",
+   "group": "anthropic",
+   "small": false
+  },
+  {
+   "id": "claude-opus-4-8",
+   "group": "anthropic",
+   "small": false
+  },
+  {
+   "id": "claude-opus-4-7",
+   "group": "anthropic",
+   "small": false
+  },
+  {
+   "id": "claude-opus-4-6",
+   "group": "anthropic",
+   "small": false
+  },
+  {
+   "id": "claude-opus-4-5-20251101",
+   "group": "anthropic",
+   "small": false
+  },
+  {
+   "id": "claude-fable-5-1",
+   "group": "anthropic",
+   "small": false
+  },
+  {
+   "id": "claude-fable-5",
+   "group": "anthropic",
+   "small": false
+  },
+  {
+   "id": "claude-sonnet-5",
+   "group": "anthropic",
+   "small": false
+  },
+  {
+   "id": "claude-sonnet-4-6",
+   "group": "anthropic",
+   "small": false
+  },
+  {
+   "id": "claude-sonnet-4-5-20250929",
+   "group": "anthropic",
+   "small": false
+  },
+  {
+   "id": "claude-haiku-4-5-20251001",
+   "group": "anthropic",
+   "small": false
+  },
+  {
+   "id": "qwen3.6-35b-a3b-mxfp4",
+   "group": "self-hosted",
+   "small": false
+  },
+  {
+   "id": "ornith-1.5-9b-mlx-full",
+   "group": "self-hosted",
+   "small": true
+  },
+  {
+   "id": "ornith-1.5-9b-mlx-6bit",
+   "group": "self-hosted",
+   "small": true
+  },
+  {
+   "id": "gemma-4-E4B-it-qat-4bit",
+   "group": "self-hosted",
+   "small": true
+  },
+  {
+   "id": "apple-fm-on-device",
+   "group": "self-hosted",
+   "small": true
+  }
+ ],
+ "steps": [
+  {
+   "id": "step0",
+   "label": "Step 0: the bare question",
+   "probes": "probes.v2.json",
+   "corpusSha256": "d8e205c5a66a60d8cbe0126d79b0a2b0712cc149bf1edbc3c00feeaad4346a53",
+   "promptSha256": "3335d03b0824407eb9d985ec0cfc871b134483e4696bc4d7ad119c9fbc0737e2"
+  },
+  {
+   "id": "step0-subject-body",
+   "label": "Step 0 on subject and body only (the appendix's four-way reading)",
+   "probes": "probes.json",
+   "corpusSha256": "ef51dae101dcd3e8bbd500b2e2d3d69644bfd9b22832f88d5c4b4e736a69b3aa",
+   "promptSha256": "3335d03b0824407eb9d985ec0cfc871b134483e4696bc4d7ad119c9fbc0737e2"
+  },
+  {
+   "id": "step1",
+   "label": "Step 1: the first prompts, end to end",
+   "probes": "probes.v2.json",
+   "corpusSha256": "d8e205c5a66a60d8cbe0126d79b0a2b0712cc149bf1edbc3c00feeaad4346a53",
+   "pipelineVersion": "rev1",
+   "promptSha256": "ea8ee98c90954233",
+   "sortingPromptSha256": "2a60d3979ef0f6ae",
+   "judgeVersion": 15
+  },
+  {
+   "id": "step2",
+   "label": "Step 2: a verdict must quote the message to claim an obligation",
+   "probes": "probes.v2.json",
+   "corpusSha256": "d8e205c5a66a60d8cbe0126d79b0a2b0712cc149bf1edbc3c00feeaad4346a53",
+   "pipelineVersion": "rev3",
+   "promptSha256": "38a611cd47bee678",
+   "sortingPromptSha256": "002c99bd251c70c9",
+   "judgeVersion": 17
+  },
+  {
+   "id": "step3",
+   "label": "Step 3: the ask must use the email's own words",
+   "probes": "probes.v2.json",
+   "corpusSha256": "d8e205c5a66a60d8cbe0126d79b0a2b0712cc149bf1edbc3c00feeaad4346a53",
+   "pipelineVersion": "rev5",
+   "promptSha256": "e0eb3c28b50cf84e",
+   "sortingPromptSha256": "002c99bd251c70c9",
+   "judgeVersion": 18
+  }
+ ]
+}

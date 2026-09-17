@@ -1,0 +1,20 @@
+{
+  "name": "pingbo-bench",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build:data": "tsx data/build/build.ts",
+    "verify": "tsx claims/verify.ts",
+    "score": "tsx harness/scoring/score.ts",
+    "figures": "tsx harness/figures/extract.ts",
+    "step0": "tsx harness/step0/run.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": { "node": ">=22" },
+  "devDependencies": {
+    "@types/node": "22.20.0",
+    "tsx": "4.22.5",
+    "typescript": "5.9.3"
+  }
+}

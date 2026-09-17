@@ -1,0 +1,709 @@
+{
+ "floor": 64.8,
+ "series": {
+  "claude-fable-5": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 82.48031496062993,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 66.338583,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 83.858268,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 84.251969,
+    "n": 508
+   }
+  ],
+  "claude-fable-5-1": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 66.53543307086615,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 70.275591,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 83.267717,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 83.070866,
+    "n": 508
+   }
+  ],
+  "claude-haiku-4-5-20251001": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 68.89763779527559,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 60.629921,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 77.952756,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 80.11811,
+    "n": 508
+   }
+  ],
+  "claude-opus-4-5-20251101": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 81.2992125984252,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 75.393701,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 82.677165,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 83.267717,
+    "n": 508
+   }
+  ],
+  "claude-opus-4-6": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 77.16535433070865,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 67.716535,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 80.511811,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 82.677165,
+    "n": 508
+   }
+  ],
+  "claude-opus-4-7": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 81.88976377952756,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 65.15748,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 82.086614,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 82.874016,
+    "n": 508
+   }
+  ],
+  "claude-opus-4-8": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 81.49606299212599,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 72.834646,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 84.84252,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 84.645669,
+    "n": 508
+   }
+  ],
+  "claude-opus-5": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 81.49606299212599,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 66.732283,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 83.267717,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 84.448819,
+    "n": 508
+   }
+  ],
+  "claude-sonnet-4-5-20250929": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 67.91338582677166,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 68.700787,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 81.299213,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 81.692913,
+    "n": 508
+   }
+  ],
+  "claude-sonnet-4-6": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 84.05511811023622,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 68.503937,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 83.267717,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 82.480315,
+    "n": 508
+   }
+  ],
+  "claude-sonnet-5": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 78.74015748031496,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 71.653543,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 83.858268,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 83.661417,
+    "n": 508
+   }
+  ],
+  "gemma-4-E4B-it-qat-4bit": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 71.06299212598425,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 60.03937,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 63.582677,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 65.15748,
+    "n": 508
+   }
+  ],
+  "gpt-4.1": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 81.10236220472441,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 63.779528,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 81.299213,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 82.874016,
+    "n": 508
+   }
+  ],
+  "gpt-4.1-mini": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 71.06299212598425,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 54.527559,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 72.834646,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 75.590551,
+    "n": 508
+   }
+  ],
+  "gpt-4.1-nano": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 69.09448818897637,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 43.897638,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 60.629921,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 61.614173,
+    "n": 508
+   }
+  ],
+  "gpt-4o-mini": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 77.95275590551181,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 34.448819,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 46.456693,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 75.787402,
+    "n": 508
+   }
+  ],
+  "gpt-5": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 76.77165354330708,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 60.433071,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 78.937008,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 80.511811,
+    "n": 508
+   }
+  ],
+  "gpt-5-mini": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 72.24409448818898,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 56.496063,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 71.653543,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 79.92126,
+    "n": 508
+   }
+  ],
+  "gpt-5-nano": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 49.60629921259842,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 64.96063,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 64.76378,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 64.76378,
+    "n": 508
+   }
+  ],
+  "gpt-5.1": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 79.52755905511812,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 59.448819,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 82.086614,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 82.480315,
+    "n": 508
+   }
+  ],
+  "gpt-5.2": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 78.74015748031496,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 61.811024,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 83.070866,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 83.464567,
+    "n": 508
+   }
+  ],
+  "gpt-5.4": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 82.48031496062993,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 67.913386,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 82.480315,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 82.874016,
+    "n": 508
+   }
+  ],
+  "gpt-5.4-mini": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 69.48818897637796,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 69.88189,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 79.330709,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 79.133858,
+    "n": 508
+   }
+  ],
+  "gpt-5.4-nano": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 73.03149606299213,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 54.527559,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 61.614173,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 63.779528,
+    "n": 508
+   }
+  ],
+  "gpt-5.5": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 82.48031496062993,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 72.244094,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 83.858268,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 85.03937,
+    "n": 508
+   }
+  ],
+  "gpt-5.6-luna": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 70.66929133858267,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 63.582677,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 81.496063,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 84.055118,
+    "n": 508
+   }
+  ],
+  "gpt-5.6-sol": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 82.28346456692913,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 74.606299,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 82.677165,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 83.267717,
+    "n": 508
+   }
+  ],
+  "gpt-5.6-terra": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 79.92125984251969,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 67.125984,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 82.874016,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 83.661417,
+    "n": 508
+   }
+  ],
+  "ornith-1.5-9b-mlx-6bit": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 60.43307086614173,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 44.488189,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 44.291339,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 45.07874,
+    "n": 508
+   }
+  ],
+  "ornith-1.5-9b-mlx-full": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 59.25196850393701,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 50.787402,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 59.645669,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 65.354331,
+    "n": 508
+   }
+  ],
+  "qwen3.6-35b-a3b-mxfp4": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 75,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 64.96063,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 73.425197,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 79.724409,
+    "n": 508
+   }
+  ],
+  "apple-fm-on-device": [
+   {
+    "arm": "rev2-ctx",
+    "accuracy": 70.07874015748031,
+    "n": 508
+   },
+   {
+    "arm": "rev1",
+    "accuracy": 47.244094,
+    "n": 508
+   },
+   {
+    "arm": "rev3",
+    "accuracy": 37.401575,
+    "n": 508
+   },
+   {
+    "arm": "rev5",
+    "accuracy": 37.598425,
+    "n": 508
+   }
+  ]
+ }
+}

@@ -1,0 +1,614 @@
+{
+ "total": 508,
+ "needsYou": 179,
+ "models": [
+  {
+   "model": "claude-fable-5",
+   "accuracy": 84.25,
+   "cards": {
+    "recall": 64.8,
+    "precision": 87.88,
+    "shown": 132
+   },
+   "ships": {
+    "recall": 86.03,
+    "precision": 55.4,
+    "shown": 278
+   },
+   "both": {
+    "recall": 92.18,
+    "precision": 56.31,
+    "shown": 293
+   }
+  },
+  {
+   "model": "claude-fable-5-1",
+   "accuracy": 83.07,
+   "cards": {
+    "recall": 64.25,
+    "precision": 85.19,
+    "shown": 135
+   },
+   "ships": {
+    "recall": 83.24,
+    "precision": 61.57,
+    "shown": 242
+   },
+   "both": {
+    "recall": 88.27,
+    "precision": 61.48,
+    "shown": 257
+   }
+  },
+  {
+   "model": "claude-haiku-4-5-20251001",
+   "accuracy": 80.12,
+   "cards": {
+    "recall": 59.22,
+    "precision": 82.81,
+    "shown": 128
+   },
+   "ships": {
+    "recall": 82.68,
+    "precision": 53.43,
+    "shown": 277
+   },
+   "both": {
+    "recall": 95.53,
+    "precision": 46.72,
+    "shown": 366
+   }
+  },
+  {
+   "model": "claude-opus-4-5-20251101",
+   "accuracy": 83.27,
+   "cards": {
+    "recall": 56.42,
+    "precision": 93.52,
+    "shown": 108
+   },
+   "ships": {
+    "recall": 75.42,
+    "precision": 64.59,
+    "shown": 209
+   },
+   "both": {
+    "recall": 88.27,
+    "precision": 60.77,
+    "shown": 260
+   }
+  },
+  {
+   "model": "claude-opus-4-6",
+   "accuracy": 82.68,
+   "cards": {
+    "recall": 60.34,
+    "precision": 86.4,
+    "shown": 125
+   },
+   "ships": {
+    "recall": 79.89,
+    "precision": 55,
+    "shown": 260
+   },
+   "both": {
+    "recall": 91.62,
+    "precision": 52.56,
+    "shown": 312
+   }
+  },
+  {
+   "model": "claude-opus-4-7",
+   "accuracy": 82.87,
+   "cards": {
+    "recall": 58.66,
+    "precision": 88.98,
+    "shown": 118
+   },
+   "ships": {
+    "recall": 84.36,
+    "precision": 53.74,
+    "shown": 281
+   },
+   "both": {
+    "recall": 93.3,
+    "precision": 53.18,
+    "shown": 314
+   }
+  },
+  {
+   "model": "claude-opus-4-8",
+   "accuracy": 84.65,
+   "cards": {
+    "recall": 63.13,
+    "precision": 91.13,
+    "shown": 124
+   },
+   "ships": {
+    "recall": 82.12,
+    "precision": 64.76,
+    "shown": 227
+   },
+   "both": {
+    "recall": 89.94,
+    "precision": 61.69,
+    "shown": 261
+   }
+  },
+  {
+   "model": "claude-opus-5",
+   "accuracy": 84.45,
+   "cards": {
+    "recall": 63.69,
+    "precision": 92.68,
+    "shown": 123
+   },
+   "ships": {
+    "recall": 84.36,
+    "precision": 54.51,
+    "shown": 277
+   },
+   "both": {
+    "recall": 92.18,
+    "precision": 55.18,
+    "shown": 299
+   }
+  },
+  {
+   "model": "claude-sonnet-4-5-20250929",
+   "accuracy": 81.69,
+   "cards": {
+    "recall": 57.54,
+    "precision": 87.29,
+    "shown": 118
+   },
+   "ships": {
+    "recall": 71.51,
+    "precision": 61.54,
+    "shown": 208
+   },
+   "both": {
+    "recall": 91.62,
+    "precision": 52.73,
+    "shown": 311
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "accuracy": 82.48,
+   "cards": {
+    "recall": 62.57,
+    "precision": 84.21,
+    "shown": 133
+   },
+   "ships": {
+    "recall": 82.68,
+    "precision": 59.92,
+    "shown": 247
+   },
+   "both": {
+    "recall": 90.5,
+    "precision": 58.48,
+    "shown": 277
+   }
+  },
+  {
+   "model": "claude-sonnet-5",
+   "accuracy": 83.66,
+   "cards": {
+    "recall": 63.69,
+    "precision": 87.69,
+    "shown": 130
+   },
+   "ships": {
+    "recall": 83.24,
+    "precision": 58.2,
+    "shown": 256
+   },
+   "both": {
+    "recall": 92.74,
+    "precision": 55.33,
+    "shown": 300
+   }
+  },
+  {
+   "model": "gemma-4-E4B-it-qat-4bit",
+   "accuracy": 65.16,
+   "cards": {
+    "recall": 74.86,
+    "precision": 66.34,
+    "shown": 202
+   },
+   "ships": {
+    "recall": 83.24,
+    "precision": 54.78,
+    "shown": 272
+   },
+   "both": {
+    "recall": 95.53,
+    "precision": 49.71,
+    "shown": 344
+   }
+  },
+  {
+   "model": "gpt-4.1",
+   "accuracy": 82.87,
+   "cards": {
+    "recall": 62.57,
+    "precision": 85.5,
+    "shown": 131
+   },
+   "ships": {
+    "recall": 86.59,
+    "precision": 56.57,
+    "shown": 274
+   },
+   "both": {
+    "recall": 93.85,
+    "precision": 54.72,
+    "shown": 307
+   }
+  },
+  {
+   "model": "gpt-4.1-mini",
+   "accuracy": 75.59,
+   "cards": {
+    "recall": 76.54,
+    "precision": 63.13,
+    "shown": 217
+   },
+   "ships": {
+    "recall": 88.83,
+    "precision": 46.9,
+    "shown": 339
+   },
+   "both": {
+    "recall": 95.53,
+    "precision": 45.48,
+    "shown": 376
+   }
+  },
+  {
+   "model": "gpt-4.1-nano",
+   "accuracy": 61.61,
+   "cards": {
+    "recall": 0,
+    "precision": 0,
+    "shown": 1
+   },
+   "ships": {
+    "recall": 26.26,
+    "precision": 36.72,
+    "shown": 128
+   },
+   "both": {
+    "recall": 92.74,
+    "precision": 47.84,
+    "shown": 347
+   }
+  },
+  {
+   "model": "gpt-4o-mini",
+   "accuracy": 75.79,
+   "cards": {
+    "recall": 59.78,
+    "precision": 70.86,
+    "shown": 151
+   },
+   "ships": {
+    "recall": 72.63,
+    "precision": 52.63,
+    "shown": 247
+   },
+   "both": {
+    "recall": 93.3,
+    "precision": 52.35,
+    "shown": 319
+   }
+  },
+  {
+   "model": "gpt-5",
+   "accuracy": 80.51,
+   "cards": {
+    "recall": 69.83,
+    "precision": 73.96,
+    "shown": 169
+   },
+   "ships": {
+    "recall": 86.03,
+    "precision": 50.66,
+    "shown": 304
+   },
+   "both": {
+    "recall": 93.85,
+    "precision": 49.7,
+    "shown": 338
+   }
+  },
+  {
+   "model": "gpt-5-mini",
+   "accuracy": 79.92,
+   "cards": {
+    "recall": 70.39,
+    "precision": 72.41,
+    "shown": 174
+   },
+   "ships": {
+    "recall": 85.47,
+    "precision": 45.27,
+    "shown": 338
+   },
+   "both": {
+    "recall": 95.53,
+    "precision": 44.88,
+    "shown": 381
+   }
+  },
+  {
+   "model": "gpt-5-nano",
+   "accuracy": 64.76,
+   "cards": {
+    "recall": 0,
+    "precision": 0,
+    "shown": 0
+   },
+   "ships": {
+    "recall": 0,
+    "precision": 0,
+    "shown": 1
+   },
+   "both": {
+    "recall": 97.21,
+    "precision": 41.04,
+    "shown": 424
+   }
+  },
+  {
+   "model": "gpt-5.1",
+   "accuracy": 82.48,
+   "cards": {
+    "recall": 59.22,
+    "precision": 86.89,
+    "shown": 122
+   },
+   "ships": {
+    "recall": 86.03,
+    "precision": 53.85,
+    "shown": 286
+   },
+   "both": {
+    "recall": 94.41,
+    "precision": 52.16,
+    "shown": 324
+   }
+  },
+  {
+   "model": "gpt-5.2",
+   "accuracy": 83.46,
+   "cards": {
+    "recall": 65.36,
+    "precision": 85.4,
+    "shown": 137
+   },
+   "ships": {
+    "recall": 86.59,
+    "precision": 55.36,
+    "shown": 280
+   },
+   "both": {
+    "recall": 93.85,
+    "precision": 51.85,
+    "shown": 324
+   }
+  },
+  {
+   "model": "gpt-5.4",
+   "accuracy": 82.87,
+   "cards": {
+    "recall": 56.42,
+    "precision": 92.66,
+    "shown": 109
+   },
+   "ships": {
+    "recall": 76.54,
+    "precision": 63.72,
+    "shown": 215
+   },
+   "both": {
+    "recall": 93.3,
+    "precision": 63.02,
+    "shown": 265
+   }
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "accuracy": 79.13,
+   "cards": {
+    "recall": 53.63,
+    "precision": 82.05,
+    "shown": 117
+   },
+   "ships": {
+    "recall": 82.68,
+    "precision": 56.06,
+    "shown": 264
+   },
+   "both": {
+    "recall": 95.53,
+    "precision": 49.57,
+    "shown": 345
+   }
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "accuracy": 63.78,
+   "cards": {
+    "recall": 30.73,
+    "precision": 67.9,
+    "shown": 81
+   },
+   "ships": {
+    "recall": 35.75,
+    "precision": 65.31,
+    "shown": 98
+   },
+   "both": {
+    "recall": 92.74,
+    "precision": 55.7,
+    "shown": 298
+   }
+  },
+  {
+   "model": "gpt-5.5",
+   "accuracy": 85.04,
+   "cards": {
+    "recall": 66.48,
+    "precision": 89.47,
+    "shown": 133
+   },
+   "ships": {
+    "recall": 83.8,
+    "precision": 62.24,
+    "shown": 241
+   },
+   "both": {
+    "recall": 88.83,
+    "precision": 60,
+    "shown": 265
+   }
+  },
+  {
+   "model": "gpt-5.6-luna",
+   "accuracy": 84.06,
+   "cards": {
+    "recall": 64.25,
+    "precision": 89.15,
+    "shown": 129
+   },
+   "ships": {
+    "recall": 83.8,
+    "precision": 55.56,
+    "shown": 270
+   },
+   "both": {
+    "recall": 95.53,
+    "precision": 49.85,
+    "shown": 343
+   }
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "accuracy": 83.27,
+   "cards": {
+    "recall": 60.89,
+    "precision": 88.62,
+    "shown": 123
+   },
+   "ships": {
+    "recall": 81.01,
+    "precision": 64.73,
+    "shown": 224
+   },
+   "both": {
+    "recall": 88.27,
+    "precision": 63.71,
+    "shown": 248
+   }
+  },
+  {
+   "model": "gpt-5.6-terra",
+   "accuracy": 83.66,
+   "cards": {
+    "recall": 62.57,
+    "precision": 88.19,
+    "shown": 127
+   },
+   "ships": {
+    "recall": 83.24,
+    "precision": 60.57,
+    "shown": 246
+   },
+   "both": {
+    "recall": 93.85,
+    "precision": 58.54,
+    "shown": 287
+   }
+  },
+  {
+   "model": "ornith-1.5-9b-mlx-6bit",
+   "accuracy": 45.08,
+   "cards": {
+    "recall": 31.28,
+    "precision": 60.22,
+    "shown": 93
+   },
+   "ships": {
+    "recall": 40.22,
+    "precision": 47.06,
+    "shown": 153
+   },
+   "both": {
+    "recall": 98.32,
+    "precision": 45.36,
+    "shown": 388
+   }
+  },
+  {
+   "model": "ornith-1.5-9b-mlx-full",
+   "accuracy": 65.35,
+   "cards": {
+    "recall": 55.87,
+    "precision": 60.98,
+    "shown": 164
+   },
+   "ships": {
+    "recall": 70.95,
+    "precision": 44.88,
+    "shown": 283
+   },
+   "both": {
+    "recall": 98.32,
+    "precision": 44.56,
+    "shown": 395
+   }
+  },
+  {
+   "model": "qwen3.6-35b-a3b-mxfp4",
+   "accuracy": 79.72,
+   "cards": {
+    "recall": 62.01,
+    "precision": 76.55,
+    "shown": 145
+   },
+   "ships": {
+    "recall": 79.89,
+    "precision": 52.96,
+    "shown": 270
+   },
+   "both": {
+    "recall": 92.18,
+    "precision": 50.77,
+    "shown": 325
+   }
+  },
+  {
+   "model": "apple-fm-on-device",
+   "accuracy": 37.6,
+   "cards": {
+    "recall": 0,
+    "precision": 0,
+    "shown": 0
+   },
+   "ships": {
+    "recall": 0,
+    "precision": 0,
+    "shown": 0
+   },
+   "both": {
+    "recall": 32.96,
+    "precision": 76.62,
+    "shown": 77
+   }
+  }
+ ]
+}

@@ -1,0 +1,7365 @@
+{
+ "version": "v1",
+ "article": {
+  "title": "How Pingbo Decides What Matters",
+  "url": "https://pingbo.ai/blog/measuring-which-emails-need-you",
+  "publishedOn": "2026-09-17"
+ },
+ "claims": [
+  {
+   "status": "reproducible",
+   "id": "corpus.emails",
+   "text": "508 real work emails",
+   "where": "The bar we hold it to",
+   "value": 508,
+   "metric": "labels.count"
+  },
+  {
+   "status": "reproducible",
+   "id": "corpus.annotated",
+   "text": "Two annotators had read 1,145 of them",
+   "where": "The bar we hold it to",
+   "value": 1145,
+   "metric": "annotations.count",
+   "args": {
+    "what": "annotated"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "labels.immediate",
+   "text": "112 needed an immediate reply",
+   "where": "The bar we hold it to",
+   "value": 112,
+   "metric": "labels.count",
+   "args": {
+    "label4": "immediate reply"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "labels.postponed",
+   "text": "67 needed a postponed reply",
+   "where": "The bar we hold it to",
+   "value": 67,
+   "metric": "labels.count",
+   "args": {
+    "label4": "postponed reply"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "labels.accountable",
+   "text": "285 were something you are accountable for",
+   "where": "The bar we hold it to",
+   "value": 285,
+   "metric": "labels.count",
+   "args": {
+    "label4": "accountable non-answer"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "labels.ignore",
+   "text": "44 you could ignore",
+   "where": "The bar we hold it to",
+   "value": 44,
+   "metric": "labels.count",
+   "args": {
+    "label4": "ignore"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "labels.owe",
+   "text": "112 + 67 = 179 that owe a reply",
+   "where": "The bar we hold it to",
+   "value": 179,
+   "metric": "labels.count",
+   "args": {
+    "label2": "needs_reply"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "labels.notOwe",
+   "text": "285 + 44 = 329 that do not",
+   "where": "The bar we hold it to",
+   "value": 329,
+   "metric": "labels.count",
+   "args": {
+    "label2": "no_reply"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "floor",
+   "text": "329 ÷ 508 = 64.8%",
+   "where": "The bar we hold it to; Figures 2 and 3",
+   "value": 64.8,
+   "decimals": 1,
+   "metric": "labels.noReplyShare"
+  },
+  {
+   "status": "reproducible",
+   "id": "example.accuracy",
+   "text": "80%, which is 406 of 508",
+   "where": "The bar we hold it to",
+   "value": 406,
+   "metric": "example.twoSystems",
+   "args": {
+    "accuracy": 0.8,
+    "secondCaught": 160,
+    "field": "correct"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "example.firstCaught",
+   "text": "One catches 77 of the 179 and flags nothing extra",
+   "where": "The bar we hold it to",
+   "value": 77,
+   "metric": "example.twoSystems",
+   "args": {
+    "accuracy": 0.8,
+    "secondCaught": 160,
+    "field": "firstCaught"
+   }
+  },
+  {
+   "id": "example.secondCaught",
+   "text": "The other catches 160",
+   "where": "The bar we hold it to",
+   "status": "context",
+   "value": 160,
+   "reason": "A chosen input to the worked example; 83 and 19 follow from it."
+  },
+  {
+   "status": "reproducible",
+   "id": "example.secondFlagged",
+   "text": "and flags 83 you did not need",
+   "where": "The bar we hold it to",
+   "value": 83,
+   "metric": "example.twoSystems",
+   "args": {
+    "accuracy": 0.8,
+    "secondCaught": 160,
+    "field": "secondFlagged"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "example.firstMissed",
+   "text": "The first leaves 102 emails you owed unread",
+   "where": "The bar we hold it to",
+   "value": 102,
+   "metric": "example.twoSystems",
+   "args": {
+    "accuracy": 0.8,
+    "secondCaught": 160,
+    "field": "firstMissed"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "example.secondMissed",
+   "text": "The second leaves 19",
+   "where": "The bar we hold it to",
+   "value": 19,
+   "metric": "example.twoSystems",
+   "args": {
+    "accuracy": 0.8,
+    "secondCaught": 160,
+    "field": "secondMissed"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "models.total",
+   "text": "We hold 32 models to that bar",
+   "where": "The bar we hold it to",
+   "value": 32,
+   "metric": "models.count"
+  },
+  {
+   "status": "reproducible",
+   "id": "models.openai",
+   "text": "16 from OpenAI",
+   "where": "The bar we hold it to",
+   "value": 16,
+   "metric": "models.count",
+   "args": {
+    "group": "openai"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "models.anthropic",
+   "text": "11 from Anthropic",
+   "where": "The bar we hold it to",
+   "value": 11,
+   "metric": "models.count",
+   "args": {
+    "group": "anthropic"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "models.small",
+   "text": "four small models",
+   "where": "The bar we hold it to",
+   "value": 4,
+   "metric": "models.count",
+   "args": {
+    "small": true
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "models.selfHosted",
+   "text": "We ran all five of those on our own machines",
+   "where": "The bar we hold it to",
+   "value": 5,
+   "metric": "models.count",
+   "args": {
+    "group": "self-hosted"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "models.everyStep",
+   "text": "every one of the 32 ran over the same 508 emails",
+   "where": "The bar we hold it to; Figure 2",
+   "value": 32,
+   "metric": "arm.modelCount",
+   "args": {
+    "step": "step3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "doubt.intro",
+   "text": "about 24 of the 508 emails are in doubt",
+   "where": "The bar we hold it to",
+   "value": 24,
+   "metric": "adjudication.replyFlips"
+  },
+  {
+   "status": "reproducible",
+   "id": "step0.median",
+   "text": "half of the 32 models score above 77.0%",
+   "where": "TL;DR; From a simple prompt… (Step 0)",
+   "value": 77,
+   "decimals": 1,
+   "metric": "step.median",
+   "args": {
+    "step": "step0"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "step0.beatFloor",
+   "text": "29 of them clear the floor",
+   "where": "Step 0",
+   "value": 29,
+   "metric": "step.beatsFloor",
+   "args": {
+    "step": "step0"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "step1.median",
+   "text": "The median drops to 65.0%",
+   "where": "Step 1",
+   "value": 65,
+   "decimals": 1,
+   "metric": "step.median",
+   "args": {
+    "step": "step1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "step1.beatFloor",
+   "text": "Only 17 models still clear it",
+   "where": "Step 1",
+   "value": 17,
+   "metric": "step.beatsFloor",
+   "args": {
+    "step": "step1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "step1.worse",
+   "text": "our harness made 28 of the 32 worse",
+   "where": "Step 1",
+   "value": 28,
+   "metric": "step.vsStep0",
+   "args": {
+    "step": "step1",
+    "compare": "lt"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "step2.median",
+   "text": "The median rose to 81.3%",
+   "where": "Step 2",
+   "value": 81.3,
+   "decimals": 1,
+   "metric": "step.median",
+   "args": {
+    "step": "step2"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "step2.beatFloor",
+   "text": "24 models cleared the floor",
+   "where": "Step 2",
+   "value": 24,
+   "metric": "step.beatsFloor",
+   "args": {
+    "step": "step2"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "step2.better",
+   "text": "more of them did at least as well inside the harness as outside it, 23 of the 32",
+   "where": "Step 2",
+   "value": 23,
+   "metric": "step.vsStep0",
+   "args": {
+    "step": "step2",
+    "compare": "ge"
+   },
+   "reason": "Counts a tie as not worse: 22 score higher and gpt-5.4 scores the same 419 of 508 at both steps."
+  },
+  {
+   "id": "step3.quotesBeneathSeparator",
+   "text": "A fifth of them were not from the email at all",
+   "where": "Step 3",
+   "status": "not-reproducible",
+   "reason": "Read from the quotes Step 2 accepted during development; those replies were not stored, and no result file holds them."
+  },
+  {
+   "status": "reproducible",
+   "id": "step3.median",
+   "text": "The median moved to 82.5%",
+   "where": "Step 3",
+   "value": 82.5,
+   "decimals": 1,
+   "metric": "step.median",
+   "args": {
+    "step": "step3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "step3.beatFloor",
+   "text": "27 models clear the floor",
+   "where": "Step 3",
+   "value": 27,
+   "metric": "step.beatsFloor",
+   "args": {
+    "step": "step3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "step3.best",
+   "text": "the best of them scores 85.0%",
+   "where": "TL;DR; Step 3",
+   "value": 85,
+   "decimals": 1,
+   "metric": "step.max",
+   "args": {
+    "step": "step3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "step3.bestModel",
+   "text": "gpt-5.5 at 85.0%",
+   "where": "Table 1 caption; Figure 2",
+   "value": 85,
+   "decimals": 1,
+   "metric": "step.accuracy",
+   "args": {
+    "step": "step3",
+    "model": "gpt-5.5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "step3.better",
+   "text": "25 of the 32 now do better inside the harness than outside it",
+   "where": "Step 3",
+   "value": 25,
+   "metric": "step.vsStep0",
+   "args": {
+    "step": "step3",
+    "compare": "ge"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "step3.bareBetter",
+   "text": "Seven of the 32 still do better with the bare question",
+   "where": "Step 3",
+   "value": 7,
+   "metric": "step.vsStep0",
+   "args": {
+    "step": "step3",
+    "compare": "lt"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure.struckThrough",
+   "text": "The five struck through cannot beat the 64.8%",
+   "where": "Figures 2 and 3 captions",
+   "value": 5,
+   "metric": "step.cannotBeatFloor",
+   "args": {
+    "step": "step3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "qwen.step1",
+   "text": "accuracy goes from 65.0",
+   "where": "Figure 2",
+   "value": 65,
+   "decimals": 1,
+   "metric": "step.accuracy",
+   "args": {
+    "step": "step1",
+    "model": "qwen3.6-35b-a3b-mxfp4"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "qwen.step2",
+   "text": "to 73.4 percent",
+   "where": "Figure 2",
+   "value": 73.4,
+   "decimals": 1,
+   "metric": "step.accuracy",
+   "args": {
+    "step": "step2",
+    "model": "qwen3.6-35b-a3b-mxfp4"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "qwen.step3",
+   "text": "and to 79.7",
+   "where": "Figure 2",
+   "value": 79.7,
+   "decimals": 1,
+   "metric": "step.accuracy",
+   "args": {
+    "step": "step3",
+    "model": "qwen3.6-35b-a3b-mxfp4"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "qwen.step2Gain",
+   "text": "was worth 8.5 points",
+   "where": "Figure 2 caption",
+   "value": 8.5,
+   "decimals": 1,
+   "metric": "step.delta",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "from": "step1",
+    "to": "step2"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "qwen.step3Gain",
+   "text": "it was worth 6.3 points",
+   "where": "Step 3; Figure 2 caption",
+   "value": 6.3,
+   "decimals": 1,
+   "metric": "step.delta",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "from": "step2",
+    "to": "step3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "qwen.gapBefore",
+   "text": "closing the gap to the rest of the field from 7.9 points",
+   "where": "Step 3",
+   "value": 7.9,
+   "decimals": 1,
+   "metric": "step.belowMedian",
+   "args": {
+    "step": "step2",
+    "model": "qwen3.6-35b-a3b-mxfp4"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "qwen.gapAfter",
+   "text": "to 2.8",
+   "where": "Step 3",
+   "value": 2.8,
+   "decimals": 1,
+   "metric": "step.belowMedian",
+   "args": {
+    "step": "step3",
+    "model": "qwen3.6-35b-a3b-mxfp4"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "qwen.recallBefore",
+   "text": "dropped the catch rate from 68.2%",
+   "where": "Step 3",
+   "value": 68.2,
+   "decimals": 1,
+   "metric": "step.needsYouRecall",
+   "args": {
+    "step": "step2",
+    "model": "qwen3.6-35b-a3b-mxfp4"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "qwen.recallAfter",
+   "text": "to 62.0%",
+   "where": "Step 3",
+   "value": 62,
+   "decimals": 1,
+   "metric": "step.needsYouRecall",
+   "args": {
+    "step": "step3",
+    "model": "qwen3.6-35b-a3b-mxfp4"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "apple.step0",
+   "text": "Asked the bare question it scores 70.1%",
+   "where": "Step 3",
+   "value": 70.1,
+   "decimals": 1,
+   "metric": "step.accuracy",
+   "args": {
+    "step": "step0",
+    "model": "apple-fm-on-device"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "apple.step1.belowFloor",
+   "text": "inside the harness it falls below the floor at every step",
+   "where": "Step 3",
+   "value": 0,
+   "metric": "model.beatsFloor",
+   "args": {
+    "step": "step1",
+    "model": "apple-fm-on-device"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "apple.step2.belowFloor",
+   "text": "inside the harness it falls below the floor at every step",
+   "where": "Step 3",
+   "value": 0,
+   "metric": "model.beatsFloor",
+   "args": {
+    "step": "step2",
+    "model": "apple-fm-on-device"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "apple.step3.belowFloor",
+   "text": "inside the harness it falls below the floor at every step",
+   "where": "Step 3",
+   "value": 0,
+   "metric": "model.beatsFloor",
+   "args": {
+    "step": "step3",
+    "model": "apple-fm-on-device"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "apple.tooLong",
+   "text": "153 of the 508 emails do not fit in the 4,096 tokens",
+   "where": "Step 3",
+   "value": 153,
+   "metric": "verdicts.count",
+   "args": {
+    "step": "step3",
+    "model": "apple-fm-on-device",
+    "where": [
+     [
+      "error.refusal",
+      "context_length_exceeded"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "apple.fit",
+   "text": "the other 355",
+   "where": "Step 3",
+   "value": 355,
+   "metric": "verdicts.count",
+   "args": {
+    "step": "step3",
+    "model": "apple-fm-on-device",
+    "not": [
+     [
+      "error.refusal",
+      "context_length_exceeded"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "apple.rejected",
+   "text": "for 306 of the other 355 its first decision … is one the rules reject",
+   "where": "Step 3",
+   "value": 306,
+   "metric": "verdicts.count",
+   "args": {
+    "step": "step3",
+    "model": "apple-fm-on-device",
+    "where": [
+     [
+      "retries.sortingCorrection",
+      true
+     ]
+    ],
+    "not": [
+     [
+      "error.refusal",
+      "context_length_exceeded"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "apple.matters",
+   "text": "Not one email becomes a Matter",
+   "where": "Step 3",
+   "value": 0,
+   "metric": "verdicts.count",
+   "args": {
+    "step": "step3",
+    "model": "apple-fm-on-device",
+    "where": [
+     [
+      "home",
+      "matter"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "apple.drafts",
+   "text": "so it drafts no reply at all",
+   "where": "Step 3",
+   "value": 0,
+   "metric": "verdicts.count",
+   "args": {
+    "step": "step3",
+    "model": "apple-fm-on-device",
+    "where": [
+     [
+      "judgment",
+      "compose"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "apple.contextWindow",
+   "text": "the 4,096 tokens, about 3,000 words, it can read at once",
+   "where": "Step 3",
+   "status": "context",
+   "value": 4096,
+   "reason": "The on-device model's documented context window, not a measurement of this benchmark."
+  },
+  {
+   "status": "reproducible",
+   "id": "table1.cards.caught",
+   "text": "To Respond cards only: caught 119",
+   "where": "Table 1",
+   "value": 119,
+   "metric": "table1",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "cards",
+    "field": "caught"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "table1.cards.recall",
+   "text": "To Respond cards only: recall 66%",
+   "where": "Table 1",
+   "value": 66,
+   "decimals": 0,
+   "metric": "table1",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "cards",
+    "field": "recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "table1.cards.precision",
+   "text": "To Respond cards only: precision 89%",
+   "where": "Table 1",
+   "value": 89,
+   "decimals": 0,
+   "metric": "table1",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "cards",
+    "field": "precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "table1.cards.shown",
+   "text": "To Respond cards only: shown 133",
+   "where": "Table 1",
+   "value": 133,
+   "metric": "table1",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "cards",
+    "field": "shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "table1.ships.caught",
+   "text": "Plus To Act cards (the shipped setting): caught 150",
+   "where": "Table 1",
+   "value": 150,
+   "metric": "table1",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "ships",
+    "field": "caught"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "table1.ships.recall",
+   "text": "Plus To Act cards (the shipped setting): recall 84%",
+   "where": "Table 1; TL;DR (84%)",
+   "value": 84,
+   "decimals": 0,
+   "metric": "table1",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "ships",
+    "field": "recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "table1.ships.precision",
+   "text": "Plus To Act cards (the shipped setting): precision 62%",
+   "where": "Table 1",
+   "value": 62,
+   "decimals": 0,
+   "metric": "table1",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "ships",
+    "field": "precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "table1.ships.shown",
+   "text": "Plus To Act cards (the shipped setting): shown 241",
+   "where": "Table 1",
+   "value": 241,
+   "metric": "table1",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "ships",
+    "field": "shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "table1.both.caught",
+   "text": "Plus a second, independent read: caught 159",
+   "where": "Table 1",
+   "value": 159,
+   "metric": "table1",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "both",
+    "field": "caught"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "table1.both.recall",
+   "text": "Plus a second, independent read: recall 89%",
+   "where": "Table 1",
+   "value": 89,
+   "decimals": 0,
+   "metric": "table1",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "both",
+    "field": "recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "table1.both.precision",
+   "text": "Plus a second, independent read: precision 60%",
+   "where": "Table 1",
+   "value": 60,
+   "decimals": 0,
+   "metric": "table1",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "both",
+    "field": "precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "table1.both.shown",
+   "text": "Plus a second, independent read: shown 265",
+   "where": "Table 1",
+   "value": 265,
+   "metric": "table1",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "both",
+    "field": "shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "table1.addedShown",
+   "text": "The second row shows 241 emails where the first shows 133, so 108 more",
+   "where": "Missing emails, or fewer interruptions",
+   "value": 108,
+   "metric": "table1.added",
+   "args": {
+    "model": "gpt-5.5",
+    "from": "cards",
+    "to": "ships",
+    "field": "shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "table1.addedOwed",
+   "text": "The annotators agree that 31 of them owed a reply",
+   "where": "Missing emails, or fewer interruptions",
+   "value": 31,
+   "metric": "table1.added",
+   "args": {
+    "model": "gpt-5.5",
+    "from": "cards",
+    "to": "ships",
+    "field": "caught"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "table1.addedNotOwed",
+   "text": "The remaining 77 count as wrong",
+   "where": "Missing emails, or fewer interruptions",
+   "value": 77,
+   "metric": "table1.added",
+   "args": {
+    "model": "gpt-5.5",
+    "from": "cards",
+    "to": "ships",
+    "field": "notOwed"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "waiting.size",
+   "text": "508 − 241 = 267 land in Waiting",
+   "where": "Missing emails, or fewer interruptions",
+   "value": 267,
+   "metric": "table1.waiting",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "ships",
+    "field": "waiting"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "waiting.missed",
+   "text": "179 − 150 = 29 owed one and went to Waiting anyway",
+   "where": "Missing emails, or fewer interruptions",
+   "value": 29,
+   "metric": "table1.waiting",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "ships",
+    "field": "missed"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "waiting.quiet",
+   "text": "267 − 29 = 238 genuinely needed nothing",
+   "where": "Missing emails, or fewer interruptions",
+   "value": 238,
+   "metric": "table1.waiting",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "ships",
+    "field": "quiet"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "waiting.quietShare",
+   "text": "About nine in ten of what lands in Waiting is correctly quiet",
+   "where": "Missing emails, or fewer interruptions",
+   "value": 0.9,
+   "decimals": 1,
+   "metric": "table1.waiting",
+   "args": {
+    "model": "gpt-5.5",
+    "setting": "ships",
+    "field": "quietShare"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "annotators.fourWayAgreed",
+   "text": "they had agreed on only 508 of the 1,145",
+   "where": "Appendix",
+   "value": 508,
+   "metric": "annotations.count",
+   "args": {
+    "what": "agreed"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "annotators.fourWayShare",
+   "text": "44% of the time",
+   "where": "Appendix",
+   "value": 44,
+   "decimals": 0,
+   "metric": "annotations.share",
+   "args": {
+    "numerator": "agreed",
+    "denominator": "annotated"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "fourway.pairwise",
+   "text": "any two of the eight … gave the same answer 78% of the time",
+   "where": "Appendix",
+   "value": 78,
+   "decimals": 0,
+   "metric": "fourway.pairwiseAgreement",
+   "args": {
+    "top": 8
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "fourway.gold",
+   "text": "each of them matched the dataset's answer only 63% of the time",
+   "where": "Appendix",
+   "value": 63,
+   "decimals": 0,
+   "metric": "fourway.goldAgreement",
+   "args": {
+    "top": 8
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "adjudication.contested",
+   "text": "the 57 emails where all eight models contradicted the dataset",
+   "where": "Appendix; Figure A1",
+   "value": 57,
+   "metric": "adjudication.contestedRecomputed"
+  },
+  {
+   "status": "reproducible",
+   "id": "adjudication.contestedSheets",
+   "text": "57 disputed sheets",
+   "where": "Appendix; Figure A1",
+   "value": 57,
+   "metric": "adjudication.count",
+   "args": {
+    "group": "disagree"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "adjudication.controls",
+   "text": "mixed in 43 emails where the models and the dataset already agreed",
+   "where": "Appendix; Figure A1",
+   "value": 43,
+   "metric": "adjudication.count",
+   "args": {
+    "group": "agree"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "adjudication.sheets",
+   "text": "how the 100 came back",
+   "where": "Appendix",
+   "value": 100,
+   "metric": "adjudication.count"
+  },
+  {
+   "status": "reproducible",
+   "id": "adjudication.models",
+   "text": "the judge sided with the models 45 times",
+   "where": "Appendix; Figure A1",
+   "value": 45,
+   "metric": "adjudication.count",
+   "args": {
+    "group": "disagree",
+    "outcome": "models"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "adjudication.gold",
+   "text": "and with the dataset 5",
+   "where": "Appendix; Figure A1",
+   "value": 5,
+   "metric": "adjudication.count",
+   "args": {
+    "group": "disagree",
+    "outcome": "gold"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "adjudication.neither",
+   "text": "with neither 7",
+   "where": "Figure A1",
+   "value": 7,
+   "metric": "adjudication.count",
+   "args": {
+    "group": "disagree",
+    "outcome": "neither"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "adjudication.decided",
+   "text": "the 50 the judge decided",
+   "where": "Figure A1",
+   "value": 50,
+   "metric": "adjudication.count",
+   "args": {
+    "group": "disagree",
+    "outcome": "decided"
+   }
+  },
+  {
+   "id": "adjudication.chance",
+   "text": "would have split about 25 and 25",
+   "where": "Figure A1",
+   "status": "context",
+   "value": 25,
+   "reason": "Half of the 50 decided sheets: the expectation under no preference, not a measurement."
+  },
+  {
+   "status": "reproducible",
+   "id": "adjudication.controlsAgree",
+   "text": "it agreed with the dataset every time (43 out of 43)",
+   "where": "Appendix; Figure A1",
+   "value": 43,
+   "metric": "adjudication.count",
+   "args": {
+    "group": "agree",
+    "outcome": "gold"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "adjudication.oneIn",
+   "text": "about once in 240 million runs",
+   "where": "Appendix; Figure A1",
+   "value": 240,
+   "significant": 2,
+   "metric": "adjudication.oneInMillions"
+  },
+  {
+   "status": "reproducible",
+   "id": "adjudication.p",
+   "text": "is 0.0000000042",
+   "where": "Appendix",
+   "value": 4.2e-9,
+   "significant": 2,
+   "metric": "adjudication.pValue"
+  },
+  {
+   "id": "adjudication.alpha",
+   "text": "against the usual bar of 0.05",
+   "where": "Appendix",
+   "status": "context",
+   "value": 0.05,
+   "reason": "A convention, not a measurement."
+  },
+  {
+   "status": "reproducible",
+   "id": "annotators.bothLabelled",
+   "text": "Both of them labelled 1,115 of the 1,145 emails",
+   "where": "Appendix",
+   "value": 1115,
+   "metric": "annotations.count",
+   "args": {
+    "what": "bothLabelled"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "annotators.disagreed",
+   "text": "and they disagreed on 607",
+   "where": "Appendix",
+   "value": 607,
+   "metric": "annotations.count",
+   "args": {
+    "what": "disagreed"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "annotators.timingOnly",
+   "text": "In 138 of those, both said a reply was owed",
+   "where": "Appendix",
+   "value": 138,
+   "metric": "annotations.count",
+   "args": {
+    "what": "replyTimingOnly"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "annotators.kindOnly",
+   "text": "In 134, both said none was owed",
+   "where": "Appendix",
+   "value": 134,
+   "metric": "annotations.count",
+   "args": {
+    "what": "noReplyKindOnly"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "annotators.whichKind",
+   "text": "Those 272 arguments are about which kind",
+   "where": "Appendix",
+   "value": 272,
+   "metric": "annotations.kindNotWhether"
+  },
+  {
+   "status": "reproducible",
+   "id": "annotators.twoWayAgreed",
+   "text": "the same two people agree on 780 of the 1,115",
+   "where": "Appendix",
+   "value": 780,
+   "metric": "annotations.count",
+   "args": {
+    "what": "twoWayAgreed"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "annotators.twoWayShare",
+   "text": "70% of the time",
+   "where": "Appendix; What Pingbo delivers",
+   "value": 70,
+   "decimals": 0,
+   "metric": "annotations.share",
+   "args": {
+    "numerator": "twoWayAgreed",
+    "denominator": "bothLabelled"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.window",
+   "text": "within 30 days",
+   "where": "Appendix",
+   "value": 30,
+   "metric": "reply.windowDays"
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.roster",
+   "text": "the 209 emails with a recipient on the archive's roster",
+   "where": "Appendix",
+   "value": 209,
+   "metric": "reply.observable",
+   "args": {
+    "rule": "roster"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.gold.rosterGap",
+   "text": "a gap of 26.9 points",
+   "where": "Appendix",
+   "value": 26.9,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "roster",
+    "source": "gold",
+    "field": "diff"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.gold.rosterLo",
+   "text": "here 12.3",
+   "where": "Appendix",
+   "value": 12.3,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "roster",
+    "source": "gold",
+    "field": "lo"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.gold.rosterHi",
+   "text": "to 42.1 points",
+   "where": "Appendix",
+   "value": 42.1,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "roster",
+    "source": "gold",
+    "field": "hi"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.gold.rosterExpects",
+   "text": "got one 51.8% of the time",
+   "where": "Appendix",
+   "value": 51.8,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "roster",
+    "source": "gold",
+    "field": "expects"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.gold.rosterNone",
+   "text": "against 24.8% for the rest",
+   "where": "Appendix",
+   "value": 24.8,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "roster",
+    "source": "gold",
+    "field": "none"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.strict",
+   "text": "counting the 48 more where a reply was seen, 257 in all",
+   "where": "METHODS (the published strict rule)",
+   "value": 257,
+   "metric": "reply.observable",
+   "args": {
+    "rule": "strict"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.gold.expects",
+   "text": "got one 67.5% of the time",
+   "where": "Appendix",
+   "value": 67.5,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "strict",
+    "source": "gold",
+    "field": "expects"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.gold.none",
+   "text": "against 33.9% for the rest",
+   "where": "Appendix",
+   "value": 33.9,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "strict",
+    "source": "gold",
+    "field": "none"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.gold.gap",
+   "text": "a gap of 33.6 points",
+   "where": "Appendix",
+   "value": 33.6,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "strict",
+    "source": "gold",
+    "field": "diff"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.gold.lo",
+   "text": "here 21.0",
+   "where": "Appendix",
+   "value": 21,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "strict",
+    "source": "gold",
+    "field": "lo"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.gold.hi",
+   "text": "to 45.6 points",
+   "where": "Appendix",
+   "value": 45.6,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "strict",
+    "source": "gold",
+    "field": "hi"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.loose",
+   "text": "491 emails in all",
+   "where": "Appendix",
+   "value": 491,
+   "metric": "reply.observable",
+   "args": {
+    "rule": "loose"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.gold.looseGap",
+   "text": "the gap narrows to 14.3 points",
+   "where": "Appendix",
+   "value": 14.3,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "loose",
+    "source": "gold",
+    "field": "diff"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.gold.looseLo",
+   "text": "with an interval of 6.2",
+   "where": "Appendix",
+   "value": 6.2,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "loose",
+    "source": "gold",
+    "field": "lo"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.gold.looseHi",
+   "text": "to 22.4",
+   "where": "Appendix",
+   "value": 22.4,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "loose",
+    "source": "gold",
+    "field": "hi"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.consensus.gap",
+   "text": "The eight models' majority answers showed smaller gaps, 23.0",
+   "where": "Appendix",
+   "value": 23,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "strict",
+    "source": "consensus",
+    "field": "diff"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "reply.consensus.looseGap",
+   "text": "and 5.5 points",
+   "where": "Appendix",
+   "value": 5.5,
+   "decimals": 1,
+   "metric": "reply.separation",
+   "args": {
+    "rule": "loose",
+    "source": "consensus",
+    "field": "diff"
+   }
+  },
+  {
+   "id": "reply.sameEmails",
+   "text": "compared on the same emails, the dataset's larger gap holds up only when all 491 are counted",
+   "where": "Appendix",
+   "status": "not-reproducible",
+   "reason": "No stored paired test of the dataset's gap against the models' gap exists, and the article gives no number for it; the two gaps and their intervals above are reproducible."
+  },
+  {
+   "status": "reproducible",
+   "id": "doubt.flips",
+   "text": "On 24 of the 100 adjudicated emails the judge's answer flips whether a reply is owed",
+   "where": "Appendix",
+   "value": 24,
+   "metric": "adjudication.replyFlips"
+  },
+  {
+   "status": "reproducible",
+   "id": "doubt.share",
+   "text": "That is about 5%",
+   "where": "Appendix",
+   "value": 5,
+   "decimals": 0,
+   "metric": "adjudication.replyFlipShare"
+  },
+  {
+   "status": "reproducible",
+   "id": "files.probesV2",
+   "text": "the 508-email test set (probes.v2.json)",
+   "where": "Every Step 0 to 3 result",
+   "value": "d8e205c5a66a60d8cbe0126d79b0a2b0712cc149bf1edbc3c00feeaad4346a53",
+   "metric": "built.sha256",
+   "args": {
+    "file": "probes.v2.json"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "files.probesV1",
+   "text": "the subject-and-body test set (probes.json)",
+   "where": "Appendix (four-way reading)",
+   "value": "ef51dae101dcd3e8bbd500b2e2d3d69644bfd9b22832f88d5c4b4e736a69b3aa",
+   "metric": "built.sha256",
+   "args": {
+    "file": "probes.json"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "files.sheets",
+   "text": "the 100 blind adjudication sheets",
+   "where": "Appendix",
+   "value": "8dcee2a474383e2e0b03a06a6d66decd3f386438123c09aea78f8d38edba0dba",
+   "metric": "built.sha256",
+   "args": {
+    "file": "adjudication/SHEETS.md"
+   }
+  },
+  {
+   "id": "context.gmailSpam",
+   "text": "Gmail keeps more than 99.9% of spam out",
+   "where": "Sorting mail is an old problem",
+   "status": "context",
+   "value": 99.9,
+   "reason": "Google's published figure."
+  },
+  {
+   "id": "context.goal",
+   "text": "right for its owner 99.99% of the time",
+   "where": "What Pingbo delivers",
+   "status": "context",
+   "value": 99.99,
+   "reason": "A goal, not a measurement."
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-fable-5.rev2-ctx",
+   "text": "claude-fable-5 rev2-ctx 82.5%",
+   "where": "Figure 2",
+   "value": 82.48031496062993,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-fable-5",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-fable-5.rev1",
+   "text": "claude-fable-5 rev1 66.3%",
+   "where": "Figure 2",
+   "value": 66.338583,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-fable-5",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-fable-5.rev3",
+   "text": "claude-fable-5 rev3 83.9%",
+   "where": "Figure 2",
+   "value": 83.858268,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-fable-5",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-fable-5.rev5",
+   "text": "claude-fable-5 rev5 84.3%",
+   "where": "Figure 2",
+   "value": 84.251969,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-fable-5",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-fable-5-1.rev2-ctx",
+   "text": "claude-fable-5-1 rev2-ctx 66.5%",
+   "where": "Figure 2",
+   "value": 66.53543307086615,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-fable-5-1",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-fable-5-1.rev1",
+   "text": "claude-fable-5-1 rev1 70.3%",
+   "where": "Figure 2",
+   "value": 70.275591,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-fable-5-1",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-fable-5-1.rev3",
+   "text": "claude-fable-5-1 rev3 83.3%",
+   "where": "Figure 2",
+   "value": 83.267717,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-fable-5-1",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-fable-5-1.rev5",
+   "text": "claude-fable-5-1 rev5 83.1%",
+   "where": "Figure 2",
+   "value": 83.070866,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-fable-5-1",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-haiku-4-5-20251001.rev2-ctx",
+   "text": "claude-haiku-4-5-20251001 rev2-ctx 68.9%",
+   "where": "Figure 2",
+   "value": 68.89763779527559,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-haiku-4-5-20251001",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-haiku-4-5-20251001.rev1",
+   "text": "claude-haiku-4-5-20251001 rev1 60.6%",
+   "where": "Figure 2",
+   "value": 60.629921,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-haiku-4-5-20251001",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-haiku-4-5-20251001.rev3",
+   "text": "claude-haiku-4-5-20251001 rev3 78.0%",
+   "where": "Figure 2",
+   "value": 77.952756,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-haiku-4-5-20251001",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-haiku-4-5-20251001.rev5",
+   "text": "claude-haiku-4-5-20251001 rev5 80.1%",
+   "where": "Figure 2",
+   "value": 80.11811,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-haiku-4-5-20251001",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-5-20251101.rev2-ctx",
+   "text": "claude-opus-4-5-20251101 rev2-ctx 81.3%",
+   "where": "Figure 2",
+   "value": 81.2992125984252,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-5-20251101",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-5-20251101.rev1",
+   "text": "claude-opus-4-5-20251101 rev1 75.4%",
+   "where": "Figure 2",
+   "value": 75.393701,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-5-20251101",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-5-20251101.rev3",
+   "text": "claude-opus-4-5-20251101 rev3 82.7%",
+   "where": "Figure 2",
+   "value": 82.677165,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-5-20251101",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-5-20251101.rev5",
+   "text": "claude-opus-4-5-20251101 rev5 83.3%",
+   "where": "Figure 2",
+   "value": 83.267717,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-5-20251101",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-6.rev2-ctx",
+   "text": "claude-opus-4-6 rev2-ctx 77.2%",
+   "where": "Figure 2",
+   "value": 77.16535433070865,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-6",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-6.rev1",
+   "text": "claude-opus-4-6 rev1 67.7%",
+   "where": "Figure 2",
+   "value": 67.716535,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-6",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-6.rev3",
+   "text": "claude-opus-4-6 rev3 80.5%",
+   "where": "Figure 2",
+   "value": 80.511811,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-6",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-6.rev5",
+   "text": "claude-opus-4-6 rev5 82.7%",
+   "where": "Figure 2",
+   "value": 82.677165,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-6",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-7.rev2-ctx",
+   "text": "claude-opus-4-7 rev2-ctx 81.9%",
+   "where": "Figure 2",
+   "value": 81.88976377952756,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-7",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-7.rev1",
+   "text": "claude-opus-4-7 rev1 65.2%",
+   "where": "Figure 2",
+   "value": 65.15748,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-7",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-7.rev3",
+   "text": "claude-opus-4-7 rev3 82.1%",
+   "where": "Figure 2",
+   "value": 82.086614,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-7",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-7.rev5",
+   "text": "claude-opus-4-7 rev5 82.9%",
+   "where": "Figure 2",
+   "value": 82.874016,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-7",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-8.rev2-ctx",
+   "text": "claude-opus-4-8 rev2-ctx 81.5%",
+   "where": "Figure 2",
+   "value": 81.49606299212599,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-8",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-8.rev1",
+   "text": "claude-opus-4-8 rev1 72.8%",
+   "where": "Figure 2",
+   "value": 72.834646,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-8",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-8.rev3",
+   "text": "claude-opus-4-8 rev3 84.8%",
+   "where": "Figure 2",
+   "value": 84.84252,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-8",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-4-8.rev5",
+   "text": "claude-opus-4-8 rev5 84.6%",
+   "where": "Figure 2",
+   "value": 84.645669,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-4-8",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-5.rev2-ctx",
+   "text": "claude-opus-5 rev2-ctx 81.5%",
+   "where": "Figure 2",
+   "value": 81.49606299212599,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-5",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-5.rev1",
+   "text": "claude-opus-5 rev1 66.7%",
+   "where": "Figure 2",
+   "value": 66.732283,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-5",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-5.rev3",
+   "text": "claude-opus-5 rev3 83.3%",
+   "where": "Figure 2",
+   "value": 83.267717,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-5",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-opus-5.rev5",
+   "text": "claude-opus-5 rev5 84.4%",
+   "where": "Figure 2",
+   "value": 84.448819,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-opus-5",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-sonnet-4-5-20250929.rev2-ctx",
+   "text": "claude-sonnet-4-5-20250929 rev2-ctx 67.9%",
+   "where": "Figure 2",
+   "value": 67.91338582677166,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-sonnet-4-5-20250929",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-sonnet-4-5-20250929.rev1",
+   "text": "claude-sonnet-4-5-20250929 rev1 68.7%",
+   "where": "Figure 2",
+   "value": 68.700787,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-sonnet-4-5-20250929",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-sonnet-4-5-20250929.rev3",
+   "text": "claude-sonnet-4-5-20250929 rev3 81.3%",
+   "where": "Figure 2",
+   "value": 81.299213,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-sonnet-4-5-20250929",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-sonnet-4-5-20250929.rev5",
+   "text": "claude-sonnet-4-5-20250929 rev5 81.7%",
+   "where": "Figure 2",
+   "value": 81.692913,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-sonnet-4-5-20250929",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-sonnet-4-6.rev2-ctx",
+   "text": "claude-sonnet-4-6 rev2-ctx 84.1%",
+   "where": "Figure 2",
+   "value": 84.05511811023622,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-sonnet-4-6",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-sonnet-4-6.rev1",
+   "text": "claude-sonnet-4-6 rev1 68.5%",
+   "where": "Figure 2",
+   "value": 68.503937,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-sonnet-4-6",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-sonnet-4-6.rev3",
+   "text": "claude-sonnet-4-6 rev3 83.3%",
+   "where": "Figure 2",
+   "value": 83.267717,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-sonnet-4-6",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-sonnet-4-6.rev5",
+   "text": "claude-sonnet-4-6 rev5 82.5%",
+   "where": "Figure 2",
+   "value": 82.480315,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-sonnet-4-6",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-sonnet-5.rev2-ctx",
+   "text": "claude-sonnet-5 rev2-ctx 78.7%",
+   "where": "Figure 2",
+   "value": 78.74015748031496,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-sonnet-5",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-sonnet-5.rev1",
+   "text": "claude-sonnet-5 rev1 71.7%",
+   "where": "Figure 2",
+   "value": 71.653543,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-sonnet-5",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-sonnet-5.rev3",
+   "text": "claude-sonnet-5 rev3 83.9%",
+   "where": "Figure 2",
+   "value": 83.858268,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-sonnet-5",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.claude-sonnet-5.rev5",
+   "text": "claude-sonnet-5 rev5 83.7%",
+   "where": "Figure 2",
+   "value": 83.661417,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "claude-sonnet-5",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gemma-4-E4B-it-qat-4bit.rev2-ctx",
+   "text": "gemma-4-E4B-it-qat-4bit rev2-ctx 71.1%",
+   "where": "Figure 2",
+   "value": 71.06299212598425,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gemma-4-E4B-it-qat-4bit",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gemma-4-E4B-it-qat-4bit.rev1",
+   "text": "gemma-4-E4B-it-qat-4bit rev1 60.0%",
+   "where": "Figure 2",
+   "value": 60.03937,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gemma-4-E4B-it-qat-4bit",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gemma-4-E4B-it-qat-4bit.rev3",
+   "text": "gemma-4-E4B-it-qat-4bit rev3 63.6%",
+   "where": "Figure 2",
+   "value": 63.582677,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gemma-4-E4B-it-qat-4bit",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gemma-4-E4B-it-qat-4bit.rev5",
+   "text": "gemma-4-E4B-it-qat-4bit rev5 65.2%",
+   "where": "Figure 2",
+   "value": 65.15748,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gemma-4-E4B-it-qat-4bit",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4.1.rev2-ctx",
+   "text": "gpt-4.1 rev2-ctx 81.1%",
+   "where": "Figure 2",
+   "value": 81.10236220472441,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4.1",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4.1.rev1",
+   "text": "gpt-4.1 rev1 63.8%",
+   "where": "Figure 2",
+   "value": 63.779528,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4.1",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4.1.rev3",
+   "text": "gpt-4.1 rev3 81.3%",
+   "where": "Figure 2",
+   "value": 81.299213,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4.1",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4.1.rev5",
+   "text": "gpt-4.1 rev5 82.9%",
+   "where": "Figure 2",
+   "value": 82.874016,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4.1",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4.1-mini.rev2-ctx",
+   "text": "gpt-4.1-mini rev2-ctx 71.1%",
+   "where": "Figure 2",
+   "value": 71.06299212598425,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4.1-mini",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4.1-mini.rev1",
+   "text": "gpt-4.1-mini rev1 54.5%",
+   "where": "Figure 2",
+   "value": 54.527559,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4.1-mini",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4.1-mini.rev3",
+   "text": "gpt-4.1-mini rev3 72.8%",
+   "where": "Figure 2",
+   "value": 72.834646,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4.1-mini",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4.1-mini.rev5",
+   "text": "gpt-4.1-mini rev5 75.6%",
+   "where": "Figure 2",
+   "value": 75.590551,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4.1-mini",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4.1-nano.rev2-ctx",
+   "text": "gpt-4.1-nano rev2-ctx 69.1%",
+   "where": "Figure 2",
+   "value": 69.09448818897637,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4.1-nano",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4.1-nano.rev1",
+   "text": "gpt-4.1-nano rev1 43.9%",
+   "where": "Figure 2",
+   "value": 43.897638,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4.1-nano",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4.1-nano.rev3",
+   "text": "gpt-4.1-nano rev3 60.6%",
+   "where": "Figure 2",
+   "value": 60.629921,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4.1-nano",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4.1-nano.rev5",
+   "text": "gpt-4.1-nano rev5 61.6%",
+   "where": "Figure 2",
+   "value": 61.614173,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4.1-nano",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4o-mini.rev2-ctx",
+   "text": "gpt-4o-mini rev2-ctx 78.0%",
+   "where": "Figure 2",
+   "value": 77.95275590551181,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4o-mini",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4o-mini.rev1",
+   "text": "gpt-4o-mini rev1 34.4%",
+   "where": "Figure 2",
+   "value": 34.448819,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4o-mini",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4o-mini.rev3",
+   "text": "gpt-4o-mini rev3 46.5%",
+   "where": "Figure 2",
+   "value": 46.456693,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4o-mini",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-4o-mini.rev5",
+   "text": "gpt-4o-mini rev5 75.8%",
+   "where": "Figure 2",
+   "value": 75.787402,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-4o-mini",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.rev2-ctx",
+   "text": "gpt-5 rev2-ctx 76.8%",
+   "where": "Figure 2",
+   "value": 76.77165354330708,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.rev1",
+   "text": "gpt-5 rev1 60.4%",
+   "where": "Figure 2",
+   "value": 60.433071,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.rev3",
+   "text": "gpt-5 rev3 78.9%",
+   "where": "Figure 2",
+   "value": 78.937008,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.rev5",
+   "text": "gpt-5 rev5 80.5%",
+   "where": "Figure 2",
+   "value": 80.511811,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5-mini.rev2-ctx",
+   "text": "gpt-5-mini rev2-ctx 72.2%",
+   "where": "Figure 2",
+   "value": 72.24409448818898,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5-mini",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5-mini.rev1",
+   "text": "gpt-5-mini rev1 56.5%",
+   "where": "Figure 2",
+   "value": 56.496063,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5-mini",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5-mini.rev3",
+   "text": "gpt-5-mini rev3 71.7%",
+   "where": "Figure 2",
+   "value": 71.653543,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5-mini",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5-mini.rev5",
+   "text": "gpt-5-mini rev5 79.9%",
+   "where": "Figure 2",
+   "value": 79.92126,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5-mini",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5-nano.rev2-ctx",
+   "text": "gpt-5-nano rev2-ctx 49.6%",
+   "where": "Figure 2",
+   "value": 49.60629921259842,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5-nano",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5-nano.rev1",
+   "text": "gpt-5-nano rev1 65.0%",
+   "where": "Figure 2",
+   "value": 64.96063,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5-nano",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5-nano.rev3",
+   "text": "gpt-5-nano rev3 64.8%",
+   "where": "Figure 2",
+   "value": 64.76378,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5-nano",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5-nano.rev5",
+   "text": "gpt-5-nano rev5 64.8%",
+   "where": "Figure 2",
+   "value": 64.76378,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5-nano",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.1.rev2-ctx",
+   "text": "gpt-5.1 rev2-ctx 79.5%",
+   "where": "Figure 2",
+   "value": 79.52755905511812,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.1",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.1.rev1",
+   "text": "gpt-5.1 rev1 59.4%",
+   "where": "Figure 2",
+   "value": 59.448819,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.1",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.1.rev3",
+   "text": "gpt-5.1 rev3 82.1%",
+   "where": "Figure 2",
+   "value": 82.086614,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.1",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.1.rev5",
+   "text": "gpt-5.1 rev5 82.5%",
+   "where": "Figure 2",
+   "value": 82.480315,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.1",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.2.rev2-ctx",
+   "text": "gpt-5.2 rev2-ctx 78.7%",
+   "where": "Figure 2",
+   "value": 78.74015748031496,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.2",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.2.rev1",
+   "text": "gpt-5.2 rev1 61.8%",
+   "where": "Figure 2",
+   "value": 61.811024,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.2",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.2.rev3",
+   "text": "gpt-5.2 rev3 83.1%",
+   "where": "Figure 2",
+   "value": 83.070866,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.2",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.2.rev5",
+   "text": "gpt-5.2 rev5 83.5%",
+   "where": "Figure 2",
+   "value": 83.464567,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.2",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.4.rev2-ctx",
+   "text": "gpt-5.4 rev2-ctx 82.5%",
+   "where": "Figure 2",
+   "value": 82.48031496062993,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.4",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.4.rev1",
+   "text": "gpt-5.4 rev1 67.9%",
+   "where": "Figure 2",
+   "value": 67.913386,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.4",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.4.rev3",
+   "text": "gpt-5.4 rev3 82.5%",
+   "where": "Figure 2",
+   "value": 82.480315,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.4",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.4.rev5",
+   "text": "gpt-5.4 rev5 82.9%",
+   "where": "Figure 2",
+   "value": 82.874016,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.4",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.4-mini.rev2-ctx",
+   "text": "gpt-5.4-mini rev2-ctx 69.5%",
+   "where": "Figure 2",
+   "value": 69.48818897637796,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.4-mini",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.4-mini.rev1",
+   "text": "gpt-5.4-mini rev1 69.9%",
+   "where": "Figure 2",
+   "value": 69.88189,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.4-mini",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.4-mini.rev3",
+   "text": "gpt-5.4-mini rev3 79.3%",
+   "where": "Figure 2",
+   "value": 79.330709,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.4-mini",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.4-mini.rev5",
+   "text": "gpt-5.4-mini rev5 79.1%",
+   "where": "Figure 2",
+   "value": 79.133858,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.4-mini",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.4-nano.rev2-ctx",
+   "text": "gpt-5.4-nano rev2-ctx 73.0%",
+   "where": "Figure 2",
+   "value": 73.03149606299213,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.4-nano",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.4-nano.rev1",
+   "text": "gpt-5.4-nano rev1 54.5%",
+   "where": "Figure 2",
+   "value": 54.527559,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.4-nano",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.4-nano.rev3",
+   "text": "gpt-5.4-nano rev3 61.6%",
+   "where": "Figure 2",
+   "value": 61.614173,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.4-nano",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.4-nano.rev5",
+   "text": "gpt-5.4-nano rev5 63.8%",
+   "where": "Figure 2",
+   "value": 63.779528,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.4-nano",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.5.rev2-ctx",
+   "text": "gpt-5.5 rev2-ctx 82.5%",
+   "where": "Figure 2",
+   "value": 82.48031496062993,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.5",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.5.rev1",
+   "text": "gpt-5.5 rev1 72.2%",
+   "where": "Figure 2",
+   "value": 72.244094,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.5",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.5.rev3",
+   "text": "gpt-5.5 rev3 83.9%",
+   "where": "Figure 2",
+   "value": 83.858268,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.5",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.5.rev5",
+   "text": "gpt-5.5 rev5 85.0%",
+   "where": "Figure 2",
+   "value": 85.03937,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.5",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.6-luna.rev2-ctx",
+   "text": "gpt-5.6-luna rev2-ctx 70.7%",
+   "where": "Figure 2",
+   "value": 70.66929133858267,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.6-luna",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.6-luna.rev1",
+   "text": "gpt-5.6-luna rev1 63.6%",
+   "where": "Figure 2",
+   "value": 63.582677,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.6-luna",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.6-luna.rev3",
+   "text": "gpt-5.6-luna rev3 81.5%",
+   "where": "Figure 2",
+   "value": 81.496063,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.6-luna",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.6-luna.rev5",
+   "text": "gpt-5.6-luna rev5 84.1%",
+   "where": "Figure 2",
+   "value": 84.055118,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.6-luna",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.6-sol.rev2-ctx",
+   "text": "gpt-5.6-sol rev2-ctx 82.3%",
+   "where": "Figure 2",
+   "value": 82.28346456692913,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.6-sol",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.6-sol.rev1",
+   "text": "gpt-5.6-sol rev1 74.6%",
+   "where": "Figure 2",
+   "value": 74.606299,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.6-sol",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.6-sol.rev3",
+   "text": "gpt-5.6-sol rev3 82.7%",
+   "where": "Figure 2",
+   "value": 82.677165,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.6-sol",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.6-sol.rev5",
+   "text": "gpt-5.6-sol rev5 83.3%",
+   "where": "Figure 2",
+   "value": 83.267717,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.6-sol",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.6-terra.rev2-ctx",
+   "text": "gpt-5.6-terra rev2-ctx 79.9%",
+   "where": "Figure 2",
+   "value": 79.92125984251969,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.6-terra",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.6-terra.rev1",
+   "text": "gpt-5.6-terra rev1 67.1%",
+   "where": "Figure 2",
+   "value": 67.125984,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.6-terra",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.6-terra.rev3",
+   "text": "gpt-5.6-terra rev3 82.9%",
+   "where": "Figure 2",
+   "value": 82.874016,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.6-terra",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.gpt-5.6-terra.rev5",
+   "text": "gpt-5.6-terra rev5 83.7%",
+   "where": "Figure 2",
+   "value": 83.661417,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "gpt-5.6-terra",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.ornith-1.5-9b-mlx-6bit.rev2-ctx",
+   "text": "ornith-1.5-9b-mlx-6bit rev2-ctx 60.4%",
+   "where": "Figure 2",
+   "value": 60.43307086614173,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-6bit",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.ornith-1.5-9b-mlx-6bit.rev1",
+   "text": "ornith-1.5-9b-mlx-6bit rev1 44.5%",
+   "where": "Figure 2",
+   "value": 44.488189,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-6bit",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.ornith-1.5-9b-mlx-6bit.rev3",
+   "text": "ornith-1.5-9b-mlx-6bit rev3 44.3%",
+   "where": "Figure 2",
+   "value": 44.291339,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-6bit",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.ornith-1.5-9b-mlx-6bit.rev5",
+   "text": "ornith-1.5-9b-mlx-6bit rev5 45.1%",
+   "where": "Figure 2",
+   "value": 45.07874,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-6bit",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.ornith-1.5-9b-mlx-full.rev2-ctx",
+   "text": "ornith-1.5-9b-mlx-full rev2-ctx 59.3%",
+   "where": "Figure 2",
+   "value": 59.25196850393701,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-full",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.ornith-1.5-9b-mlx-full.rev1",
+   "text": "ornith-1.5-9b-mlx-full rev1 50.8%",
+   "where": "Figure 2",
+   "value": 50.787402,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-full",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.ornith-1.5-9b-mlx-full.rev3",
+   "text": "ornith-1.5-9b-mlx-full rev3 59.6%",
+   "where": "Figure 2",
+   "value": 59.645669,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-full",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.ornith-1.5-9b-mlx-full.rev5",
+   "text": "ornith-1.5-9b-mlx-full rev5 65.4%",
+   "where": "Figure 2",
+   "value": 65.354331,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-full",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.qwen3.6-35b-a3b-mxfp4.rev2-ctx",
+   "text": "qwen3.6-35b-a3b-mxfp4 rev2-ctx 75.0%",
+   "where": "Figure 2",
+   "value": 75,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.qwen3.6-35b-a3b-mxfp4.rev1",
+   "text": "qwen3.6-35b-a3b-mxfp4 rev1 65.0%",
+   "where": "Figure 2",
+   "value": 64.96063,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.qwen3.6-35b-a3b-mxfp4.rev3",
+   "text": "qwen3.6-35b-a3b-mxfp4 rev3 73.4%",
+   "where": "Figure 2",
+   "value": 73.425197,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.qwen3.6-35b-a3b-mxfp4.rev5",
+   "text": "qwen3.6-35b-a3b-mxfp4 rev5 79.7%",
+   "where": "Figure 2",
+   "value": 79.724409,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.apple-fm-on-device.rev2-ctx",
+   "text": "apple-fm-on-device rev2-ctx 70.1%",
+   "where": "Figure 2",
+   "value": 70.07874015748031,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "apple-fm-on-device",
+    "arm": "rev2-ctx"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.apple-fm-on-device.rev1",
+   "text": "apple-fm-on-device rev1 47.2%",
+   "where": "Figure 2",
+   "value": 47.244094,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "apple-fm-on-device",
+    "arm": "rev1"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.apple-fm-on-device.rev3",
+   "text": "apple-fm-on-device rev3 37.4%",
+   "where": "Figure 2",
+   "value": 37.401575,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "apple-fm-on-device",
+    "arm": "rev3"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure2.apple-fm-on-device.rev5",
+   "text": "apple-fm-on-device rev5 37.6%",
+   "where": "Figure 2",
+   "value": 37.598425,
+   "tolerance": 1e-9,
+   "metric": "figure2.point",
+   "args": {
+    "model": "apple-fm-on-device",
+    "arm": "rev5"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5.accuracy",
+   "text": "claude-fable-5 84.25%",
+   "where": "Figure 3",
+   "value": 84.25,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5.cards.recall",
+   "text": "claude-fable-5 cards recall 64.8",
+   "where": "Figure 3",
+   "value": 64.8,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5.cards.precision",
+   "text": "claude-fable-5 cards precision 87.88",
+   "where": "Figure 3",
+   "value": 87.88,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5.cards.shown",
+   "text": "claude-fable-5 cards shown 132",
+   "where": "Figure 3",
+   "value": 132,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5.ships.recall",
+   "text": "claude-fable-5 ships recall 86.03",
+   "where": "Figure 3",
+   "value": 86.03,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5.ships.precision",
+   "text": "claude-fable-5 ships precision 55.4",
+   "where": "Figure 3",
+   "value": 55.4,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5.ships.shown",
+   "text": "claude-fable-5 ships shown 278",
+   "where": "Figure 3",
+   "value": 278,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5.both.recall",
+   "text": "claude-fable-5 both recall 92.18",
+   "where": "Figure 3",
+   "value": 92.18,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5.both.precision",
+   "text": "claude-fable-5 both precision 56.31",
+   "where": "Figure 3",
+   "value": 56.31,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5.both.shown",
+   "text": "claude-fable-5 both shown 293",
+   "where": "Figure 3",
+   "value": 293,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5-1.accuracy",
+   "text": "claude-fable-5-1 83.07%",
+   "where": "Figure 3",
+   "value": 83.07,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5-1",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5-1.cards.recall",
+   "text": "claude-fable-5-1 cards recall 64.25",
+   "where": "Figure 3",
+   "value": 64.25,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5-1",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5-1.cards.precision",
+   "text": "claude-fable-5-1 cards precision 85.19",
+   "where": "Figure 3",
+   "value": 85.19,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5-1",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5-1.cards.shown",
+   "text": "claude-fable-5-1 cards shown 135",
+   "where": "Figure 3",
+   "value": 135,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5-1",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5-1.ships.recall",
+   "text": "claude-fable-5-1 ships recall 83.24",
+   "where": "Figure 3",
+   "value": 83.24,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5-1",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5-1.ships.precision",
+   "text": "claude-fable-5-1 ships precision 61.57",
+   "where": "Figure 3",
+   "value": 61.57,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5-1",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5-1.ships.shown",
+   "text": "claude-fable-5-1 ships shown 242",
+   "where": "Figure 3",
+   "value": 242,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5-1",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5-1.both.recall",
+   "text": "claude-fable-5-1 both recall 88.27",
+   "where": "Figure 3",
+   "value": 88.27,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5-1",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5-1.both.precision",
+   "text": "claude-fable-5-1 both precision 61.48",
+   "where": "Figure 3",
+   "value": 61.48,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5-1",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-fable-5-1.both.shown",
+   "text": "claude-fable-5-1 both shown 257",
+   "where": "Figure 3",
+   "value": 257,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-fable-5-1",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-haiku-4-5-20251001.accuracy",
+   "text": "claude-haiku-4-5-20251001 80.12%",
+   "where": "Figure 3",
+   "value": 80.12,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-haiku-4-5-20251001",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-haiku-4-5-20251001.cards.recall",
+   "text": "claude-haiku-4-5-20251001 cards recall 59.22",
+   "where": "Figure 3",
+   "value": 59.22,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-haiku-4-5-20251001",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-haiku-4-5-20251001.cards.precision",
+   "text": "claude-haiku-4-5-20251001 cards precision 82.81",
+   "where": "Figure 3",
+   "value": 82.81,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-haiku-4-5-20251001",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-haiku-4-5-20251001.cards.shown",
+   "text": "claude-haiku-4-5-20251001 cards shown 128",
+   "where": "Figure 3",
+   "value": 128,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-haiku-4-5-20251001",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-haiku-4-5-20251001.ships.recall",
+   "text": "claude-haiku-4-5-20251001 ships recall 82.68",
+   "where": "Figure 3",
+   "value": 82.68,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-haiku-4-5-20251001",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-haiku-4-5-20251001.ships.precision",
+   "text": "claude-haiku-4-5-20251001 ships precision 53.43",
+   "where": "Figure 3",
+   "value": 53.43,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-haiku-4-5-20251001",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-haiku-4-5-20251001.ships.shown",
+   "text": "claude-haiku-4-5-20251001 ships shown 277",
+   "where": "Figure 3",
+   "value": 277,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-haiku-4-5-20251001",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-haiku-4-5-20251001.both.recall",
+   "text": "claude-haiku-4-5-20251001 both recall 95.53",
+   "where": "Figure 3",
+   "value": 95.53,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-haiku-4-5-20251001",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-haiku-4-5-20251001.both.precision",
+   "text": "claude-haiku-4-5-20251001 both precision 46.72",
+   "where": "Figure 3",
+   "value": 46.72,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-haiku-4-5-20251001",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-haiku-4-5-20251001.both.shown",
+   "text": "claude-haiku-4-5-20251001 both shown 366",
+   "where": "Figure 3",
+   "value": 366,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-haiku-4-5-20251001",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-5-20251101.accuracy",
+   "text": "claude-opus-4-5-20251101 83.27%",
+   "where": "Figure 3",
+   "value": 83.27,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-5-20251101",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-5-20251101.cards.recall",
+   "text": "claude-opus-4-5-20251101 cards recall 56.42",
+   "where": "Figure 3",
+   "value": 56.42,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-5-20251101",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-5-20251101.cards.precision",
+   "text": "claude-opus-4-5-20251101 cards precision 93.52",
+   "where": "Figure 3",
+   "value": 93.52,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-5-20251101",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-5-20251101.cards.shown",
+   "text": "claude-opus-4-5-20251101 cards shown 108",
+   "where": "Figure 3",
+   "value": 108,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-5-20251101",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-5-20251101.ships.recall",
+   "text": "claude-opus-4-5-20251101 ships recall 75.42",
+   "where": "Figure 3",
+   "value": 75.42,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-5-20251101",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-5-20251101.ships.precision",
+   "text": "claude-opus-4-5-20251101 ships precision 64.59",
+   "where": "Figure 3",
+   "value": 64.59,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-5-20251101",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-5-20251101.ships.shown",
+   "text": "claude-opus-4-5-20251101 ships shown 209",
+   "where": "Figure 3",
+   "value": 209,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-5-20251101",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-5-20251101.both.recall",
+   "text": "claude-opus-4-5-20251101 both recall 88.27",
+   "where": "Figure 3",
+   "value": 88.27,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-5-20251101",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-5-20251101.both.precision",
+   "text": "claude-opus-4-5-20251101 both precision 60.77",
+   "where": "Figure 3",
+   "value": 60.77,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-5-20251101",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-5-20251101.both.shown",
+   "text": "claude-opus-4-5-20251101 both shown 260",
+   "where": "Figure 3",
+   "value": 260,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-5-20251101",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-6.accuracy",
+   "text": "claude-opus-4-6 82.68%",
+   "where": "Figure 3",
+   "value": 82.68,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-6",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-6.cards.recall",
+   "text": "claude-opus-4-6 cards recall 60.34",
+   "where": "Figure 3",
+   "value": 60.34,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-6",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-6.cards.precision",
+   "text": "claude-opus-4-6 cards precision 86.4",
+   "where": "Figure 3",
+   "value": 86.4,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-6",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-6.cards.shown",
+   "text": "claude-opus-4-6 cards shown 125",
+   "where": "Figure 3",
+   "value": 125,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-6",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-6.ships.recall",
+   "text": "claude-opus-4-6 ships recall 79.89",
+   "where": "Figure 3",
+   "value": 79.89,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-6",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-6.ships.precision",
+   "text": "claude-opus-4-6 ships precision 55",
+   "where": "Figure 3",
+   "value": 55,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-6",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-6.ships.shown",
+   "text": "claude-opus-4-6 ships shown 260",
+   "where": "Figure 3",
+   "value": 260,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-6",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-6.both.recall",
+   "text": "claude-opus-4-6 both recall 91.62",
+   "where": "Figure 3",
+   "value": 91.62,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-6",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-6.both.precision",
+   "text": "claude-opus-4-6 both precision 52.56",
+   "where": "Figure 3",
+   "value": 52.56,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-6",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-6.both.shown",
+   "text": "claude-opus-4-6 both shown 312",
+   "where": "Figure 3",
+   "value": 312,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-6",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-7.accuracy",
+   "text": "claude-opus-4-7 82.87%",
+   "where": "Figure 3",
+   "value": 82.87,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-7",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-7.cards.recall",
+   "text": "claude-opus-4-7 cards recall 58.66",
+   "where": "Figure 3",
+   "value": 58.66,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-7",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-7.cards.precision",
+   "text": "claude-opus-4-7 cards precision 88.98",
+   "where": "Figure 3",
+   "value": 88.98,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-7",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-7.cards.shown",
+   "text": "claude-opus-4-7 cards shown 118",
+   "where": "Figure 3",
+   "value": 118,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-7",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-7.ships.recall",
+   "text": "claude-opus-4-7 ships recall 84.36",
+   "where": "Figure 3",
+   "value": 84.36,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-7",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-7.ships.precision",
+   "text": "claude-opus-4-7 ships precision 53.74",
+   "where": "Figure 3",
+   "value": 53.74,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-7",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-7.ships.shown",
+   "text": "claude-opus-4-7 ships shown 281",
+   "where": "Figure 3",
+   "value": 281,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-7",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-7.both.recall",
+   "text": "claude-opus-4-7 both recall 93.3",
+   "where": "Figure 3",
+   "value": 93.3,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-7",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-7.both.precision",
+   "text": "claude-opus-4-7 both precision 53.18",
+   "where": "Figure 3",
+   "value": 53.18,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-7",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-7.both.shown",
+   "text": "claude-opus-4-7 both shown 314",
+   "where": "Figure 3",
+   "value": 314,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-7",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-8.accuracy",
+   "text": "claude-opus-4-8 84.65%",
+   "where": "Figure 3",
+   "value": 84.65,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-8",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-8.cards.recall",
+   "text": "claude-opus-4-8 cards recall 63.13",
+   "where": "Figure 3",
+   "value": 63.13,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-8",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-8.cards.precision",
+   "text": "claude-opus-4-8 cards precision 91.13",
+   "where": "Figure 3",
+   "value": 91.13,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-8",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-8.cards.shown",
+   "text": "claude-opus-4-8 cards shown 124",
+   "where": "Figure 3",
+   "value": 124,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-8",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-8.ships.recall",
+   "text": "claude-opus-4-8 ships recall 82.12",
+   "where": "Figure 3",
+   "value": 82.12,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-8",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-8.ships.precision",
+   "text": "claude-opus-4-8 ships precision 64.76",
+   "where": "Figure 3",
+   "value": 64.76,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-8",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-8.ships.shown",
+   "text": "claude-opus-4-8 ships shown 227",
+   "where": "Figure 3",
+   "value": 227,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-8",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-8.both.recall",
+   "text": "claude-opus-4-8 both recall 89.94",
+   "where": "Figure 3",
+   "value": 89.94,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-8",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-8.both.precision",
+   "text": "claude-opus-4-8 both precision 61.69",
+   "where": "Figure 3",
+   "value": 61.69,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-8",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-4-8.both.shown",
+   "text": "claude-opus-4-8 both shown 261",
+   "where": "Figure 3",
+   "value": 261,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-4-8",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-5.accuracy",
+   "text": "claude-opus-5 84.45%",
+   "where": "Figure 3",
+   "value": 84.45,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-5",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-5.cards.recall",
+   "text": "claude-opus-5 cards recall 63.69",
+   "where": "Figure 3",
+   "value": 63.69,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-5",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-5.cards.precision",
+   "text": "claude-opus-5 cards precision 92.68",
+   "where": "Figure 3",
+   "value": 92.68,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-5",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-5.cards.shown",
+   "text": "claude-opus-5 cards shown 123",
+   "where": "Figure 3",
+   "value": 123,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-5",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-5.ships.recall",
+   "text": "claude-opus-5 ships recall 84.36",
+   "where": "Figure 3",
+   "value": 84.36,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-5",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-5.ships.precision",
+   "text": "claude-opus-5 ships precision 54.51",
+   "where": "Figure 3",
+   "value": 54.51,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-5",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-5.ships.shown",
+   "text": "claude-opus-5 ships shown 277",
+   "where": "Figure 3",
+   "value": 277,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-5",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-5.both.recall",
+   "text": "claude-opus-5 both recall 92.18",
+   "where": "Figure 3",
+   "value": 92.18,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-5",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-5.both.precision",
+   "text": "claude-opus-5 both precision 55.18",
+   "where": "Figure 3",
+   "value": 55.18,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-5",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-opus-5.both.shown",
+   "text": "claude-opus-5 both shown 299",
+   "where": "Figure 3",
+   "value": 299,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-opus-5",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-5-20250929.accuracy",
+   "text": "claude-sonnet-4-5-20250929 81.69%",
+   "where": "Figure 3",
+   "value": 81.69,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-5-20250929",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-5-20250929.cards.recall",
+   "text": "claude-sonnet-4-5-20250929 cards recall 57.54",
+   "where": "Figure 3",
+   "value": 57.54,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-5-20250929",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-5-20250929.cards.precision",
+   "text": "claude-sonnet-4-5-20250929 cards precision 87.29",
+   "where": "Figure 3",
+   "value": 87.29,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-5-20250929",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-5-20250929.cards.shown",
+   "text": "claude-sonnet-4-5-20250929 cards shown 118",
+   "where": "Figure 3",
+   "value": 118,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-5-20250929",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-5-20250929.ships.recall",
+   "text": "claude-sonnet-4-5-20250929 ships recall 71.51",
+   "where": "Figure 3",
+   "value": 71.51,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-5-20250929",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-5-20250929.ships.precision",
+   "text": "claude-sonnet-4-5-20250929 ships precision 61.54",
+   "where": "Figure 3",
+   "value": 61.54,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-5-20250929",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-5-20250929.ships.shown",
+   "text": "claude-sonnet-4-5-20250929 ships shown 208",
+   "where": "Figure 3",
+   "value": 208,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-5-20250929",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-5-20250929.both.recall",
+   "text": "claude-sonnet-4-5-20250929 both recall 91.62",
+   "where": "Figure 3",
+   "value": 91.62,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-5-20250929",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-5-20250929.both.precision",
+   "text": "claude-sonnet-4-5-20250929 both precision 52.73",
+   "where": "Figure 3",
+   "value": 52.73,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-5-20250929",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-5-20250929.both.shown",
+   "text": "claude-sonnet-4-5-20250929 both shown 311",
+   "where": "Figure 3",
+   "value": 311,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-5-20250929",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-6.accuracy",
+   "text": "claude-sonnet-4-6 82.48%",
+   "where": "Figure 3",
+   "value": 82.48,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-6",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-6.cards.recall",
+   "text": "claude-sonnet-4-6 cards recall 62.57",
+   "where": "Figure 3",
+   "value": 62.57,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-6",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-6.cards.precision",
+   "text": "claude-sonnet-4-6 cards precision 84.21",
+   "where": "Figure 3",
+   "value": 84.21,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-6",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-6.cards.shown",
+   "text": "claude-sonnet-4-6 cards shown 133",
+   "where": "Figure 3",
+   "value": 133,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-6",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-6.ships.recall",
+   "text": "claude-sonnet-4-6 ships recall 82.68",
+   "where": "Figure 3",
+   "value": 82.68,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-6",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-6.ships.precision",
+   "text": "claude-sonnet-4-6 ships precision 59.92",
+   "where": "Figure 3",
+   "value": 59.92,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-6",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-6.ships.shown",
+   "text": "claude-sonnet-4-6 ships shown 247",
+   "where": "Figure 3",
+   "value": 247,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-6",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-6.both.recall",
+   "text": "claude-sonnet-4-6 both recall 90.5",
+   "where": "Figure 3",
+   "value": 90.5,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-6",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-6.both.precision",
+   "text": "claude-sonnet-4-6 both precision 58.48",
+   "where": "Figure 3",
+   "value": 58.48,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-6",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-4-6.both.shown",
+   "text": "claude-sonnet-4-6 both shown 277",
+   "where": "Figure 3",
+   "value": 277,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-4-6",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-5.accuracy",
+   "text": "claude-sonnet-5 83.66%",
+   "where": "Figure 3",
+   "value": 83.66,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-5",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-5.cards.recall",
+   "text": "claude-sonnet-5 cards recall 63.69",
+   "where": "Figure 3",
+   "value": 63.69,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-5",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-5.cards.precision",
+   "text": "claude-sonnet-5 cards precision 87.69",
+   "where": "Figure 3",
+   "value": 87.69,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-5",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-5.cards.shown",
+   "text": "claude-sonnet-5 cards shown 130",
+   "where": "Figure 3",
+   "value": 130,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-5",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-5.ships.recall",
+   "text": "claude-sonnet-5 ships recall 83.24",
+   "where": "Figure 3",
+   "value": 83.24,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-5",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-5.ships.precision",
+   "text": "claude-sonnet-5 ships precision 58.2",
+   "where": "Figure 3",
+   "value": 58.2,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-5",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-5.ships.shown",
+   "text": "claude-sonnet-5 ships shown 256",
+   "where": "Figure 3",
+   "value": 256,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-5",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-5.both.recall",
+   "text": "claude-sonnet-5 both recall 92.74",
+   "where": "Figure 3",
+   "value": 92.74,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-5",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-5.both.precision",
+   "text": "claude-sonnet-5 both precision 55.33",
+   "where": "Figure 3",
+   "value": 55.33,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-5",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.claude-sonnet-5.both.shown",
+   "text": "claude-sonnet-5 both shown 300",
+   "where": "Figure 3",
+   "value": 300,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "claude-sonnet-5",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gemma-4-E4B-it-qat-4bit.accuracy",
+   "text": "gemma-4-E4B-it-qat-4bit 65.16%",
+   "where": "Figure 3",
+   "value": 65.16,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gemma-4-E4B-it-qat-4bit",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gemma-4-E4B-it-qat-4bit.cards.recall",
+   "text": "gemma-4-E4B-it-qat-4bit cards recall 74.86",
+   "where": "Figure 3",
+   "value": 74.86,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gemma-4-E4B-it-qat-4bit",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gemma-4-E4B-it-qat-4bit.cards.precision",
+   "text": "gemma-4-E4B-it-qat-4bit cards precision 66.34",
+   "where": "Figure 3",
+   "value": 66.34,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gemma-4-E4B-it-qat-4bit",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gemma-4-E4B-it-qat-4bit.cards.shown",
+   "text": "gemma-4-E4B-it-qat-4bit cards shown 202",
+   "where": "Figure 3",
+   "value": 202,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gemma-4-E4B-it-qat-4bit",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gemma-4-E4B-it-qat-4bit.ships.recall",
+   "text": "gemma-4-E4B-it-qat-4bit ships recall 83.24",
+   "where": "Figure 3",
+   "value": 83.24,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gemma-4-E4B-it-qat-4bit",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gemma-4-E4B-it-qat-4bit.ships.precision",
+   "text": "gemma-4-E4B-it-qat-4bit ships precision 54.78",
+   "where": "Figure 3",
+   "value": 54.78,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gemma-4-E4B-it-qat-4bit",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gemma-4-E4B-it-qat-4bit.ships.shown",
+   "text": "gemma-4-E4B-it-qat-4bit ships shown 272",
+   "where": "Figure 3",
+   "value": 272,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gemma-4-E4B-it-qat-4bit",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gemma-4-E4B-it-qat-4bit.both.recall",
+   "text": "gemma-4-E4B-it-qat-4bit both recall 95.53",
+   "where": "Figure 3",
+   "value": 95.53,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gemma-4-E4B-it-qat-4bit",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gemma-4-E4B-it-qat-4bit.both.precision",
+   "text": "gemma-4-E4B-it-qat-4bit both precision 49.71",
+   "where": "Figure 3",
+   "value": 49.71,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gemma-4-E4B-it-qat-4bit",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gemma-4-E4B-it-qat-4bit.both.shown",
+   "text": "gemma-4-E4B-it-qat-4bit both shown 344",
+   "where": "Figure 3",
+   "value": 344,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gemma-4-E4B-it-qat-4bit",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1.accuracy",
+   "text": "gpt-4.1 82.87%",
+   "where": "Figure 3",
+   "value": 82.87,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1.cards.recall",
+   "text": "gpt-4.1 cards recall 62.57",
+   "where": "Figure 3",
+   "value": 62.57,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1.cards.precision",
+   "text": "gpt-4.1 cards precision 85.5",
+   "where": "Figure 3",
+   "value": 85.5,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1.cards.shown",
+   "text": "gpt-4.1 cards shown 131",
+   "where": "Figure 3",
+   "value": 131,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1.ships.recall",
+   "text": "gpt-4.1 ships recall 86.59",
+   "where": "Figure 3",
+   "value": 86.59,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1.ships.precision",
+   "text": "gpt-4.1 ships precision 56.57",
+   "where": "Figure 3",
+   "value": 56.57,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1.ships.shown",
+   "text": "gpt-4.1 ships shown 274",
+   "where": "Figure 3",
+   "value": 274,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1.both.recall",
+   "text": "gpt-4.1 both recall 93.85",
+   "where": "Figure 3",
+   "value": 93.85,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1.both.precision",
+   "text": "gpt-4.1 both precision 54.72",
+   "where": "Figure 3",
+   "value": 54.72,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1.both.shown",
+   "text": "gpt-4.1 both shown 307",
+   "where": "Figure 3",
+   "value": 307,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-mini.accuracy",
+   "text": "gpt-4.1-mini 75.59%",
+   "where": "Figure 3",
+   "value": 75.59,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-mini",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-mini.cards.recall",
+   "text": "gpt-4.1-mini cards recall 76.54",
+   "where": "Figure 3",
+   "value": 76.54,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-mini",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-mini.cards.precision",
+   "text": "gpt-4.1-mini cards precision 63.13",
+   "where": "Figure 3",
+   "value": 63.13,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-mini",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-mini.cards.shown",
+   "text": "gpt-4.1-mini cards shown 217",
+   "where": "Figure 3",
+   "value": 217,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-mini",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-mini.ships.recall",
+   "text": "gpt-4.1-mini ships recall 88.83",
+   "where": "Figure 3",
+   "value": 88.83,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-mini",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-mini.ships.precision",
+   "text": "gpt-4.1-mini ships precision 46.9",
+   "where": "Figure 3",
+   "value": 46.9,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-mini",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-mini.ships.shown",
+   "text": "gpt-4.1-mini ships shown 339",
+   "where": "Figure 3",
+   "value": 339,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-mini",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-mini.both.recall",
+   "text": "gpt-4.1-mini both recall 95.53",
+   "where": "Figure 3",
+   "value": 95.53,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-mini",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-mini.both.precision",
+   "text": "gpt-4.1-mini both precision 45.48",
+   "where": "Figure 3",
+   "value": 45.48,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-mini",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-mini.both.shown",
+   "text": "gpt-4.1-mini both shown 376",
+   "where": "Figure 3",
+   "value": 376,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-mini",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-nano.accuracy",
+   "text": "gpt-4.1-nano 61.61%",
+   "where": "Figure 3",
+   "value": 61.61,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-nano",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-nano.cards.recall",
+   "text": "gpt-4.1-nano cards recall 0",
+   "where": "Figure 3",
+   "value": 0,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-nano",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-nano.cards.precision",
+   "text": "gpt-4.1-nano cards precision 0",
+   "where": "Figure 3",
+   "value": 0,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-nano",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-nano.cards.shown",
+   "text": "gpt-4.1-nano cards shown 1",
+   "where": "Figure 3",
+   "value": 1,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-nano",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-nano.ships.recall",
+   "text": "gpt-4.1-nano ships recall 26.26",
+   "where": "Figure 3",
+   "value": 26.26,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-nano",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-nano.ships.precision",
+   "text": "gpt-4.1-nano ships precision 36.72",
+   "where": "Figure 3",
+   "value": 36.72,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-nano",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-nano.ships.shown",
+   "text": "gpt-4.1-nano ships shown 128",
+   "where": "Figure 3",
+   "value": 128,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-nano",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-nano.both.recall",
+   "text": "gpt-4.1-nano both recall 92.74",
+   "where": "Figure 3",
+   "value": 92.74,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-nano",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-nano.both.precision",
+   "text": "gpt-4.1-nano both precision 47.84",
+   "where": "Figure 3",
+   "value": 47.84,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-nano",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4.1-nano.both.shown",
+   "text": "gpt-4.1-nano both shown 347",
+   "where": "Figure 3",
+   "value": 347,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4.1-nano",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4o-mini.accuracy",
+   "text": "gpt-4o-mini 75.79%",
+   "where": "Figure 3",
+   "value": 75.79,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4o-mini",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4o-mini.cards.recall",
+   "text": "gpt-4o-mini cards recall 59.78",
+   "where": "Figure 3",
+   "value": 59.78,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4o-mini",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4o-mini.cards.precision",
+   "text": "gpt-4o-mini cards precision 70.86",
+   "where": "Figure 3",
+   "value": 70.86,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4o-mini",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4o-mini.cards.shown",
+   "text": "gpt-4o-mini cards shown 151",
+   "where": "Figure 3",
+   "value": 151,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4o-mini",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4o-mini.ships.recall",
+   "text": "gpt-4o-mini ships recall 72.63",
+   "where": "Figure 3",
+   "value": 72.63,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4o-mini",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4o-mini.ships.precision",
+   "text": "gpt-4o-mini ships precision 52.63",
+   "where": "Figure 3",
+   "value": 52.63,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4o-mini",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4o-mini.ships.shown",
+   "text": "gpt-4o-mini ships shown 247",
+   "where": "Figure 3",
+   "value": 247,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4o-mini",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4o-mini.both.recall",
+   "text": "gpt-4o-mini both recall 93.3",
+   "where": "Figure 3",
+   "value": 93.3,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4o-mini",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4o-mini.both.precision",
+   "text": "gpt-4o-mini both precision 52.35",
+   "where": "Figure 3",
+   "value": 52.35,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4o-mini",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-4o-mini.both.shown",
+   "text": "gpt-4o-mini both shown 319",
+   "where": "Figure 3",
+   "value": 319,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-4o-mini",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.accuracy",
+   "text": "gpt-5 80.51%",
+   "where": "Figure 3",
+   "value": 80.51,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.cards.recall",
+   "text": "gpt-5 cards recall 69.83",
+   "where": "Figure 3",
+   "value": 69.83,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.cards.precision",
+   "text": "gpt-5 cards precision 73.96",
+   "where": "Figure 3",
+   "value": 73.96,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.cards.shown",
+   "text": "gpt-5 cards shown 169",
+   "where": "Figure 3",
+   "value": 169,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.ships.recall",
+   "text": "gpt-5 ships recall 86.03",
+   "where": "Figure 3",
+   "value": 86.03,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.ships.precision",
+   "text": "gpt-5 ships precision 50.66",
+   "where": "Figure 3",
+   "value": 50.66,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.ships.shown",
+   "text": "gpt-5 ships shown 304",
+   "where": "Figure 3",
+   "value": 304,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.both.recall",
+   "text": "gpt-5 both recall 93.85",
+   "where": "Figure 3",
+   "value": 93.85,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.both.precision",
+   "text": "gpt-5 both precision 49.7",
+   "where": "Figure 3",
+   "value": 49.7,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.both.shown",
+   "text": "gpt-5 both shown 338",
+   "where": "Figure 3",
+   "value": 338,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-mini.accuracy",
+   "text": "gpt-5-mini 79.92%",
+   "where": "Figure 3",
+   "value": 79.92,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-mini",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-mini.cards.recall",
+   "text": "gpt-5-mini cards recall 70.39",
+   "where": "Figure 3",
+   "value": 70.39,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-mini",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-mini.cards.precision",
+   "text": "gpt-5-mini cards precision 72.41",
+   "where": "Figure 3",
+   "value": 72.41,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-mini",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-mini.cards.shown",
+   "text": "gpt-5-mini cards shown 174",
+   "where": "Figure 3",
+   "value": 174,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-mini",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-mini.ships.recall",
+   "text": "gpt-5-mini ships recall 85.47",
+   "where": "Figure 3",
+   "value": 85.47,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-mini",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-mini.ships.precision",
+   "text": "gpt-5-mini ships precision 45.27",
+   "where": "Figure 3",
+   "value": 45.27,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-mini",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-mini.ships.shown",
+   "text": "gpt-5-mini ships shown 338",
+   "where": "Figure 3",
+   "value": 338,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-mini",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-mini.both.recall",
+   "text": "gpt-5-mini both recall 95.53",
+   "where": "Figure 3",
+   "value": 95.53,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-mini",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-mini.both.precision",
+   "text": "gpt-5-mini both precision 44.88",
+   "where": "Figure 3",
+   "value": 44.88,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-mini",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-mini.both.shown",
+   "text": "gpt-5-mini both shown 381",
+   "where": "Figure 3",
+   "value": 381,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-mini",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-nano.accuracy",
+   "text": "gpt-5-nano 64.76%",
+   "where": "Figure 3",
+   "value": 64.76,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-nano",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-nano.cards.recall",
+   "text": "gpt-5-nano cards recall 0",
+   "where": "Figure 3",
+   "value": 0,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-nano",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-nano.cards.precision",
+   "text": "gpt-5-nano cards precision 0",
+   "where": "Figure 3",
+   "value": 0,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-nano",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-nano.cards.shown",
+   "text": "gpt-5-nano cards shown 0",
+   "where": "Figure 3",
+   "value": 0,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-nano",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-nano.ships.recall",
+   "text": "gpt-5-nano ships recall 0",
+   "where": "Figure 3",
+   "value": 0,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-nano",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-nano.ships.precision",
+   "text": "gpt-5-nano ships precision 0",
+   "where": "Figure 3",
+   "value": 0,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-nano",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-nano.ships.shown",
+   "text": "gpt-5-nano ships shown 1",
+   "where": "Figure 3",
+   "value": 1,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-nano",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-nano.both.recall",
+   "text": "gpt-5-nano both recall 97.21",
+   "where": "Figure 3",
+   "value": 97.21,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-nano",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-nano.both.precision",
+   "text": "gpt-5-nano both precision 41.04",
+   "where": "Figure 3",
+   "value": 41.04,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-nano",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5-nano.both.shown",
+   "text": "gpt-5-nano both shown 424",
+   "where": "Figure 3",
+   "value": 424,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5-nano",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.1.accuracy",
+   "text": "gpt-5.1 82.48%",
+   "where": "Figure 3",
+   "value": 82.48,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.1",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.1.cards.recall",
+   "text": "gpt-5.1 cards recall 59.22",
+   "where": "Figure 3",
+   "value": 59.22,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.1",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.1.cards.precision",
+   "text": "gpt-5.1 cards precision 86.89",
+   "where": "Figure 3",
+   "value": 86.89,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.1",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.1.cards.shown",
+   "text": "gpt-5.1 cards shown 122",
+   "where": "Figure 3",
+   "value": 122,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.1",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.1.ships.recall",
+   "text": "gpt-5.1 ships recall 86.03",
+   "where": "Figure 3",
+   "value": 86.03,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.1",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.1.ships.precision",
+   "text": "gpt-5.1 ships precision 53.85",
+   "where": "Figure 3",
+   "value": 53.85,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.1",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.1.ships.shown",
+   "text": "gpt-5.1 ships shown 286",
+   "where": "Figure 3",
+   "value": 286,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.1",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.1.both.recall",
+   "text": "gpt-5.1 both recall 94.41",
+   "where": "Figure 3",
+   "value": 94.41,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.1",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.1.both.precision",
+   "text": "gpt-5.1 both precision 52.16",
+   "where": "Figure 3",
+   "value": 52.16,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.1",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.1.both.shown",
+   "text": "gpt-5.1 both shown 324",
+   "where": "Figure 3",
+   "value": 324,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.1",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.2.accuracy",
+   "text": "gpt-5.2 83.46%",
+   "where": "Figure 3",
+   "value": 83.46,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.2",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.2.cards.recall",
+   "text": "gpt-5.2 cards recall 65.36",
+   "where": "Figure 3",
+   "value": 65.36,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.2",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.2.cards.precision",
+   "text": "gpt-5.2 cards precision 85.4",
+   "where": "Figure 3",
+   "value": 85.4,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.2",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.2.cards.shown",
+   "text": "gpt-5.2 cards shown 137",
+   "where": "Figure 3",
+   "value": 137,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.2",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.2.ships.recall",
+   "text": "gpt-5.2 ships recall 86.59",
+   "where": "Figure 3",
+   "value": 86.59,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.2",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.2.ships.precision",
+   "text": "gpt-5.2 ships precision 55.36",
+   "where": "Figure 3",
+   "value": 55.36,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.2",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.2.ships.shown",
+   "text": "gpt-5.2 ships shown 280",
+   "where": "Figure 3",
+   "value": 280,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.2",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.2.both.recall",
+   "text": "gpt-5.2 both recall 93.85",
+   "where": "Figure 3",
+   "value": 93.85,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.2",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.2.both.precision",
+   "text": "gpt-5.2 both precision 51.85",
+   "where": "Figure 3",
+   "value": 51.85,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.2",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.2.both.shown",
+   "text": "gpt-5.2 both shown 324",
+   "where": "Figure 3",
+   "value": 324,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.2",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4.accuracy",
+   "text": "gpt-5.4 82.87%",
+   "where": "Figure 3",
+   "value": 82.87,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4.cards.recall",
+   "text": "gpt-5.4 cards recall 56.42",
+   "where": "Figure 3",
+   "value": 56.42,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4.cards.precision",
+   "text": "gpt-5.4 cards precision 92.66",
+   "where": "Figure 3",
+   "value": 92.66,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4.cards.shown",
+   "text": "gpt-5.4 cards shown 109",
+   "where": "Figure 3",
+   "value": 109,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4.ships.recall",
+   "text": "gpt-5.4 ships recall 76.54",
+   "where": "Figure 3",
+   "value": 76.54,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4.ships.precision",
+   "text": "gpt-5.4 ships precision 63.72",
+   "where": "Figure 3",
+   "value": 63.72,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4.ships.shown",
+   "text": "gpt-5.4 ships shown 215",
+   "where": "Figure 3",
+   "value": 215,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4.both.recall",
+   "text": "gpt-5.4 both recall 93.3",
+   "where": "Figure 3",
+   "value": 93.3,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4.both.precision",
+   "text": "gpt-5.4 both precision 63.02",
+   "where": "Figure 3",
+   "value": 63.02,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4.both.shown",
+   "text": "gpt-5.4 both shown 265",
+   "where": "Figure 3",
+   "value": 265,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-mini.accuracy",
+   "text": "gpt-5.4-mini 79.13%",
+   "where": "Figure 3",
+   "value": 79.13,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-mini",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-mini.cards.recall",
+   "text": "gpt-5.4-mini cards recall 53.63",
+   "where": "Figure 3",
+   "value": 53.63,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-mini",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-mini.cards.precision",
+   "text": "gpt-5.4-mini cards precision 82.05",
+   "where": "Figure 3",
+   "value": 82.05,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-mini",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-mini.cards.shown",
+   "text": "gpt-5.4-mini cards shown 117",
+   "where": "Figure 3",
+   "value": 117,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-mini",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-mini.ships.recall",
+   "text": "gpt-5.4-mini ships recall 82.68",
+   "where": "Figure 3",
+   "value": 82.68,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-mini",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-mini.ships.precision",
+   "text": "gpt-5.4-mini ships precision 56.06",
+   "where": "Figure 3",
+   "value": 56.06,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-mini",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-mini.ships.shown",
+   "text": "gpt-5.4-mini ships shown 264",
+   "where": "Figure 3",
+   "value": 264,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-mini",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-mini.both.recall",
+   "text": "gpt-5.4-mini both recall 95.53",
+   "where": "Figure 3",
+   "value": 95.53,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-mini",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-mini.both.precision",
+   "text": "gpt-5.4-mini both precision 49.57",
+   "where": "Figure 3",
+   "value": 49.57,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-mini",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-mini.both.shown",
+   "text": "gpt-5.4-mini both shown 345",
+   "where": "Figure 3",
+   "value": 345,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-mini",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-nano.accuracy",
+   "text": "gpt-5.4-nano 63.78%",
+   "where": "Figure 3",
+   "value": 63.78,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-nano",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-nano.cards.recall",
+   "text": "gpt-5.4-nano cards recall 30.73",
+   "where": "Figure 3",
+   "value": 30.73,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-nano",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-nano.cards.precision",
+   "text": "gpt-5.4-nano cards precision 67.9",
+   "where": "Figure 3",
+   "value": 67.9,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-nano",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-nano.cards.shown",
+   "text": "gpt-5.4-nano cards shown 81",
+   "where": "Figure 3",
+   "value": 81,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-nano",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-nano.ships.recall",
+   "text": "gpt-5.4-nano ships recall 35.75",
+   "where": "Figure 3",
+   "value": 35.75,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-nano",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-nano.ships.precision",
+   "text": "gpt-5.4-nano ships precision 65.31",
+   "where": "Figure 3",
+   "value": 65.31,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-nano",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-nano.ships.shown",
+   "text": "gpt-5.4-nano ships shown 98",
+   "where": "Figure 3",
+   "value": 98,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-nano",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-nano.both.recall",
+   "text": "gpt-5.4-nano both recall 92.74",
+   "where": "Figure 3",
+   "value": 92.74,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-nano",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-nano.both.precision",
+   "text": "gpt-5.4-nano both precision 55.7",
+   "where": "Figure 3",
+   "value": 55.7,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-nano",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.4-nano.both.shown",
+   "text": "gpt-5.4-nano both shown 298",
+   "where": "Figure 3",
+   "value": 298,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.4-nano",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.5.accuracy",
+   "text": "gpt-5.5 85.04%",
+   "where": "Figure 3",
+   "value": 85.04,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.5",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.5.cards.recall",
+   "text": "gpt-5.5 cards recall 66.48",
+   "where": "Figure 3",
+   "value": 66.48,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.5",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.5.cards.precision",
+   "text": "gpt-5.5 cards precision 89.47",
+   "where": "Figure 3",
+   "value": 89.47,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.5",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.5.cards.shown",
+   "text": "gpt-5.5 cards shown 133",
+   "where": "Figure 3",
+   "value": 133,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.5",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.5.ships.recall",
+   "text": "gpt-5.5 ships recall 83.8",
+   "where": "Figure 3",
+   "value": 83.8,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.5",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.5.ships.precision",
+   "text": "gpt-5.5 ships precision 62.24",
+   "where": "Figure 3",
+   "value": 62.24,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.5",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.5.ships.shown",
+   "text": "gpt-5.5 ships shown 241",
+   "where": "Figure 3",
+   "value": 241,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.5",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.5.both.recall",
+   "text": "gpt-5.5 both recall 88.83",
+   "where": "Figure 3",
+   "value": 88.83,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.5",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.5.both.precision",
+   "text": "gpt-5.5 both precision 60",
+   "where": "Figure 3",
+   "value": 60,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.5",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.5.both.shown",
+   "text": "gpt-5.5 both shown 265",
+   "where": "Figure 3",
+   "value": 265,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.5",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-luna.accuracy",
+   "text": "gpt-5.6-luna 84.06%",
+   "where": "Figure 3",
+   "value": 84.06,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-luna",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-luna.cards.recall",
+   "text": "gpt-5.6-luna cards recall 64.25",
+   "where": "Figure 3",
+   "value": 64.25,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-luna",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-luna.cards.precision",
+   "text": "gpt-5.6-luna cards precision 89.15",
+   "where": "Figure 3",
+   "value": 89.15,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-luna",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-luna.cards.shown",
+   "text": "gpt-5.6-luna cards shown 129",
+   "where": "Figure 3",
+   "value": 129,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-luna",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-luna.ships.recall",
+   "text": "gpt-5.6-luna ships recall 83.8",
+   "where": "Figure 3",
+   "value": 83.8,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-luna",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-luna.ships.precision",
+   "text": "gpt-5.6-luna ships precision 55.56",
+   "where": "Figure 3",
+   "value": 55.56,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-luna",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-luna.ships.shown",
+   "text": "gpt-5.6-luna ships shown 270",
+   "where": "Figure 3",
+   "value": 270,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-luna",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-luna.both.recall",
+   "text": "gpt-5.6-luna both recall 95.53",
+   "where": "Figure 3",
+   "value": 95.53,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-luna",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-luna.both.precision",
+   "text": "gpt-5.6-luna both precision 49.85",
+   "where": "Figure 3",
+   "value": 49.85,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-luna",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-luna.both.shown",
+   "text": "gpt-5.6-luna both shown 343",
+   "where": "Figure 3",
+   "value": 343,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-luna",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-sol.accuracy",
+   "text": "gpt-5.6-sol 83.27%",
+   "where": "Figure 3",
+   "value": 83.27,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-sol",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-sol.cards.recall",
+   "text": "gpt-5.6-sol cards recall 60.89",
+   "where": "Figure 3",
+   "value": 60.89,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-sol",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-sol.cards.precision",
+   "text": "gpt-5.6-sol cards precision 88.62",
+   "where": "Figure 3",
+   "value": 88.62,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-sol",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-sol.cards.shown",
+   "text": "gpt-5.6-sol cards shown 123",
+   "where": "Figure 3",
+   "value": 123,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-sol",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-sol.ships.recall",
+   "text": "gpt-5.6-sol ships recall 81.01",
+   "where": "Figure 3",
+   "value": 81.01,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-sol",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-sol.ships.precision",
+   "text": "gpt-5.6-sol ships precision 64.73",
+   "where": "Figure 3",
+   "value": 64.73,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-sol",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-sol.ships.shown",
+   "text": "gpt-5.6-sol ships shown 224",
+   "where": "Figure 3",
+   "value": 224,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-sol",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-sol.both.recall",
+   "text": "gpt-5.6-sol both recall 88.27",
+   "where": "Figure 3",
+   "value": 88.27,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-sol",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-sol.both.precision",
+   "text": "gpt-5.6-sol both precision 63.71",
+   "where": "Figure 3",
+   "value": 63.71,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-sol",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-sol.both.shown",
+   "text": "gpt-5.6-sol both shown 248",
+   "where": "Figure 3",
+   "value": 248,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-sol",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-terra.accuracy",
+   "text": "gpt-5.6-terra 83.66%",
+   "where": "Figure 3",
+   "value": 83.66,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-terra",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-terra.cards.recall",
+   "text": "gpt-5.6-terra cards recall 62.57",
+   "where": "Figure 3",
+   "value": 62.57,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-terra",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-terra.cards.precision",
+   "text": "gpt-5.6-terra cards precision 88.19",
+   "where": "Figure 3",
+   "value": 88.19,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-terra",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-terra.cards.shown",
+   "text": "gpt-5.6-terra cards shown 127",
+   "where": "Figure 3",
+   "value": 127,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-terra",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-terra.ships.recall",
+   "text": "gpt-5.6-terra ships recall 83.24",
+   "where": "Figure 3",
+   "value": 83.24,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-terra",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-terra.ships.precision",
+   "text": "gpt-5.6-terra ships precision 60.57",
+   "where": "Figure 3",
+   "value": 60.57,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-terra",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-terra.ships.shown",
+   "text": "gpt-5.6-terra ships shown 246",
+   "where": "Figure 3",
+   "value": 246,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-terra",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-terra.both.recall",
+   "text": "gpt-5.6-terra both recall 93.85",
+   "where": "Figure 3",
+   "value": 93.85,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-terra",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-terra.both.precision",
+   "text": "gpt-5.6-terra both precision 58.54",
+   "where": "Figure 3",
+   "value": 58.54,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-terra",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.gpt-5.6-terra.both.shown",
+   "text": "gpt-5.6-terra both shown 287",
+   "where": "Figure 3",
+   "value": 287,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "gpt-5.6-terra",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-6bit.accuracy",
+   "text": "ornith-1.5-9b-mlx-6bit 45.08%",
+   "where": "Figure 3",
+   "value": 45.08,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-6bit",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-6bit.cards.recall",
+   "text": "ornith-1.5-9b-mlx-6bit cards recall 31.28",
+   "where": "Figure 3",
+   "value": 31.28,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-6bit",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-6bit.cards.precision",
+   "text": "ornith-1.5-9b-mlx-6bit cards precision 60.22",
+   "where": "Figure 3",
+   "value": 60.22,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-6bit",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-6bit.cards.shown",
+   "text": "ornith-1.5-9b-mlx-6bit cards shown 93",
+   "where": "Figure 3",
+   "value": 93,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-6bit",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-6bit.ships.recall",
+   "text": "ornith-1.5-9b-mlx-6bit ships recall 40.22",
+   "where": "Figure 3",
+   "value": 40.22,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-6bit",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-6bit.ships.precision",
+   "text": "ornith-1.5-9b-mlx-6bit ships precision 47.06",
+   "where": "Figure 3",
+   "value": 47.06,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-6bit",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-6bit.ships.shown",
+   "text": "ornith-1.5-9b-mlx-6bit ships shown 153",
+   "where": "Figure 3",
+   "value": 153,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-6bit",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-6bit.both.recall",
+   "text": "ornith-1.5-9b-mlx-6bit both recall 98.32",
+   "where": "Figure 3",
+   "value": 98.32,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-6bit",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-6bit.both.precision",
+   "text": "ornith-1.5-9b-mlx-6bit both precision 45.36",
+   "where": "Figure 3",
+   "value": 45.36,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-6bit",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-6bit.both.shown",
+   "text": "ornith-1.5-9b-mlx-6bit both shown 388",
+   "where": "Figure 3",
+   "value": 388,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-6bit",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-full.accuracy",
+   "text": "ornith-1.5-9b-mlx-full 65.35%",
+   "where": "Figure 3",
+   "value": 65.35,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-full",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-full.cards.recall",
+   "text": "ornith-1.5-9b-mlx-full cards recall 55.87",
+   "where": "Figure 3",
+   "value": 55.87,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-full",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-full.cards.precision",
+   "text": "ornith-1.5-9b-mlx-full cards precision 60.98",
+   "where": "Figure 3",
+   "value": 60.98,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-full",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-full.cards.shown",
+   "text": "ornith-1.5-9b-mlx-full cards shown 164",
+   "where": "Figure 3",
+   "value": 164,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-full",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-full.ships.recall",
+   "text": "ornith-1.5-9b-mlx-full ships recall 70.95",
+   "where": "Figure 3",
+   "value": 70.95,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-full",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-full.ships.precision",
+   "text": "ornith-1.5-9b-mlx-full ships precision 44.88",
+   "where": "Figure 3",
+   "value": 44.88,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-full",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-full.ships.shown",
+   "text": "ornith-1.5-9b-mlx-full ships shown 283",
+   "where": "Figure 3",
+   "value": 283,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-full",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-full.both.recall",
+   "text": "ornith-1.5-9b-mlx-full both recall 98.32",
+   "where": "Figure 3",
+   "value": 98.32,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-full",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-full.both.precision",
+   "text": "ornith-1.5-9b-mlx-full both precision 44.56",
+   "where": "Figure 3",
+   "value": 44.56,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-full",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.ornith-1.5-9b-mlx-full.both.shown",
+   "text": "ornith-1.5-9b-mlx-full both shown 395",
+   "where": "Figure 3",
+   "value": 395,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "ornith-1.5-9b-mlx-full",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.qwen3.6-35b-a3b-mxfp4.accuracy",
+   "text": "qwen3.6-35b-a3b-mxfp4 79.72%",
+   "where": "Figure 3",
+   "value": 79.72,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.qwen3.6-35b-a3b-mxfp4.cards.recall",
+   "text": "qwen3.6-35b-a3b-mxfp4 cards recall 62.01",
+   "where": "Figure 3",
+   "value": 62.01,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.qwen3.6-35b-a3b-mxfp4.cards.precision",
+   "text": "qwen3.6-35b-a3b-mxfp4 cards precision 76.55",
+   "where": "Figure 3",
+   "value": 76.55,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.qwen3.6-35b-a3b-mxfp4.cards.shown",
+   "text": "qwen3.6-35b-a3b-mxfp4 cards shown 145",
+   "where": "Figure 3",
+   "value": 145,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.qwen3.6-35b-a3b-mxfp4.ships.recall",
+   "text": "qwen3.6-35b-a3b-mxfp4 ships recall 79.89",
+   "where": "Figure 3",
+   "value": 79.89,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.qwen3.6-35b-a3b-mxfp4.ships.precision",
+   "text": "qwen3.6-35b-a3b-mxfp4 ships precision 52.96",
+   "where": "Figure 3",
+   "value": 52.96,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.qwen3.6-35b-a3b-mxfp4.ships.shown",
+   "text": "qwen3.6-35b-a3b-mxfp4 ships shown 270",
+   "where": "Figure 3",
+   "value": 270,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.qwen3.6-35b-a3b-mxfp4.both.recall",
+   "text": "qwen3.6-35b-a3b-mxfp4 both recall 92.18",
+   "where": "Figure 3",
+   "value": 92.18,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.qwen3.6-35b-a3b-mxfp4.both.precision",
+   "text": "qwen3.6-35b-a3b-mxfp4 both precision 50.77",
+   "where": "Figure 3",
+   "value": 50.77,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.qwen3.6-35b-a3b-mxfp4.both.shown",
+   "text": "qwen3.6-35b-a3b-mxfp4 both shown 325",
+   "where": "Figure 3",
+   "value": 325,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "qwen3.6-35b-a3b-mxfp4",
+    "field": "both.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.apple-fm-on-device.accuracy",
+   "text": "apple-fm-on-device 37.6%",
+   "where": "Figure 3",
+   "value": 37.6,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "apple-fm-on-device",
+    "field": "accuracy"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.apple-fm-on-device.cards.recall",
+   "text": "apple-fm-on-device cards recall 0",
+   "where": "Figure 3",
+   "value": 0,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "apple-fm-on-device",
+    "field": "cards.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.apple-fm-on-device.cards.precision",
+   "text": "apple-fm-on-device cards precision 0",
+   "where": "Figure 3",
+   "value": 0,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "apple-fm-on-device",
+    "field": "cards.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.apple-fm-on-device.cards.shown",
+   "text": "apple-fm-on-device cards shown 0",
+   "where": "Figure 3",
+   "value": 0,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "apple-fm-on-device",
+    "field": "cards.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.apple-fm-on-device.ships.recall",
+   "text": "apple-fm-on-device ships recall 0",
+   "where": "Figure 3",
+   "value": 0,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "apple-fm-on-device",
+    "field": "ships.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.apple-fm-on-device.ships.precision",
+   "text": "apple-fm-on-device ships precision 0",
+   "where": "Figure 3",
+   "value": 0,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "apple-fm-on-device",
+    "field": "ships.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.apple-fm-on-device.ships.shown",
+   "text": "apple-fm-on-device ships shown 0",
+   "where": "Figure 3",
+   "value": 0,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "apple-fm-on-device",
+    "field": "ships.shown"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.apple-fm-on-device.both.recall",
+   "text": "apple-fm-on-device both recall 32.96",
+   "where": "Figure 3",
+   "value": 32.96,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "apple-fm-on-device",
+    "field": "both.recall"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.apple-fm-on-device.both.precision",
+   "text": "apple-fm-on-device both precision 76.62",
+   "where": "Figure 3",
+   "value": 76.62,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "apple-fm-on-device",
+    "field": "both.precision"
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "figure3.apple-fm-on-device.both.shown",
+   "text": "apple-fm-on-device both shown 77",
+   "where": "Figure 3",
+   "value": 77,
+   "tolerance": 1e-9,
+   "metric": "figure3.point",
+   "args": {
+    "model": "apple-fm-on-device",
+    "field": "both.shown"
+   }
+  }
+ ]
+}

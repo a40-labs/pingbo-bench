@@ -1,0 +1,7 @@
+node_modules/
+# data/build: downloaded sources and the rebuilt email text never enter git
+!data/build/
+data/build/cache/
+data/build/out/
+# harness/step0 output from your own runs
+runs/

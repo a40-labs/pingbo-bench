@@ -1,0 +1,505 @@
+{
+ "arm": "step0-subject-body",
+ "observability": "loose",
+ "models": [
+  {
+   "model": "claude-sonnet-4-6",
+   "accuracy": 0.6712598425196851
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "accuracy": 0.6496062992125984
+  },
+  {
+   "model": "claude-fable-5",
+   "accuracy": 0.6377952755905512
+  },
+  {
+   "model": "claude-opus-5",
+   "accuracy": 0.6338582677165354
+  },
+  {
+   "model": "gpt-5.5",
+   "accuracy": 0.6318897637795275
+  },
+  {
+   "model": "gpt-4.1",
+   "accuracy": 0.6220472440944882
+  },
+  {
+   "model": "gpt-5.4",
+   "accuracy": 0.6062992125984252
+  },
+  {
+   "model": "gpt-5.1",
+   "accuracy": 0.6062992125984252
+  }
+ ],
+ "seed": 1610,
+ "behaviourCounts": {
+  "probes": 508,
+  "probesWithoutQuoteNeedle": 43,
+  "probesWithoutDate": 0,
+  "observable": 491,
+  "unobservable": 17,
+  "observableStrict": 257,
+  "withCustodianRecipient": 491,
+  "withRosterRecipient": 209,
+  "withSenderOnRoster": 423,
+  "repliedByRecipient": 115,
+  "repliedByQuote": 43,
+  "repliedBySubject": 114,
+  "anyReply": 153,
+  "matchesOutsideWindow": 1795,
+  "dumpMessages": 252759,
+  "dumpCustodianAddresses": 297,
+  "dumpReferenceRows": 54778,
+  "dumpReferenceRowsMatched": 263
+ },
+ "derivedFrom": {
+  "probes": "probes.v2.json",
+  "dump": "enron-mysqldump_v5.sql.gz",
+  "dumpSha256": "5e815af345a3207140c20ed010c1c0e89d739fa8173ab616268c47a438f54f6a"
+ },
+ "counts": {
+  "probes": 508,
+  "observable": 491,
+  "unanimousContested": 64,
+  "unanimousContestedIds": 62,
+  "unanimousAgreed": 198,
+  "control": 47,
+  "controlShortfall": {
+   "postponed reply": 17
+  },
+  "consensusTies": 26
+ },
+ "goldCrosstab": {
+  "ignore": {
+   "fast": 12,
+   "slow": 0,
+   "none": 32,
+   "unobservable": 0
+  },
+  "accountable non-answer": {
+   "fast": 41,
+   "slow": 6,
+   "none": 229,
+   "unobservable": 0
+  },
+  "immediate reply": {
+   "fast": 27,
+   "slow": 4,
+   "none": 77,
+   "unobservable": 0
+  },
+  "postponed reply": {
+   "fast": 19,
+   "slow": 6,
+   "none": 38,
+   "unobservable": 0
+  }
+ },
+ "consensusCrosstab": {
+  "accountable non-answer": {
+   "fast": 36,
+   "slow": 6,
+   "none": 171,
+   "unobservable": 0
+  },
+  "ignore": {
+   "fast": 13,
+   "slow": 0,
+   "none": 34,
+   "unobservable": 0
+  },
+  "immediate reply": {
+   "fast": 34,
+   "slow": 7,
+   "none": 102,
+   "unobservable": 0
+  },
+  "postponed reply": {
+   "fast": 11,
+   "slow": 3,
+   "none": 49,
+   "unobservable": 0
+  }
+ },
+ "contested": {
+  "n": 62,
+  "goldOnly": 20,
+  "modelOnly": 12,
+  "both": 12,
+  "neither": 18,
+  "goldRate": 0.5161290322580645,
+  "modelRate": 0.3870967741935484,
+  "goldCI": {
+   "lo": 0.3870967741935484,
+   "hi": 0.6451612903225806
+  },
+  "modelCI": {
+   "lo": 0.27419354838709675,
+   "hi": 0.5161290322580645
+  },
+  "delta": 0.12903225806451613,
+  "deltaCI": {
+   "lo": -0.04838709677419355,
+   "hi": 0.3064516129032258
+  },
+  "p": 0.21532714972272524,
+  "discordant": 32
+ },
+ "control": {
+  "n": 45,
+  "goldOnly": 0,
+  "modelOnly": 0,
+  "both": 28,
+  "neither": 17,
+  "goldRate": 0.6222222222222222,
+  "modelRate": 0.6222222222222222,
+  "goldCI": {
+   "lo": 0.4888888888888889,
+   "hi": 0.7555555555555555
+  },
+  "modelCI": {
+   "lo": 0.4888888888888889,
+   "hi": 0.7555555555555555
+  },
+  "delta": 0,
+  "deltaCI": {
+   "lo": 0,
+   "hi": 0
+  },
+  "p": 1,
+  "discordant": 0
+ },
+ "levels": {
+  "gold": {
+   "a": {
+    "n": 62,
+    "k": 32,
+    "rate": 0.5161290322580645
+   },
+   "b": {
+    "n": 45,
+    "k": 28,
+    "rate": 0.6222222222222222
+   },
+   "diff": -0.10609318996415773,
+   "ci": {
+    "lo": -0.2939068100358423,
+    "hi": 0.0795698924731183
+   }
+  },
+  "consensus": {
+   "a": {
+    "n": 62,
+    "k": 24,
+    "rate": 0.3870967741935484
+   },
+   "b": {
+    "n": 45,
+    "k": 28,
+    "rate": 0.6222222222222222
+   },
+   "diff": -0.23512544802867386,
+   "ci": {
+    "lo": -0.42078853046594983,
+    "hi": -0.04731182795698924
+   }
+  }
+ },
+ "replySeparation": {
+  "gold": {
+   "a": {
+    "n": 171,
+    "k": 56,
+    "rate": 0.32748538011695905
+   },
+   "b": {
+    "n": 320,
+    "k": 59,
+    "rate": 0.184375
+   },
+   "diff": 0.14311038011695904,
+   "ci": {
+    "lo": 0.06164108187134501,
+    "hi": 0.22386695906432746
+   }
+  },
+  "consensus": {
+   "a": {
+    "n": 206,
+    "k": 55,
+    "rate": 0.2669902912621359
+   },
+   "b": {
+    "n": 260,
+    "k": 55,
+    "rate": 0.21153846153846154
+   },
+   "diff": 0.05545182972367438,
+   "ci": {
+    "lo": -0.02303958177744586,
+    "hi": 0.13091859596713967
+   }
+  }
+ },
+ "needsYouSignal": {
+  "vsGoldImmediate": {
+   "n": 491,
+   "agreement": 0.6883910386965377,
+   "majorityBaseline": 0.7800407331975561,
+   "positiveRate": 0.219959266802444,
+   "signalRate": 0.20162932790224034,
+   "truePositive": 27,
+   "falsePositive": 72,
+   "falseNegative": 81,
+   "trueNegative": 311
+  },
+  "vsConsensusImmediate": {
+   "n": 466,
+   "agreement": 0.6373390557939914,
+   "majorityBaseline": 0.6931330472103004,
+   "positiveRate": 0.30686695278969955,
+   "signalRate": 0.2017167381974249,
+   "truePositive": 34,
+   "falsePositive": 60,
+   "falseNegative": 109,
+   "trueNegative": 263
+  }
+ },
+ "sensitivity": [
+  {
+   "fastCutHours": 4,
+   "gold": {
+    "ignore": {
+     "fast": 11,
+     "slow": 1,
+     "none": 32,
+     "unobservable": 0
+    },
+    "accountable non-answer": {
+     "fast": 37,
+     "slow": 10,
+     "none": 229,
+     "unobservable": 0
+    },
+    "immediate reply": {
+     "fast": 17,
+     "slow": 14,
+     "none": 77,
+     "unobservable": 0
+    },
+    "postponed reply": {
+     "fast": 13,
+     "slow": 12,
+     "none": 38,
+     "unobservable": 0
+    }
+   },
+   "contested": {
+    "n": 62,
+    "goldOnly": 19,
+    "modelOnly": 12,
+    "both": 12,
+    "neither": 19,
+    "goldRate": 0.5,
+    "modelRate": 0.3870967741935484,
+    "goldCI": {
+     "lo": 0.3709677419354839,
+     "hi": 0.6290322580645161
+    },
+    "modelCI": {
+     "lo": 0.27419354838709675,
+     "hi": 0.5161290322580645
+    },
+    "delta": 0.11290322580645161,
+    "deltaCI": {
+     "lo": -0.06451612903225806,
+     "hi": 0.2903225806451613
+    },
+    "p": 0.2810415150597689,
+    "discordant": 31
+   },
+   "control": {
+    "n": 45,
+    "goldOnly": 0,
+    "modelOnly": 0,
+    "both": 28,
+    "neither": 17,
+    "goldRate": 0.6222222222222222,
+    "modelRate": 0.6222222222222222,
+    "goldCI": {
+     "lo": 0.4888888888888889,
+     "hi": 0.7555555555555555
+    },
+    "modelCI": {
+     "lo": 0.4888888888888889,
+     "hi": 0.7555555555555555
+    },
+    "delta": 0,
+    "deltaCI": {
+     "lo": 0,
+     "hi": 0
+    },
+    "p": 1,
+    "discordant": 0
+   }
+  },
+  {
+   "fastCutHours": 24,
+   "gold": {
+    "ignore": {
+     "fast": 12,
+     "slow": 0,
+     "none": 32,
+     "unobservable": 0
+    },
+    "accountable non-answer": {
+     "fast": 41,
+     "slow": 6,
+     "none": 229,
+     "unobservable": 0
+    },
+    "immediate reply": {
+     "fast": 27,
+     "slow": 4,
+     "none": 77,
+     "unobservable": 0
+    },
+    "postponed reply": {
+     "fast": 19,
+     "slow": 6,
+     "none": 38,
+     "unobservable": 0
+    }
+   },
+   "contested": {
+    "n": 62,
+    "goldOnly": 20,
+    "modelOnly": 12,
+    "both": 12,
+    "neither": 18,
+    "goldRate": 0.5161290322580645,
+    "modelRate": 0.3870967741935484,
+    "goldCI": {
+     "lo": 0.3870967741935484,
+     "hi": 0.6451612903225806
+    },
+    "modelCI": {
+     "lo": 0.27419354838709675,
+     "hi": 0.5161290322580645
+    },
+    "delta": 0.12903225806451613,
+    "deltaCI": {
+     "lo": -0.04838709677419355,
+     "hi": 0.3064516129032258
+    },
+    "p": 0.21532714972272524,
+    "discordant": 32
+   },
+   "control": {
+    "n": 45,
+    "goldOnly": 0,
+    "modelOnly": 0,
+    "both": 28,
+    "neither": 17,
+    "goldRate": 0.6222222222222222,
+    "modelRate": 0.6222222222222222,
+    "goldCI": {
+     "lo": 0.4888888888888889,
+     "hi": 0.7555555555555555
+    },
+    "modelCI": {
+     "lo": 0.4888888888888889,
+     "hi": 0.7555555555555555
+    },
+    "delta": 0,
+    "deltaCI": {
+     "lo": 0,
+     "hi": 0
+    },
+    "p": 1,
+    "discordant": 0
+   }
+  },
+  {
+   "fastCutHours": 72,
+   "gold": {
+    "ignore": {
+     "fast": 12,
+     "slow": 0,
+     "none": 32,
+     "unobservable": 0
+    },
+    "accountable non-answer": {
+     "fast": 45,
+     "slow": 2,
+     "none": 229,
+     "unobservable": 0
+    },
+    "immediate reply": {
+     "fast": 30,
+     "slow": 1,
+     "none": 77,
+     "unobservable": 0
+    },
+    "postponed reply": {
+     "fast": 23,
+     "slow": 2,
+     "none": 38,
+     "unobservable": 0
+    }
+   },
+   "contested": {
+    "n": 62,
+    "goldOnly": 19,
+    "modelOnly": 13,
+    "both": 12,
+    "neither": 18,
+    "goldRate": 0.5,
+    "modelRate": 0.4032258064516129,
+    "goldCI": {
+     "lo": 0.3709677419354839,
+     "hi": 0.6290322580645161
+    },
+    "modelCI": {
+     "lo": 0.2903225806451613,
+     "hi": 0.532258064516129
+    },
+    "delta": 0.0967741935483871,
+    "deltaCI": {
+     "lo": -0.08064516129032258,
+     "hi": 0.27419354838709675
+    },
+    "p": 0.37708558747544907,
+    "discordant": 32
+   },
+   "control": {
+    "n": 45,
+    "goldOnly": 0,
+    "modelOnly": 0,
+    "both": 29,
+    "neither": 16,
+    "goldRate": 0.6444444444444445,
+    "modelRate": 0.6444444444444445,
+    "goldCI": {
+     "lo": 0.5111111111111111,
+     "hi": 0.7777777777777778
+    },
+    "modelCI": {
+     "lo": 0.5111111111111111,
+     "hi": 0.7777777777777778
+    },
+    "delta": 0,
+    "deltaCI": {
+     "lo": 0,
+     "hi": 0
+    },
+    "p": 1,
+    "discordant": 0
+   }
+  }
+ ]
+}

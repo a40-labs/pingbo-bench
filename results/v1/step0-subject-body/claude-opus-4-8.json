@@ -1,0 +1,4158 @@
+{
+ "header": {
+  "model": "claude-opus-4-8",
+  "step": "step0-subject-body",
+  "probes": "probes.json",
+  "corpusSha256": "ef51dae101dcd3e8bbd500b2e2d3d69644bfd9b22832f88d5c4b4e736a69b3aa",
+  "probesVersion": 1,
+  "construct": "response-expectation",
+  "promptRev": 2,
+  "promptSha256": "3335d03b0824407eb9d985ec0cfc871b134483e4696bc4d7ad119c9fbc0737e2",
+  "seed": 1610,
+  "sample": 508,
+  "decode": {
+   "maxTokens": 2048,
+   "bodyOverrides": {
+    "temperature": null,
+    "top_p": null
+   },
+   "chatTemplateKwargs": null
+  },
+  "generatedAt": "2026-09-04T14:03:35.626Z"
+ },
+ "metrics": {
+  "total": 508,
+  "decided": 508,
+  "unparsed": 0,
+  "correct": 308,
+  "accuracy": 0.6062992125984252,
+  "macroRecall": 0.5651093366897569,
+  "majorityClassFloor": 0.5610236220472441,
+  "perClass": [
+   {
+    "label": "accountable non-answer",
+    "support": 285,
+    "predicted": 211,
+    "correct": 176,
+    "recall": 0.6175438596491228,
+    "precision": 0.8341232227488151
+   },
+   {
+    "label": "immediate reply",
+    "support": 112,
+    "predicted": 173,
+    "correct": 91,
+    "recall": 0.8125,
+    "precision": 0.5260115606936416
+   },
+   {
+    "label": "postponed reply",
+    "support": 67,
+    "predicted": 58,
+    "correct": 13,
+    "recall": 0.19402985074626866,
+    "precision": 0.22413793103448276
+   },
+   {
+    "label": "ignore",
+    "support": 44,
+    "predicted": 66,
+    "correct": 28,
+    "recall": 0.6363636363636364,
+    "precision": 0.42424242424242425
+   }
+  ],
+  "confusion": {
+   "accountable non-answer": {
+    "ignore": 34,
+    "postponed reply": 33,
+    "accountable non-answer": 176,
+    "immediate reply": 42
+   },
+   "immediate reply": {
+    "immediate reply": 91,
+    "accountable non-answer": 11,
+    "postponed reply": 9,
+    "ignore": 1
+   },
+   "postponed reply": {
+    "immediate reply": 39,
+    "accountable non-answer": 12,
+    "postponed reply": 13,
+    "ignore": 3
+   },
+   "ignore": {
+    "ignore": 28,
+    "accountable non-answer": 12,
+    "immediate reply": 1,
+    "postponed reply": 3
+   }
+  }
+ },
+ "verdicts": [
+  {
+   "position": 0,
+   "id": "sappelli:100865",
+   "gold": "ignore",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 1,
+   "id": "sappelli:102834",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 2,
+   "id": "sappelli:102928",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 3,
+   "id": "sappelli:103076",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 4,
+   "id": "sappelli:103216",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 5,
+   "id": "sappelli:103455",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 6,
+   "id": "sappelli:103462",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 7,
+   "id": "sappelli:103793",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 8,
+   "id": "sappelli:103820",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 9,
+   "id": "sappelli:103855",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 10,
+   "id": "sappelli:103860",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 11,
+   "id": "sappelli:103938",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 12,
+   "id": "sappelli:104126",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 13,
+   "id": "sappelli:104236",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 14,
+   "id": "sappelli:104301",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 15,
+   "id": "sappelli:104352",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 16,
+   "id": "sappelli:104386",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 17,
+   "id": "sappelli:104498",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 18,
+   "id": "sappelli:104532",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 19,
+   "id": "sappelli:104535",
+   "gold": "ignore",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 20,
+   "id": "sappelli:104540",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 21,
+   "id": "sappelli:104548",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 22,
+   "id": "sappelli:104552",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 23,
+   "id": "sappelli:104556",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 24,
+   "id": "sappelli:105134",
+   "gold": "postponed reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 25,
+   "id": "sappelli:105421",
+   "gold": "immediate reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 26,
+   "id": "sappelli:105611",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 27,
+   "id": "sappelli:105628",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 28,
+   "id": "sappelli:105644",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 29,
+   "id": "sappelli:105680",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 30,
+   "id": "sappelli:105691",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 31,
+   "id": "sappelli:105861",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 32,
+   "id": "sappelli:106266",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 33,
+   "id": "sappelli:106903",
+   "gold": "postponed reply",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 34,
+   "id": "sappelli:106903",
+   "gold": "postponed reply",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 35,
+   "id": "sappelli:106903",
+   "gold": "postponed reply",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 36,
+   "id": "sappelli:108333",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 37,
+   "id": "sappelli:108341",
+   "gold": "ignore",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 38,
+   "id": "sappelli:108390",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 39,
+   "id": "sappelli:108390",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 40,
+   "id": "sappelli:108390",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 41,
+   "id": "sappelli:108683",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 42,
+   "id": "sappelli:108683",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 43,
+   "id": "sappelli:108683",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 44,
+   "id": "sappelli:109234",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 45,
+   "id": "sappelli:109479",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 46,
+   "id": "sappelli:109497",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 47,
+   "id": "sappelli:109615",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 48,
+   "id": "sappelli:109615",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 49,
+   "id": "sappelli:109615",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 50,
+   "id": "sappelli:109990",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 51,
+   "id": "sappelli:110530",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 52,
+   "id": "sappelli:110530",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 53,
+   "id": "sappelli:110530",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 54,
+   "id": "sappelli:110531",
+   "gold": "immediate reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 55,
+   "id": "sappelli:11250",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 56,
+   "id": "sappelli:11251",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 57,
+   "id": "sappelli:11390",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 58,
+   "id": "sappelli:11395",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 59,
+   "id": "sappelli:11400",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 60,
+   "id": "sappelli:117625",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 61,
+   "id": "sappelli:117652",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 62,
+   "id": "sappelli:117660",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 63,
+   "id": "sappelli:1301",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 64,
+   "id": "sappelli:135262",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 65,
+   "id": "sappelli:135267",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 66,
+   "id": "sappelli:135269",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 67,
+   "id": "sappelli:135270",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 68,
+   "id": "sappelli:135281",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 69,
+   "id": "sappelli:135297",
+   "gold": "immediate reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 70,
+   "id": "sappelli:135303",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 71,
+   "id": "sappelli:139527",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 72,
+   "id": "sappelli:139778",
+   "gold": "immediate reply",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 73,
+   "id": "sappelli:140355",
+   "gold": "immediate reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 74,
+   "id": "sappelli:140498",
+   "gold": "immediate reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 75,
+   "id": "sappelli:140670",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 76,
+   "id": "sappelli:140795",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 77,
+   "id": "sappelli:141108",
+   "gold": "postponed reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 78,
+   "id": "sappelli:141223",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 79,
+   "id": "sappelli:141681",
+   "gold": "postponed reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 80,
+   "id": "sappelli:142333",
+   "gold": "postponed reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 81,
+   "id": "sappelli:142548",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 82,
+   "id": "sappelli:142573",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 83,
+   "id": "sappelli:142714",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 84,
+   "id": "sappelli:142844",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 85,
+   "id": "sappelli:143130",
+   "gold": "postponed reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 86,
+   "id": "sappelli:143171",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 87,
+   "id": "sappelli:143174",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 88,
+   "id": "sappelli:143179",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 89,
+   "id": "sappelli:143264",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 90,
+   "id": "sappelli:143273",
+   "gold": "immediate reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 91,
+   "id": "sappelli:143339",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 92,
+   "id": "sappelli:143387",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 93,
+   "id": "sappelli:143405",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 94,
+   "id": "sappelli:143405",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 95,
+   "id": "sappelli:143405",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 96,
+   "id": "sappelli:143407",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 97,
+   "id": "sappelli:143541",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 98,
+   "id": "sappelli:143614",
+   "gold": "postponed reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 99,
+   "id": "sappelli:143627",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 100,
+   "id": "sappelli:143638",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 101,
+   "id": "sappelli:143654",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 102,
+   "id": "sappelli:143779",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 103,
+   "id": "sappelli:1473",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 104,
+   "id": "sappelli:1479",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 105,
+   "id": "sappelli:1483",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 106,
+   "id": "sappelli:1490",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 107,
+   "id": "sappelli:1495",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 108,
+   "id": "sappelli:1504",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 109,
+   "id": "sappelli:1508",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 110,
+   "id": "sappelli:1509",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 111,
+   "id": "sappelli:160877",
+   "gold": "ignore",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 112,
+   "id": "sappelli:162619",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 113,
+   "id": "sappelli:172838",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 114,
+   "id": "sappelli:172894",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 115,
+   "id": "sappelli:172935",
+   "gold": "postponed reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 116,
+   "id": "sappelli:173020",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 117,
+   "id": "sappelli:173063",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 118,
+   "id": "sappelli:173116",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 119,
+   "id": "sappelli:173161",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 120,
+   "id": "sappelli:173179",
+   "gold": "ignore",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 121,
+   "id": "sappelli:173190",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 122,
+   "id": "sappelli:173273",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 123,
+   "id": "sappelli:173337",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 124,
+   "id": "sappelli:173368",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 125,
+   "id": "sappelli:173374",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 126,
+   "id": "sappelli:173378",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 127,
+   "id": "sappelli:173408",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 128,
+   "id": "sappelli:173442",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 129,
+   "id": "sappelli:173674",
+   "gold": "ignore",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 130,
+   "id": "sappelli:173758",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 131,
+   "id": "sappelli:173769",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 132,
+   "id": "sappelli:174868",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 133,
+   "id": "sappelli:174927",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 134,
+   "id": "sappelli:174928",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 135,
+   "id": "sappelli:174949",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 136,
+   "id": "sappelli:175086",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 137,
+   "id": "sappelli:175121",
+   "gold": "postponed reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 138,
+   "id": "sappelli:175148",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 139,
+   "id": "sappelli:175154",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 140,
+   "id": "sappelli:177156",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 141,
+   "id": "sappelli:177189",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 142,
+   "id": "sappelli:177333",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 143,
+   "id": "sappelli:177370",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 144,
+   "id": "sappelli:178230",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 145,
+   "id": "sappelli:178239",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 146,
+   "id": "sappelli:180669",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 147,
+   "id": "sappelli:180854",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 148,
+   "id": "sappelli:180885",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 149,
+   "id": "sappelli:180970",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 150,
+   "id": "sappelli:181031",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 151,
+   "id": "sappelli:181094",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 152,
+   "id": "sappelli:181163",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 153,
+   "id": "sappelli:181234",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 154,
+   "id": "sappelli:181314",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 155,
+   "id": "sappelli:181390",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 156,
+   "id": "sappelli:181400",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 157,
+   "id": "sappelli:181447",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 158,
+   "id": "sappelli:181522",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 159,
+   "id": "sappelli:182006",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 160,
+   "id": "sappelli:182198",
+   "gold": "immediate reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 161,
+   "id": "sappelli:182230",
+   "gold": "postponed reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 162,
+   "id": "sappelli:182333",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 163,
+   "id": "sappelli:182386",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 164,
+   "id": "sappelli:182465",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 165,
+   "id": "sappelli:187010",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 166,
+   "id": "sappelli:187014",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 167,
+   "id": "sappelli:187822",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 168,
+   "id": "sappelli:187830",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 169,
+   "id": "sappelli:188171",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 170,
+   "id": "sappelli:18825",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 171,
+   "id": "sappelli:1938",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 172,
+   "id": "sappelli:1944",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 173,
+   "id": "sappelli:1973",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 174,
+   "id": "sappelli:19849",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 175,
+   "id": "sappelli:19908",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 176,
+   "id": "sappelli:1993",
+   "gold": "postponed reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 177,
+   "id": "sappelli:200547",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 178,
+   "id": "sappelli:20283",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 179,
+   "id": "sappelli:2064",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 180,
+   "id": "sappelli:209540",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 181,
+   "id": "sappelli:210005",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 182,
+   "id": "sappelli:210233",
+   "gold": "ignore",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 183,
+   "id": "sappelli:210464",
+   "gold": "immediate reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 184,
+   "id": "sappelli:210566",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 185,
+   "id": "sappelli:210692",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 186,
+   "id": "sappelli:210706",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 187,
+   "id": "sappelli:210891",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 188,
+   "id": "sappelli:210948",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 189,
+   "id": "sappelli:210987",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 190,
+   "id": "sappelli:210988",
+   "gold": "ignore",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 191,
+   "id": "sappelli:211125",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 192,
+   "id": "sappelli:211151",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 193,
+   "id": "sappelli:211161",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 194,
+   "id": "sappelli:211174",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 195,
+   "id": "sappelli:211208",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 196,
+   "id": "sappelli:211260",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 197,
+   "id": "sappelli:211405",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 198,
+   "id": "sappelli:232696",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 199,
+   "id": "sappelli:232806",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 200,
+   "id": "sappelli:233493",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 201,
+   "id": "sappelli:233494",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 202,
+   "id": "sappelli:233502",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 203,
+   "id": "sappelli:233503",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 204,
+   "id": "sappelli:248595",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 205,
+   "id": "sappelli:248913",
+   "gold": "ignore",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 206,
+   "id": "sappelli:248938",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 207,
+   "id": "sappelli:248977",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 208,
+   "id": "sappelli:249055",
+   "gold": "immediate reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 209,
+   "id": "sappelli:249121",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 210,
+   "id": "sappelli:249149",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 211,
+   "id": "sappelli:249171",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 212,
+   "id": "sappelli:249244",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 213,
+   "id": "sappelli:249277",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 214,
+   "id": "sappelli:249327",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 215,
+   "id": "sappelli:249436",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 216,
+   "id": "sappelli:249497",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 217,
+   "id": "sappelli:249501",
+   "gold": "postponed reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 218,
+   "id": "sappelli:249521",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 219,
+   "id": "sappelli:249582",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 220,
+   "id": "sappelli:249605",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 221,
+   "id": "sappelli:249778",
+   "gold": "immediate reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 222,
+   "id": "sappelli:249802",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 223,
+   "id": "sappelli:249816",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 224,
+   "id": "sappelli:249854",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 225,
+   "id": "sappelli:249858",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 226,
+   "id": "sappelli:249881",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 227,
+   "id": "sappelli:252775",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 228,
+   "id": "sappelli:253245",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 229,
+   "id": "sappelli:256574",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 230,
+   "id": "sappelli:259561",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 231,
+   "id": "sappelli:259566",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 232,
+   "id": "sappelli:259580",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 233,
+   "id": "sappelli:259652",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 234,
+   "id": "sappelli:259664",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 235,
+   "id": "sappelli:259686",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 236,
+   "id": "sappelli:259799",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 237,
+   "id": "sappelli:259905",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 238,
+   "id": "sappelli:259978",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 239,
+   "id": "sappelli:259989",
+   "gold": "postponed reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 240,
+   "id": "sappelli:260061",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 241,
+   "id": "sappelli:260109",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 242,
+   "id": "sappelli:260300",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 243,
+   "id": "sappelli:260332",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 244,
+   "id": "sappelli:260344",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 245,
+   "id": "sappelli:260470",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 246,
+   "id": "sappelli:260573",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 247,
+   "id": "sappelli:260600",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 248,
+   "id": "sappelli:260641",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 249,
+   "id": "sappelli:260699",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 250,
+   "id": "sappelli:260712",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 251,
+   "id": "sappelli:260845",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 252,
+   "id": "sappelli:287084",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 253,
+   "id": "sappelli:28961",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 254,
+   "id": "sappelli:28981",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 255,
+   "id": "sappelli:29258",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 256,
+   "id": "sappelli:29534",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 257,
+   "id": "sappelli:30092",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 258,
+   "id": "sappelli:30107",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 259,
+   "id": "sappelli:30188",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 260,
+   "id": "sappelli:30338",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 261,
+   "id": "sappelli:304907",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 262,
+   "id": "sappelli:304967",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 263,
+   "id": "sappelli:305173",
+   "gold": "ignore",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 264,
+   "id": "sappelli:305329",
+   "gold": "postponed reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 265,
+   "id": "sappelli:305379",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 266,
+   "id": "sappelli:305391",
+   "gold": "immediate reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 267,
+   "id": "sappelli:305432",
+   "gold": "ignore",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 268,
+   "id": "sappelli:305543",
+   "gold": "immediate reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 269,
+   "id": "sappelli:306117",
+   "gold": "immediate reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 270,
+   "id": "sappelli:306123",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 271,
+   "id": "sappelli:306164",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 272,
+   "id": "sappelli:306393",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 273,
+   "id": "sappelli:306399",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 274,
+   "id": "sappelli:306406",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 275,
+   "id": "sappelli:30653",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 276,
+   "id": "sappelli:306546",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 277,
+   "id": "sappelli:306559",
+   "gold": "ignore",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 278,
+   "id": "sappelli:306610",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 279,
+   "id": "sappelli:306733",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 280,
+   "id": "sappelli:306986",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 281,
+   "id": "sappelli:307069",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 282,
+   "id": "sappelli:30709",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 283,
+   "id": "sappelli:307132",
+   "gold": "postponed reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 284,
+   "id": "sappelli:307239",
+   "gold": "postponed reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 285,
+   "id": "sappelli:307287",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 286,
+   "id": "sappelli:30770",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 287,
+   "id": "sappelli:30775",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 288,
+   "id": "sappelli:30817",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 289,
+   "id": "sappelli:30856",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 290,
+   "id": "sappelli:30928",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 291,
+   "id": "sappelli:30929",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 292,
+   "id": "sappelli:31055",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 293,
+   "id": "sappelli:320867",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 294,
+   "id": "sappelli:320885",
+   "gold": "ignore",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 295,
+   "id": "sappelli:320936",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 296,
+   "id": "sappelli:321016",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 297,
+   "id": "sappelli:321064",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 298,
+   "id": "sappelli:321076",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 299,
+   "id": "sappelli:321085",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 300,
+   "id": "sappelli:321096",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 301,
+   "id": "sappelli:321106",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 302,
+   "id": "sappelli:321121",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 303,
+   "id": "sappelli:321122",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 304,
+   "id": "sappelli:321146",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 305,
+   "id": "sappelli:321161",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 306,
+   "id": "sappelli:321218",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 307,
+   "id": "sappelli:321246",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 308,
+   "id": "sappelli:321270",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 309,
+   "id": "sappelli:321477",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 310,
+   "id": "sappelli:321684",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 311,
+   "id": "sappelli:321729",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 312,
+   "id": "sappelli:321772",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 313,
+   "id": "sappelli:321773",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 314,
+   "id": "sappelli:321865",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 315,
+   "id": "sappelli:324010",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 316,
+   "id": "sappelli:325393",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 317,
+   "id": "sappelli:326238",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 318,
+   "id": "sappelli:32764",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 319,
+   "id": "sappelli:32776",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 320,
+   "id": "sappelli:32815",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 321,
+   "id": "sappelli:32825",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 322,
+   "id": "sappelli:32836",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 323,
+   "id": "sappelli:32849",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 324,
+   "id": "sappelli:32897",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 325,
+   "id": "sappelli:32966",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 326,
+   "id": "sappelli:33072",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 327,
+   "id": "sappelli:33182",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 328,
+   "id": "sappelli:33233",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 329,
+   "id": "sappelli:33370",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 330,
+   "id": "sappelli:33399",
+   "gold": "postponed reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 331,
+   "id": "sappelli:33540",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 332,
+   "id": "sappelli:33542",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 333,
+   "id": "sappelli:33572",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 334,
+   "id": "sappelli:33713",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 335,
+   "id": "sappelli:337436",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 336,
+   "id": "sappelli:337507",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 337,
+   "id": "sappelli:337522",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 338,
+   "id": "sappelli:337530",
+   "gold": "postponed reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 339,
+   "id": "sappelli:337618",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 340,
+   "id": "sappelli:337654",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 341,
+   "id": "sappelli:337748",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 342,
+   "id": "sappelli:33777",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 343,
+   "id": "sappelli:337850",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 344,
+   "id": "sappelli:337852",
+   "gold": "immediate reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 345,
+   "id": "sappelli:337998",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 346,
+   "id": "sappelli:338077",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 347,
+   "id": "sappelli:338223",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 348,
+   "id": "sappelli:338254",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 349,
+   "id": "sappelli:338265",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 350,
+   "id": "sappelli:338300",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 351,
+   "id": "sappelli:338314",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 352,
+   "id": "sappelli:338340",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 353,
+   "id": "sappelli:338361",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 354,
+   "id": "sappelli:33838",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 355,
+   "id": "sappelli:338431",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 356,
+   "id": "sappelli:338534",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 357,
+   "id": "sappelli:33857",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 358,
+   "id": "sappelli:338659",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 359,
+   "id": "sappelli:338752",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 360,
+   "id": "sappelli:338762",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 361,
+   "id": "sappelli:379926",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 362,
+   "id": "sappelli:379936",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 363,
+   "id": "sappelli:383615",
+   "gold": "postponed reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 364,
+   "id": "sappelli:383662",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 365,
+   "id": "sappelli:383695",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 366,
+   "id": "sappelli:383705",
+   "gold": "immediate reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 367,
+   "id": "sappelli:383712",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 368,
+   "id": "sappelli:383717",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 369,
+   "id": "sappelli:383746",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 370,
+   "id": "sappelli:383899",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 371,
+   "id": "sappelli:383916",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 372,
+   "id": "sappelli:384047",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 373,
+   "id": "sappelli:384151",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 374,
+   "id": "sappelli:384174",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 375,
+   "id": "sappelli:384224",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 376,
+   "id": "sappelli:384239",
+   "gold": "postponed reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 377,
+   "id": "sappelli:384361",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 378,
+   "id": "sappelli:384365",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 379,
+   "id": "sappelli:384366",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 380,
+   "id": "sappelli:384376",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 381,
+   "id": "sappelli:384387",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 382,
+   "id": "sappelli:384393",
+   "gold": "ignore",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 383,
+   "id": "sappelli:384407",
+   "gold": "immediate reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 384,
+   "id": "sappelli:384529",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 385,
+   "id": "sappelli:384542",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 386,
+   "id": "sappelli:384548",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 387,
+   "id": "sappelli:384898",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 388,
+   "id": "sappelli:385146",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 389,
+   "id": "sappelli:385179",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 390,
+   "id": "sappelli:392355",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 391,
+   "id": "sappelli:394583",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 392,
+   "id": "sappelli:394978",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 393,
+   "id": "sappelli:395138",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 394,
+   "id": "sappelli:40953",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 395,
+   "id": "sappelli:41251",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 396,
+   "id": "sappelli:41262",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 397,
+   "id": "sappelli:41311",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 398,
+   "id": "sappelli:41348",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 399,
+   "id": "sappelli:41367",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 400,
+   "id": "sappelli:41448",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 401,
+   "id": "sappelli:41475",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 402,
+   "id": "sappelli:41492",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 403,
+   "id": "sappelli:41531",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 404,
+   "id": "sappelli:41554",
+   "gold": "ignore",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 405,
+   "id": "sappelli:41601",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 406,
+   "id": "sappelli:41634",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 407,
+   "id": "sappelli:41650",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 408,
+   "id": "sappelli:41669",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 409,
+   "id": "sappelli:41672",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 410,
+   "id": "sappelli:41674",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 411,
+   "id": "sappelli:41708",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 412,
+   "id": "sappelli:41832",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 413,
+   "id": "sappelli:41837",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 414,
+   "id": "sappelli:41849",
+   "gold": "immediate reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 415,
+   "id": "sappelli:41854",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 416,
+   "id": "sappelli:41863",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 417,
+   "id": "sappelli:48901",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 418,
+   "id": "sappelli:49346",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 419,
+   "id": "sappelli:49367",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 420,
+   "id": "sappelli:49389",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 421,
+   "id": "sappelli:49419",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 422,
+   "id": "sappelli:49456",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 423,
+   "id": "sappelli:49480",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 424,
+   "id": "sappelli:49485",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 425,
+   "id": "sappelli:49600",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 426,
+   "id": "sappelli:49600",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 427,
+   "id": "sappelli:49624",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 428,
+   "id": "sappelli:49637",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 429,
+   "id": "sappelli:49648",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 430,
+   "id": "sappelli:49667",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 431,
+   "id": "sappelli:49710",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 432,
+   "id": "sappelli:49712",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 433,
+   "id": "sappelli:49790",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 434,
+   "id": "sappelli:49822",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 435,
+   "id": "sappelli:49854",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 436,
+   "id": "sappelli:49982",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 437,
+   "id": "sappelli:49995",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 438,
+   "id": "sappelli:50072",
+   "gold": "immediate reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 439,
+   "id": "sappelli:50094",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 440,
+   "id": "sappelli:50115",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 441,
+   "id": "sappelli:50118",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 442,
+   "id": "sappelli:50142",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 443,
+   "id": "sappelli:50232",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 444,
+   "id": "sappelli:68637",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 445,
+   "id": "sappelli:69542",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 446,
+   "id": "sappelli:69661",
+   "gold": "ignore",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 447,
+   "id": "sappelli:69688",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 448,
+   "id": "sappelli:69690",
+   "gold": "postponed reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 449,
+   "id": "sappelli:69696",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 450,
+   "id": "sappelli:69701",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 451,
+   "id": "sappelli:69802",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 452,
+   "id": "sappelli:69872",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 453,
+   "id": "sappelli:70113",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 454,
+   "id": "sappelli:70124",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 455,
+   "id": "sappelli:70129",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 456,
+   "id": "sappelli:70562",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 457,
+   "id": "sappelli:70563",
+   "gold": "ignore",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 458,
+   "id": "sappelli:70564",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 459,
+   "id": "sappelli:70654",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 460,
+   "id": "sappelli:71280",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 461,
+   "id": "sappelli:71422",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 462,
+   "id": "sappelli:73297",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 463,
+   "id": "sappelli:77400",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 464,
+   "id": "sappelli:77415",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 465,
+   "id": "sappelli:77443",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 466,
+   "id": "sappelli:77485",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 467,
+   "id": "sappelli:77520",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 468,
+   "id": "sappelli:77522",
+   "gold": "immediate reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 469,
+   "id": "sappelli:77566",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 470,
+   "id": "sappelli:77681",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 471,
+   "id": "sappelli:77694",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 472,
+   "id": "sappelli:77779",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 473,
+   "id": "sappelli:77834",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 474,
+   "id": "sappelli:77847",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 475,
+   "id": "sappelli:77881",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 476,
+   "id": "sappelli:77891",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 477,
+   "id": "sappelli:77930",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 478,
+   "id": "sappelli:78089",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 479,
+   "id": "sappelli:78125",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 480,
+   "id": "sappelli:78178",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 481,
+   "id": "sappelli:78240",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 482,
+   "id": "sappelli:78264",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 483,
+   "id": "sappelli:78280",
+   "gold": "immediate reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 484,
+   "id": "sappelli:78292",
+   "gold": "postponed reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 485,
+   "id": "sappelli:78334",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 486,
+   "id": "sappelli:78343",
+   "gold": "accountable non-answer",
+   "answer": "ignore",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 487,
+   "id": "sappelli:78408",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 488,
+   "id": "sappelli:8348",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 489,
+   "id": "sappelli:8356",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 490,
+   "id": "sappelli:8387",
+   "gold": "postponed reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 491,
+   "id": "sappelli:8392",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 492,
+   "id": "sappelli:8544",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 493,
+   "id": "sappelli:8631",
+   "gold": "postponed reply",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 494,
+   "id": "sappelli:8702",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 495,
+   "id": "sappelli:8782",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 496,
+   "id": "sappelli:8793",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 497,
+   "id": "sappelli:8803",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 498,
+   "id": "sappelli:8881",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 499,
+   "id": "sappelli:8974",
+   "gold": "postponed reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 500,
+   "id": "sappelli:8985",
+   "gold": "postponed reply",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 501,
+   "id": "sappelli:9085",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 502,
+   "id": "sappelli:9160",
+   "gold": "postponed reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 503,
+   "id": "sappelli:9302",
+   "gold": "immediate reply",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 504,
+   "id": "sappelli:9330",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 505,
+   "id": "sappelli:9339",
+   "gold": "accountable non-answer",
+   "answer": "immediate reply",
+   "finishReason": "stop",
+   "correct": false
+  },
+  {
+   "position": 506,
+   "id": "sappelli:94644",
+   "gold": "accountable non-answer",
+   "answer": "accountable non-answer",
+   "finishReason": "stop",
+   "correct": true
+  },
+  {
+   "position": 507,
+   "id": "sappelli:9647",
+   "gold": "accountable non-answer",
+   "answer": "postponed reply",
+   "finishReason": "stop",
+   "correct": false
+  }
+ ]
+}

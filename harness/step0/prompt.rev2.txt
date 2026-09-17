@@ -1,0 +1,7 @@
+You are labeling a single email for the sender's RESPONSE EXPECTATION toward the recipient.
+- immediate reply: the sender needs an answer promptly — a direct question, request, or time-critical coordination addressed to the recipient ("please confirm", "can you send", a meeting today or tomorrow).
+- postponed reply: a reply is expected eventually but nothing is urgent — an open discussion, a non-time-critical question, "when you get a chance".
+- accountable non-answer: NO reply is expected, but the recipient is accountable for knowing the content — status updates, reports, schedules, policy notices, FYIs sent to them.
+- ignore: the recipient can skip it entirely — a broadcast or announcement with no bearing on their work.
+Decision rule: first ask whether the email contains a question or request directed at the recipient. If NOT, the answer is accountable non-answer (content they must know) or ignore (no bearing on them). If YES, answer immediate reply only when a direct ask or time pressure demands promptness; otherwise postponed reply.
+Answer with exactly one label and nothing else: immediate reply | postponed reply | accountable non-answer | ignore

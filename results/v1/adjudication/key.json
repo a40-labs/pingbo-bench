@@ -1,0 +1,616 @@
+{
+ "seed": 1954,
+ "top_models": [
+  "claude-sonnet-4-6",
+  "gpt-5.6-sol",
+  "claude-fable-5",
+  "claude-opus-5",
+  "gpt-5.5",
+  "gpt-4.1",
+  "claude-opus-4-8",
+  "gpt-5.1"
+ ],
+ "source": "probes.v2.json",
+ "sheets": {
+  "S001": {
+   "id": "sappelli:29258",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S002": {
+   "id": "sappelli:32764",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S003": {
+   "id": "sappelli:69542",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S004": {
+   "id": "sappelli:49995",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S005": {
+   "id": "sappelli:70113",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S006": {
+   "id": "sappelli:305543",
+   "group": "disagree",
+   "gold": "immediate reply",
+   "models": "accountable non-answer"
+  },
+  "S007": {
+   "id": "sappelli:383712",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "ignore"
+  },
+  "S008": {
+   "id": "sappelli:259664",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "immediate reply"
+  },
+  "S009": {
+   "id": "sappelli:306123",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S010": {
+   "id": "sappelli:1490",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S011": {
+   "id": "sappelli:260699",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S012": {
+   "id": "sappelli:103938",
+   "group": "agree",
+   "gold": "ignore",
+   "models": "ignore"
+  },
+  "S013": {
+   "id": "sappelli:384376",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "ignore"
+  },
+  "S014": {
+   "id": "sappelli:140355",
+   "group": "disagree",
+   "gold": "immediate reply",
+   "models": "postponed reply"
+  },
+  "S015": {
+   "id": "sappelli:49667",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "ignore"
+  },
+  "S016": {
+   "id": "sappelli:9330",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S017": {
+   "id": "sappelli:11251",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "postponed reply"
+  },
+  "S018": {
+   "id": "sappelli:41672",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "immediate reply"
+  },
+  "S019": {
+   "id": "sappelli:108683",
+   "group": "agree",
+   "gold": "ignore",
+   "models": "ignore"
+  },
+  "S020": {
+   "id": "sappelli:117652",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S021": {
+   "id": "sappelli:306986",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S022": {
+   "id": "sappelli:105691",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S023": {
+   "id": "sappelli:1504",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "immediate reply"
+  },
+  "S024": {
+   "id": "sappelli:33233",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S025": {
+   "id": "sappelli:49982",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S026": {
+   "id": "sappelli:69802",
+   "group": "agree",
+   "gold": "immediate reply",
+   "models": "immediate reply"
+  },
+  "S027": {
+   "id": "sappelli:143264",
+   "group": "agree",
+   "gold": "immediate reply",
+   "models": "immediate reply"
+  },
+  "S028": {
+   "id": "sappelli:233503",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S029": {
+   "id": "sappelli:306164",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S030": {
+   "id": "sappelli:50072",
+   "group": "disagree",
+   "gold": "immediate reply",
+   "models": "postponed reply"
+  },
+  "S031": {
+   "id": "sappelli:49790",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "immediate reply"
+  },
+  "S032": {
+   "id": "sappelli:174949",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S033": {
+   "id": "sappelli:338265",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "postponed reply"
+  },
+  "S034": {
+   "id": "sappelli:109479",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "immediate reply"
+  },
+  "S035": {
+   "id": "sappelli:141108",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "accountable non-answer"
+  },
+  "S036": {
+   "id": "sappelli:106903",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "ignore"
+  },
+  "S037": {
+   "id": "sappelli:100865",
+   "group": "disagree",
+   "gold": "ignore",
+   "models": "accountable non-answer"
+  },
+  "S038": {
+   "id": "sappelli:249171",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "immediate reply"
+  },
+  "S039": {
+   "id": "sappelli:211161",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S040": {
+   "id": "sappelli:337436",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S041": {
+   "id": "sappelli:307132",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "accountable non-answer"
+  },
+  "S042": {
+   "id": "sappelli:77891",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S043": {
+   "id": "sappelli:175086",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S044": {
+   "id": "sappelli:77400",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S045": {
+   "id": "sappelli:384387",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "immediate reply"
+  },
+  "S046": {
+   "id": "sappelli:338077",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S047": {
+   "id": "sappelli:30709",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "immediate reply"
+  },
+  "S048": {
+   "id": "sappelli:338431",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S049": {
+   "id": "sappelli:321122",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S050": {
+   "id": "sappelli:321218",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S051": {
+   "id": "sappelli:78264",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S052": {
+   "id": "sappelli:78334",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S053": {
+   "id": "sappelli:28981",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S054": {
+   "id": "sappelli:383916",
+   "group": "agree",
+   "gold": "immediate reply",
+   "models": "immediate reply"
+  },
+  "S055": {
+   "id": "sappelli:50142",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S056": {
+   "id": "sappelli:160877",
+   "group": "disagree",
+   "gold": "ignore",
+   "models": "accountable non-answer"
+  },
+  "S057": {
+   "id": "sappelli:173378",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "ignore"
+  },
+  "S058": {
+   "id": "sappelli:259561",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S059": {
+   "id": "sappelli:177370",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "immediate reply"
+  },
+  "S060": {
+   "id": "sappelli:384548",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "ignore"
+  },
+  "S061": {
+   "id": "sappelli:321121",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S062": {
+   "id": "sappelli:210988",
+   "group": "disagree",
+   "gold": "ignore",
+   "models": "accountable non-answer"
+  },
+  "S063": {
+   "id": "sappelli:41554",
+   "group": "disagree",
+   "gold": "ignore",
+   "models": "accountable non-answer"
+  },
+  "S064": {
+   "id": "sappelli:187822",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S065": {
+   "id": "sappelli:141681",
+   "group": "agree",
+   "gold": "postponed reply",
+   "models": "postponed reply"
+  },
+  "S066": {
+   "id": "sappelli:379926",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S067": {
+   "id": "sappelli:173368",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "immediate reply"
+  },
+  "S068": {
+   "id": "sappelli:177189",
+   "group": "agree",
+   "gold": "immediate reply",
+   "models": "immediate reply"
+  },
+  "S069": {
+   "id": "sappelli:29534",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "ignore"
+  },
+  "S070": {
+   "id": "sappelli:211125",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S071": {
+   "id": "sappelli:135297",
+   "group": "disagree",
+   "gold": "immediate reply",
+   "models": "accountable non-answer"
+  },
+  "S072": {
+   "id": "sappelli:71280",
+   "group": "agree",
+   "gold": "immediate reply",
+   "models": "immediate reply"
+  },
+  "S073": {
+   "id": "sappelli:78292",
+   "group": "agree",
+   "gold": "postponed reply",
+   "models": "postponed reply"
+  },
+  "S074": {
+   "id": "sappelli:181234",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "ignore"
+  },
+  "S075": {
+   "id": "sappelli:181400",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S076": {
+   "id": "sappelli:384542",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "ignore"
+  },
+  "S077": {
+   "id": "sappelli:143179",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S078": {
+   "id": "sappelli:233493",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S079": {
+   "id": "sappelli:104556",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S080": {
+   "id": "sappelli:49648",
+   "group": "agree",
+   "gold": "immediate reply",
+   "models": "immediate reply"
+  },
+  "S081": {
+   "id": "sappelli:307069",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "postponed reply"
+  },
+  "S082": {
+   "id": "sappelli:78408",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S083": {
+   "id": "sappelli:30817",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "ignore"
+  },
+  "S084": {
+   "id": "sappelli:338254",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S085": {
+   "id": "sappelli:30928",
+   "group": "agree",
+   "gold": "ignore",
+   "models": "ignore"
+  },
+  "S086": {
+   "id": "sappelli:177333",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "immediate reply"
+  },
+  "S087": {
+   "id": "sappelli:321477",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S088": {
+   "id": "sappelli:249055",
+   "group": "disagree",
+   "gold": "immediate reply",
+   "models": "postponed reply"
+  },
+  "S089": {
+   "id": "sappelli:69688",
+   "group": "agree",
+   "gold": "immediate reply",
+   "models": "immediate reply"
+  },
+  "S090": {
+   "id": "sappelli:117625",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S091": {
+   "id": "sappelli:143779",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S092": {
+   "id": "sappelli:249778",
+   "group": "disagree",
+   "gold": "immediate reply",
+   "models": "postponed reply"
+  },
+  "S093": {
+   "id": "sappelli:49419",
+   "group": "disagree",
+   "gold": "accountable non-answer",
+   "models": "immediate reply"
+  },
+  "S094": {
+   "id": "sappelli:110530",
+   "group": "agree",
+   "gold": "ignore",
+   "models": "ignore"
+  },
+  "S095": {
+   "id": "sappelli:105421",
+   "group": "disagree",
+   "gold": "immediate reply",
+   "models": "postponed reply"
+  },
+  "S096": {
+   "id": "sappelli:1483",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "immediate reply"
+  },
+  "S097": {
+   "id": "sappelli:259989",
+   "group": "disagree",
+   "gold": "postponed reply",
+   "models": "accountable non-answer"
+  },
+  "S098": {
+   "id": "sappelli:104532",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S099": {
+   "id": "sappelli:306610",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  },
+  "S100": {
+   "id": "sappelli:321270",
+   "group": "agree",
+   "gold": "accountable non-answer",
+   "models": "accountable non-answer"
+  }
+ }
+}

@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+message: >-
+  If you use this benchmark, cite it as below. Cite the Sappelli et al. (2016) dataset its
+  labels come from as well.
+title: pingbo-bench
+abstract: >-
+  The benchmark behind the A40 Labs article "How Pingbo Decides What Matters": 32 models decide
+  whether each of 508 annotated Enron work emails needs a reply, at four steps from a bare prompt
+  to the pipeline Pingbo ships.
+type: dataset
+version: "1.0"
+license:
+  - Apache-2.0
+  - CC-BY-4.0
+authors:
+  - name: A40 Labs
+repository-code: https://github.com/a40-labs/pingbo-bench
+url: https://pingbo.ai/blog/measuring-which-emails-need-you
+keywords:
+  - email
+  - benchmark
+  - large language models
+  - reply prediction
+references:
+  - type: blog
+    title: How Pingbo Decides What Matters
+    authors:
+      - family-names: Chang
+        given-names: Ping-Lin
+    publisher:
+      name: A40 Labs
+    date-published: 2026-09-17
+    url: https://pingbo.ai/blog/measuring-which-emails-need-you
+  - type: article
+    title: Assessing e-mail intent and tasks in e-mail messages
+    authors:
+      - family-names: Sappelli
+        given-names: Maya
+      - family-names: Pasi
+        given-names: Gabriella
+      - family-names: Verberne
+        given-names: Suzan
+      - family-names: de Boer
+        given-names: Maaike
+      - family-names: Kraaij
+        given-names: Wessel
+    journal: Information Sciences
+    year: 2016
+    url: https://www.sciencedirect.com/science/article/pii/S0020025516301438
+    repository: http://cs.ru.nl/~msappelli/data/

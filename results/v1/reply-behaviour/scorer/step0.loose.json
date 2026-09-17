@@ -1,0 +1,505 @@
+{
+ "arm": "step0",
+ "observability": "loose",
+ "models": [
+  {
+   "model": "claude-sonnet-4-6",
+   "accuracy": 0.6811023622047244
+  },
+  {
+   "model": "gpt-5.5",
+   "accuracy": 0.6633858267716536
+  },
+  {
+   "model": "gpt-5.4",
+   "accuracy": 0.6535433070866141
+  },
+  {
+   "model": "gpt-4.1",
+   "accuracy": 0.6496062992125984
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "accuracy": 0.6496062992125984
+  },
+  {
+   "model": "claude-opus-5",
+   "accuracy": 0.6437007874015748
+  },
+  {
+   "model": "claude-fable-5",
+   "accuracy": 0.6338582677165354
+  },
+  {
+   "model": "claude-opus-4-8",
+   "accuracy": 0.6200787401574803
+  }
+ ],
+ "seed": 1610,
+ "behaviourCounts": {
+  "probes": 508,
+  "probesWithoutQuoteNeedle": 43,
+  "probesWithoutDate": 0,
+  "observable": 491,
+  "unobservable": 17,
+  "observableStrict": 257,
+  "withCustodianRecipient": 491,
+  "withRosterRecipient": 209,
+  "withSenderOnRoster": 423,
+  "repliedByRecipient": 115,
+  "repliedByQuote": 43,
+  "repliedBySubject": 114,
+  "anyReply": 153,
+  "matchesOutsideWindow": 1795,
+  "dumpMessages": 252759,
+  "dumpCustodianAddresses": 297,
+  "dumpReferenceRows": 54778,
+  "dumpReferenceRowsMatched": 263
+ },
+ "derivedFrom": {
+  "probes": "probes.v2.json",
+  "dump": "enron-mysqldump_v5.sql.gz",
+  "dumpSha256": "5e815af345a3207140c20ed010c1c0e89d739fa8173ab616268c47a438f54f6a"
+ },
+ "counts": {
+  "probes": 508,
+  "observable": 491,
+  "unanimousContested": 52,
+  "unanimousContestedIds": 52,
+  "unanimousAgreed": 219,
+  "control": 37,
+  "controlShortfall": {
+   "postponed reply": 15
+  },
+  "consensusTies": 20
+ },
+ "goldCrosstab": {
+  "ignore": {
+   "fast": 12,
+   "slow": 0,
+   "none": 32,
+   "unobservable": 0
+  },
+  "accountable non-answer": {
+   "fast": 41,
+   "slow": 6,
+   "none": 229,
+   "unobservable": 0
+  },
+  "immediate reply": {
+   "fast": 27,
+   "slow": 4,
+   "none": 77,
+   "unobservable": 0
+  },
+  "postponed reply": {
+   "fast": 19,
+   "slow": 6,
+   "none": 38,
+   "unobservable": 0
+  }
+ },
+ "consensusCrosstab": {
+  "accountable non-answer": {
+   "fast": 39,
+   "slow": 6,
+   "none": 187,
+   "unobservable": 0
+  },
+  "ignore": {
+   "fast": 12,
+   "slow": 0,
+   "none": 33,
+   "unobservable": 0
+  },
+  "immediate reply": {
+   "fast": 34,
+   "slow": 9,
+   "none": 97,
+   "unobservable": 0
+  },
+  "postponed reply": {
+   "fast": 11,
+   "slow": 1,
+   "none": 43,
+   "unobservable": 0
+  }
+ },
+ "contested": {
+  "n": 51,
+  "goldOnly": 14,
+  "modelOnly": 11,
+  "both": 12,
+  "neither": 14,
+  "goldRate": 0.5098039215686274,
+  "modelRate": 0.45098039215686275,
+  "goldCI": {
+   "lo": 0.37254901960784315,
+   "hi": 0.6470588235294118
+  },
+  "modelCI": {
+   "lo": 0.3137254901960784,
+   "hi": 0.5882352941176471
+  },
+  "delta": 0.058823529411764705,
+  "deltaCI": {
+   "lo": -0.13725490196078433,
+   "hi": 0.2549019607843137
+  },
+  "p": 0.6900379657745359,
+  "discordant": 25
+ },
+ "control": {
+  "n": 35,
+  "goldOnly": 0,
+  "modelOnly": 0,
+  "both": 20,
+  "neither": 15,
+  "goldRate": 0.5714285714285714,
+  "modelRate": 0.5714285714285714,
+  "goldCI": {
+   "lo": 0.4,
+   "hi": 0.7428571428571429
+  },
+  "modelCI": {
+   "lo": 0.4,
+   "hi": 0.7428571428571429
+  },
+  "delta": 0,
+  "deltaCI": {
+   "lo": 0,
+   "hi": 0
+  },
+  "p": 1,
+  "discordant": 0
+ },
+ "levels": {
+  "gold": {
+   "a": {
+    "n": 51,
+    "k": 26,
+    "rate": 0.5098039215686274
+   },
+   "b": {
+    "n": 35,
+    "k": 20,
+    "rate": 0.5714285714285714
+   },
+   "diff": -0.06162464985994398,
+   "ci": {
+    "lo": -0.2756302521008403,
+    "hi": 0.15798319327731092
+   }
+  },
+  "consensus": {
+   "a": {
+    "n": 51,
+    "k": 23,
+    "rate": 0.45098039215686275
+   },
+   "b": {
+    "n": 35,
+    "k": 20,
+    "rate": 0.5714285714285714
+   },
+   "diff": -0.12044817927170864,
+   "ci": {
+    "lo": -0.33109243697478996,
+    "hi": 0.10084033613445381
+   }
+  }
+ },
+ "replySeparation": {
+  "gold": {
+   "a": {
+    "n": 171,
+    "k": 56,
+    "rate": 0.32748538011695905
+   },
+   "b": {
+    "n": 320,
+    "k": 59,
+    "rate": 0.184375
+   },
+   "diff": 0.14311038011695904,
+   "ci": {
+    "lo": 0.06164108187134501,
+    "hi": 0.22386695906432746
+   }
+  },
+  "consensus": {
+   "a": {
+    "n": 195,
+    "k": 55,
+    "rate": 0.28205128205128205
+   },
+   "b": {
+    "n": 277,
+    "k": 57,
+    "rate": 0.20577617328519857
+   },
+   "diff": 0.07627510876608348,
+   "ci": {
+    "lo": -0.004258076460242538,
+    "hi": 0.15643802647412755
+   }
+  }
+ },
+ "needsYouSignal": {
+  "vsGoldImmediate": {
+   "n": 491,
+   "agreement": 0.6883910386965377,
+   "majorityBaseline": 0.7800407331975561,
+   "positiveRate": 0.219959266802444,
+   "signalRate": 0.20162932790224034,
+   "truePositive": 27,
+   "falsePositive": 72,
+   "falseNegative": 81,
+   "trueNegative": 311
+  },
+  "vsConsensusImmediate": {
+   "n": 472,
+   "agreement": 0.6440677966101694,
+   "majorityBaseline": 0.7033898305084746,
+   "positiveRate": 0.2966101694915254,
+   "signalRate": 0.2033898305084746,
+   "truePositive": 34,
+   "falsePositive": 62,
+   "falseNegative": 106,
+   "trueNegative": 270
+  }
+ },
+ "sensitivity": [
+  {
+   "fastCutHours": 4,
+   "gold": {
+    "ignore": {
+     "fast": 11,
+     "slow": 1,
+     "none": 32,
+     "unobservable": 0
+    },
+    "accountable non-answer": {
+     "fast": 37,
+     "slow": 10,
+     "none": 229,
+     "unobservable": 0
+    },
+    "immediate reply": {
+     "fast": 17,
+     "slow": 14,
+     "none": 77,
+     "unobservable": 0
+    },
+    "postponed reply": {
+     "fast": 13,
+     "slow": 12,
+     "none": 38,
+     "unobservable": 0
+    }
+   },
+   "contested": {
+    "n": 51,
+    "goldOnly": 14,
+    "modelOnly": 10,
+    "both": 12,
+    "neither": 15,
+    "goldRate": 0.5098039215686274,
+    "modelRate": 0.43137254901960786,
+    "goldCI": {
+     "lo": 0.37254901960784315,
+     "hi": 0.6470588235294118
+    },
+    "modelCI": {
+     "lo": 0.29411764705882354,
+     "hi": 0.5686274509803921
+    },
+    "delta": 0.0784313725490196,
+    "deltaCI": {
+     "lo": -0.09803921568627451,
+     "hi": 0.27450980392156865
+    },
+    "p": 0.5412561893463145,
+    "discordant": 24
+   },
+   "control": {
+    "n": 35,
+    "goldOnly": 0,
+    "modelOnly": 0,
+    "both": 18,
+    "neither": 17,
+    "goldRate": 0.5142857142857142,
+    "modelRate": 0.5142857142857142,
+    "goldCI": {
+     "lo": 0.34285714285714286,
+     "hi": 0.6857142857142857
+    },
+    "modelCI": {
+     "lo": 0.34285714285714286,
+     "hi": 0.6857142857142857
+    },
+    "delta": 0,
+    "deltaCI": {
+     "lo": 0,
+     "hi": 0
+    },
+    "p": 1,
+    "discordant": 0
+   }
+  },
+  {
+   "fastCutHours": 24,
+   "gold": {
+    "ignore": {
+     "fast": 12,
+     "slow": 0,
+     "none": 32,
+     "unobservable": 0
+    },
+    "accountable non-answer": {
+     "fast": 41,
+     "slow": 6,
+     "none": 229,
+     "unobservable": 0
+    },
+    "immediate reply": {
+     "fast": 27,
+     "slow": 4,
+     "none": 77,
+     "unobservable": 0
+    },
+    "postponed reply": {
+     "fast": 19,
+     "slow": 6,
+     "none": 38,
+     "unobservable": 0
+    }
+   },
+   "contested": {
+    "n": 51,
+    "goldOnly": 14,
+    "modelOnly": 11,
+    "both": 12,
+    "neither": 14,
+    "goldRate": 0.5098039215686274,
+    "modelRate": 0.45098039215686275,
+    "goldCI": {
+     "lo": 0.37254901960784315,
+     "hi": 0.6470588235294118
+    },
+    "modelCI": {
+     "lo": 0.3137254901960784,
+     "hi": 0.5882352941176471
+    },
+    "delta": 0.058823529411764705,
+    "deltaCI": {
+     "lo": -0.13725490196078433,
+     "hi": 0.2549019607843137
+    },
+    "p": 0.6900379657745359,
+    "discordant": 25
+   },
+   "control": {
+    "n": 35,
+    "goldOnly": 0,
+    "modelOnly": 0,
+    "both": 20,
+    "neither": 15,
+    "goldRate": 0.5714285714285714,
+    "modelRate": 0.5714285714285714,
+    "goldCI": {
+     "lo": 0.4,
+     "hi": 0.7428571428571429
+    },
+    "modelCI": {
+     "lo": 0.4,
+     "hi": 0.7428571428571429
+    },
+    "delta": 0,
+    "deltaCI": {
+     "lo": 0,
+     "hi": 0
+    },
+    "p": 1,
+    "discordant": 0
+   }
+  },
+  {
+   "fastCutHours": 72,
+   "gold": {
+    "ignore": {
+     "fast": 12,
+     "slow": 0,
+     "none": 32,
+     "unobservable": 0
+    },
+    "accountable non-answer": {
+     "fast": 45,
+     "slow": 2,
+     "none": 229,
+     "unobservable": 0
+    },
+    "immediate reply": {
+     "fast": 30,
+     "slow": 1,
+     "none": 77,
+     "unobservable": 0
+    },
+    "postponed reply": {
+     "fast": 23,
+     "slow": 2,
+     "none": 38,
+     "unobservable": 0
+    }
+   },
+   "contested": {
+    "n": 51,
+    "goldOnly": 14,
+    "modelOnly": 11,
+    "both": 12,
+    "neither": 14,
+    "goldRate": 0.5098039215686274,
+    "modelRate": 0.45098039215686275,
+    "goldCI": {
+     "lo": 0.37254901960784315,
+     "hi": 0.6470588235294118
+    },
+    "modelCI": {
+     "lo": 0.3137254901960784,
+     "hi": 0.5882352941176471
+    },
+    "delta": 0.058823529411764705,
+    "deltaCI": {
+     "lo": -0.13725490196078433,
+     "hi": 0.2549019607843137
+    },
+    "p": 0.6900379657745359,
+    "discordant": 25
+   },
+   "control": {
+    "n": 35,
+    "goldOnly": 0,
+    "modelOnly": 0,
+    "both": 20,
+    "neither": 15,
+    "goldRate": 0.5714285714285714,
+    "modelRate": 0.5714285714285714,
+    "goldCI": {
+     "lo": 0.4,
+     "hi": 0.7428571428571429
+    },
+    "modelCI": {
+     "lo": 0.4,
+     "hi": 0.7428571428571429
+    },
+    "delta": 0,
+    "deltaCI": {
+     "lo": 0,
+     "hi": 0
+    },
+    "p": 1,
+    "discordant": 0
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "scored_at": "2026-09-05",
+ "judge": "Fable 5.1 in-session, blind",
+ "summary": {
+  "disagree": {
+   "n": 57,
+   "judge_eq_gold": 5,
+   "judge_eq_models": 45,
+   "neither": 7
+  },
+  "agree": {
+   "n": 43,
+   "judge_eq_gold": 43,
+   "judge_eq_models": 43,
+   "neither": 0
+  }
+ },
+ "binomial_p": 4.209852022540872e-09,
+ "ci": [
+  0.5263157894736843,
+  0.8596491228070176
+ ]
+}

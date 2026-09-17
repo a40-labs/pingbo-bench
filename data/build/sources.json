@@ -1,0 +1,22 @@
+{
+ "version": "v1",
+ "inputs": {
+  "annotations": {
+   "url": "https://cs.ru.nl/~msappelli/data/AllDataENRON-transposed-final.csv",
+   "file": "AllDataENRON-transposed-final.csv",
+   "sha256": "2b90354a06295510ff69b6184fb9e4ea718b45257f18bf0b1499b17ee868a0b9",
+   "bytes": 370266
+  },
+  "dump": {
+   "url": "https://www.ah-ruhe.de/pub/R/data/enron-mysqldump_v5.sql.gz",
+   "file": "enron-mysqldump_v5.sql.gz",
+   "sha256": "5e815af345a3207140c20ed010c1c0e89d739fa8173ab616268c47a438f54f6a",
+   "bytes": 178317104
+  }
+ },
+ "outputs": {
+  "probes.json": "ef51dae101dcd3e8bbd500b2e2d3d69644bfd9b22832f88d5c4b4e736a69b3aa",
+  "probes.v2.json": "d8e205c5a66a60d8cbe0126d79b0a2b0712cc149bf1edbc3c00feeaad4346a53",
+  "adjudication/SHEETS.md": "8dcee2a474383e2e0b03a06a6d66decd3f386438123c09aea78f8d38edba0dba"
+ }
+}

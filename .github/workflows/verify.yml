@@ -1,0 +1,44 @@
+name: verify
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Monthly, so a source that moves out from under the build is found here rather than by a
+    # reader. The rebuild downloads 178 MB, which is why it does not run on every push.
+    - cron: "0 5 1 * *"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    # Runs only while the repository is public, on GitHub-hosted runners.
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run verify
+
+  data:
+    # The rebuild fetches the annotation file and the Enron dump from their original hosts and
+    # checks both, then the rebuilt emails and sheets, against the hashes this release pins. Run
+    # by hand, and once a month.
+    if: ${{ !github.event.repository.private && (github.event_name == 'workflow_dispatch' || github.event_name == 'schedule') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build:data
+      - run: npm run verify
