@@ -30,6 +30,7 @@ const PROMPT_ARMS = new Set<ArmDir>(["step0", "step0-subject-body"]);
  *  file, not an absence of evidence, so it fails rather than being skipped. */
 const REQUIRED_METRICS = {
   prompt: ["total", "decided", "unparsed", "correct", "accuracy", "macroRecall", "majorityClassFloor"],
+  // `perClass` is an array, checked entry by entry below rather than as a block of counts.
   pipeline: [
     "total",
     "decided",
@@ -172,7 +173,47 @@ export function validateReports(ctx: Context): StructureReport {
       if (metrics.unparsed !== verdicts.length - decided) {
         say(`metrics unparsed ${JSON.stringify(metrics.unparsed)}, the rows give ${verdicts.length - decided}`);
       }
+      const close = (a: unknown, b: number, name: string): void => {
+        if (typeof a !== "number" || Math.abs(a - b) > 1e-9) say(`metrics ${name} ${JSON.stringify(a)}, the rows give ${b}`);
+      };
       if (prompt) {
+        // Every rate is recomputed too: a rate is where a wrong number hides best, since nothing
+        // about it looks out of place.
+        const classes = new Map<string, { support: number; predicted: number; correct: number }>();
+        const of = (label: string) => {
+          const entry = classes.get(label) ?? { support: 0, predicted: 0, correct: 0 };
+          classes.set(label, entry);
+          return entry;
+        };
+        for (const v of verdicts) {
+          of(v.gold).support += 1;
+          if (v.answer === null) continue;
+          of(v.answer).predicted += 1;
+          if (v.answer === v.gold) of(v.gold).correct += 1;
+        }
+        const perClass = [...classes.entries()].map(([label, c]) => ({
+          label,
+          ...c,
+          recall: c.support === 0 ? 0 : c.correct / c.support,
+          precision: c.predicted === 0 ? 0 : c.correct / c.predicted
+        }));
+        if (!Array.isArray(metrics.perClass)) say(`metrics perClass is ${JSON.stringify(metrics.perClass)}, not a list`);
+        const stored = new Map(((Array.isArray(metrics.perClass) ? metrics.perClass : []) as Array<{ label: string }>).map((e) => [e.label, e as Record<string, unknown>]));
+        for (const want of perClass) {
+          const got = stored.get(want.label);
+          if (got === undefined) {
+            say(`metrics perClass has no ${want.label}`);
+            continue;
+          }
+          for (const field of ["support", "predicted", "correct", "recall", "precision"] as const) {
+            close(got[field], want[field], `perClass.${want.label}.${field}`);
+          }
+        }
+        for (const label of stored.keys()) {
+          if (!classes.has(label)) say(`metrics perClass carries ${label}, which no row does`);
+        }
+        close(metrics.macroRecall, perClass.reduce((sum, c) => sum + c.recall, 0) / perClass.length, "macroRecall");
+        close(metrics.majorityClassFloor, Math.max(...perClass.map((c) => c.support)) / verdicts.length, "majorityClassFloor");
         const confusion: Record<string, Record<string, number>> = {};
         for (const v of verdicts) {
           const row = (confusion[v.gold] ??= {});
@@ -192,6 +233,16 @@ export function validateReports(ctx: Context): StructureReport {
           say(`metrics support ${JSON.stringify(metrics.support)}, the labels give ${JSON.stringify(support)}`);
         }
         if (metrics.floorCount !== support.waiting) say(`metrics floorCount ${JSON.stringify(metrics.floorCount)}, the labels give ${support.waiting}`);
+        const hit = (which: "needsYou" | "waiting"): number => {
+          const rows = verdicts.filter((v, i) => (labels[i]?.label2 === NEEDS_REPLY) === (which === "needsYou"));
+          return rows.length === 0 ? 0 : rows.filter((v) => v.correct).length / rows.length;
+        };
+        const needsYouRecall = hit("needsYou");
+        const waitingRecall = hit("waiting");
+        close(metrics.needsYouRecall, needsYouRecall, "needsYouRecall");
+        close(metrics.waitingRecall, waitingRecall, "waitingRecall");
+        close(metrics.macroRecall, (needsYouRecall + waitingRecall) / 2, "macroRecall");
+        close(metrics.majorityClassFloor, Math.max(support.needsYou, support.waiting) / verdicts.length, "majorityClassFloor");
         for (const [field, name] of [
           ["home", "home"],
           ["judgment", "judgment"]
