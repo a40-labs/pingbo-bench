@@ -59,7 +59,8 @@
   },
   "errorsByCode": {
    "abandoned_after_retries": 3
-  }
+  },
+  "refusals": {}
  },
  "verdicts": [
   {

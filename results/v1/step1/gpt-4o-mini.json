@@ -56,7 +56,8 @@
   },
   "errorsByCode": {
    "verdict_schema_rejected": 282
-  }
+  },
+  "refusals": {}
  },
  "verdicts": [
   {

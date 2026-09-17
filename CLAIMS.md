@@ -1,6 +1,6 @@
 # Claims
 
-Every number in [How Pingbo Decides What Matters](https://pingbo.ai/blog/measuring-which-emails-need-you), release v1: 575 claims, 567 reproducible, 2 not reproducible, 6 context.
+Every number in [How Pingbo Decides What Matters](https://pingbo.ai/blog/measuring-which-emails-need-you), release v1: 578 claims, 570 reproducible, 2 not reproducible, 6 context.
 Generated from `claims/claims.json`; `npm run verify` checks them all.
 
 | Status | Meaning |
@@ -84,10 +84,12 @@ Generated from `claims/claims.json`; `npm run verify` checks them all.
 | `table1.addedShown` | The second row shows 241 emails where the first shows 133, so 108 more | 108 | Missing emails, or fewer interruptions | reproducible | `npm run verify -- --id table1.addedShown` |
 | `table1.addedOwed` | The annotators agree that 31 of them owed a reply | 31 | Missing emails, or fewer interruptions | reproducible | `npm run verify -- --id table1.addedOwed` |
 | `table1.addedNotOwed` | The remaining 77 count as wrong | 77 | Missing emails, or fewer interruptions | reproducible | `npm run verify -- --id table1.addedNotOwed` |
-| `waiting.size` | 508 − 241 = 267 land in Waiting | 267 | Missing emails, or fewer interruptions | reproducible | `npm run verify -- --id waiting.size` |
-| `waiting.missed` | 179 − 150 = 29 owed one and went to Waiting anyway | 29 | Missing emails, or fewer interruptions | reproducible | `npm run verify -- --id waiting.missed` |
-| `waiting.quiet` | 267 − 29 = 238 genuinely needed nothing | 238 | Missing emails, or fewer interruptions | reproducible | `npm run verify -- --id waiting.quiet` |
-| `waiting.quietShare` | About nine in ten of what lands in Waiting is correctly quiet | 0.9 | Missing emails, or fewer interruptions | reproducible | `npm run verify -- --id waiting.quietShare` |
+| `waiting.size` | the other 267 stay off the Needs you list | 267 | Missing emails, or fewer interruptions | reproducible | `npm run verify -- --id waiting.size` |
+| `waiting.missed` | 29 owed a reply and were left off anyway | 29 | Missing emails, or fewer interruptions | reproducible | `npm run verify -- --id waiting.missed` |
+| `waiting.quiet` | the other 238 were labelled as owing no reply | 238 | Missing emails, or fewer interruptions | reproducible | `npm run verify -- --id waiting.quiet` |
+| `waiting.lanes` | 46 sit in Waiting, 124 in Done | 46 | Missing emails, or fewer interruptions | reproducible | `npm run verify -- --id waiting.lanes` |
+| `waiting.done` | 124 in Done | 124 | Missing emails, or fewer interruptions | reproducible | `npm run verify -- --id waiting.done` |
+| `waiting.screened` | 95 never became Matters at all | 95 | Missing emails, or fewer interruptions | reproducible | `npm run verify -- --id waiting.screened` |
 | `annotators.fourWayAgreed` | they had agreed on only 508 of the 1,145 | 508 | Appendix | reproducible, needs `build:data` | `npm run verify -- --id annotators.fourWayAgreed` |
 | `annotators.fourWayShare` | 44% of the time | 44 | Appendix | reproducible, needs `build:data` | `npm run verify -- --id annotators.fourWayShare` |
 | `fourway.pairwise` | any two of the eight … gave the same answer 78% of the time | 78 | Appendix | reproducible | `npm run verify -- --id fourway.pairwise` |
@@ -133,7 +135,8 @@ Generated from `claims/claims.json`; `npm run verify` checks them all.
 | `reply.consensus.looseGap` | and 5.5 points | 5.5 | Appendix | reproducible | `npm run verify -- --id reply.consensus.looseGap` |
 | `reply.sameEmails` | compared on the same emails, the dataset's larger gap holds up only when all 491 are counted |  | Appendix | not-reproducible | No stored paired test of the dataset's gap against the models' gap exists, and the article gives no number for it; the two gaps and their intervals above are reproducible. |
 | `doubt.flips` | On 24 of the 100 adjudicated emails the judge's answer flips whether a reply is owed | 24 | Appendix | reproducible | `npm run verify -- --id doubt.flips` |
-| `doubt.share` | That is about 5% | 5 | Appendix | reproducible | `npm run verify -- --id doubt.share` |
+| `doubt.share` | Those 24 are 4.7% of the 508 we grade on | 4.7 | Appendix | reproducible | `npm run verify -- --id doubt.share` |
+| `doubt.unread` | the other 408 emails were never re-read | 408 | Appendix; METHODS | reproducible | `npm run verify -- --id doubt.unread` |
 | `files.probesV2` | the 508-email test set (probes.v2.json) | d8e205c5a66a60d8cbe0126d79b0a2b0712cc149bf1edbc3c00feeaad4346a53 | Every Step 0 to 3 result | reproducible, needs `build:data` | `npm run verify -- --id files.probesV2` |
 | `files.probesV1` | the subject-and-body test set (probes.json) | ef51dae101dcd3e8bbd500b2e2d3d69644bfd9b22832f88d5c4b4e736a69b3aa | Appendix (four-way reading) | reproducible, needs `build:data` | `npm run verify -- --id files.probesV1` |
 | `files.sheets` | the 100 blind adjudication sheets | 8dcee2a474383e2e0b03a06a6d66decd3f386438123c09aea78f8d38edba0dba | Appendix | reproducible, needs `build:data` | `npm run verify -- --id files.sheets` |

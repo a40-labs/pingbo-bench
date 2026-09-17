@@ -60,7 +60,8 @@
   "errorsByCode": {
    "abandoned_after_retries": 2,
    "sorting_schema_rejected": 6
-  }
+  },
+  "refusals": {}
  },
  "verdicts": [
   {

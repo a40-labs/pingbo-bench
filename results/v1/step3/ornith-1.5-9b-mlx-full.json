@@ -62,7 +62,8 @@
    "abandoned_after_retries": 1,
    "verdict_schema_rejected": 4,
    "verdict_no_json_object": 1
-  }
+  },
+  "refusals": {}
  },
  "verdicts": [
   {

@@ -60,7 +60,8 @@
    "abandoned_after_retries": 2,
    "sorting_schema_rejected": 12,
    "verdict_schema_rejected": 2
-  }
+  },
+  "refusals": {}
  },
  "verdicts": [
   {

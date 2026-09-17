@@ -59,7 +59,8 @@
   },
   "errorsByCode": {
    "verdict_invalid_json": 1
-  }
+  },
+  "refusals": {}
  },
  "verdicts": [
   {

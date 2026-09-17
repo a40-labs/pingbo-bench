@@ -61,7 +61,8 @@
    "abandoned_after_retries": 2,
    "sorting_http_502": 1,
    "sorting_schema_rejected": 2
-  }
+  },
+  "refusals": {}
  },
  "verdicts": [
   {

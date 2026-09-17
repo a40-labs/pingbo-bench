@@ -58,7 +58,8 @@
   },
   "errorsByCode": {
    "sorting_http_502": 1
-  }
+  },
+  "refusals": {}
  },
  "verdicts": [
   {

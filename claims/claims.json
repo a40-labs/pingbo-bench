@@ -907,7 +907,7 @@
   {
    "status": "reproducible",
    "id": "waiting.size",
-   "text": "508 − 241 = 267 land in Waiting",
+   "text": "the other 267 stay off the Needs you list",
    "where": "Missing emails, or fewer interruptions",
    "value": 267,
    "metric": "table1.waiting",
@@ -920,7 +920,7 @@
   {
    "status": "reproducible",
    "id": "waiting.missed",
-   "text": "179 − 150 = 29 owed one and went to Waiting anyway",
+   "text": "29 owed a reply and were left off anyway",
    "where": "Missing emails, or fewer interruptions",
    "value": 29,
    "metric": "table1.waiting",
@@ -933,7 +933,7 @@
   {
    "status": "reproducible",
    "id": "waiting.quiet",
-   "text": "267 − 29 = 238 genuinely needed nothing",
+   "text": "the other 238 were labelled as owing no reply",
    "where": "Missing emails, or fewer interruptions",
    "value": 238,
    "metric": "table1.waiting",
@@ -945,16 +945,56 @@
   },
   {
    "status": "reproducible",
-   "id": "waiting.quietShare",
-   "text": "About nine in ten of what lands in Waiting is correctly quiet",
+   "id": "waiting.lanes",
+   "text": "46 sit in Waiting, 124 in Done",
    "where": "Missing emails, or fewer interruptions",
-   "value": 0.9,
-   "decimals": 1,
-   "metric": "table1.waiting",
+   "value": 46,
+   "metric": "verdicts.count",
    "args": {
+    "step": "step3",
     "model": "gpt-5.5",
-    "setting": "ships",
-    "field": "quietShare"
+    "where": [
+     [
+      "judgment",
+      "waiting"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "waiting.done",
+   "text": "124 in Done",
+   "where": "Missing emails, or fewer interruptions",
+   "value": 124,
+   "metric": "verdicts.count",
+   "args": {
+    "step": "step3",
+    "model": "gpt-5.5",
+    "where": [
+     [
+      "judgment",
+      "done"
+     ]
+    ]
+   }
+  },
+  {
+   "status": "reproducible",
+   "id": "waiting.screened",
+   "text": "95 never became Matters at all",
+   "where": "Missing emails, or fewer interruptions",
+   "value": 95,
+   "metric": "verdicts.count",
+   "args": {
+    "step": "step3",
+    "model": "gpt-5.5",
+    "not": [
+     [
+      "home",
+      "matter"
+     ]
+    ]
    }
   },
   {
@@ -1482,11 +1522,19 @@
   {
    "status": "reproducible",
    "id": "doubt.share",
-   "text": "That is about 5%",
+   "text": "Those 24 are 4.7% of the 508 we grade on",
    "where": "Appendix",
-   "value": 5,
-   "decimals": 0,
+   "value": 4.7,
+   "decimals": 1,
    "metric": "adjudication.replyFlipShare"
+  },
+  {
+   "status": "reproducible",
+   "id": "doubt.unread",
+   "text": "the other 408 emails were never re-read",
+   "where": "Appendix; METHODS",
+   "value": 408,
+   "metric": "adjudication.unread"
   },
   {
    "status": "reproducible",

@@ -60,6 +60,9 @@
    "sorting_http_400": 65,
    "sorting_schema_rejected": 56,
    "sorting_invalid_json": 1
+  },
+  "refusals": {
+   "context_length_exceeded": 65
   }
  },
  "verdicts": [

@@ -306,6 +306,8 @@ export const METRICS: Record<string, Metric> = {
     }).length;
   },
   "adjudication.replyFlipShare": (ctx) => pct(num("adjudication.replyFlips", ctx), ctx.labels().length),
+  /** Emails nobody re-read: the graded set less the sheets that were adjudicated. */
+  "adjudication.unread": (ctx) => ctx.labels().length - num("adjudication.count", ctx),
 
   /**
    * How many emails a reply could have been seen for. `strict` is the published rule — a recipient

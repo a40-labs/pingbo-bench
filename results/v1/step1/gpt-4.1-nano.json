@@ -58,7 +58,8 @@
    "verdict_schema_rejected": 158,
    "verdict_invalid_json": 4,
    "sorting_schema_rejected": 9
-  }
+  },
+  "refusals": {}
  },
  "verdicts": [
   {

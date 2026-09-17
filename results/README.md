@@ -29,4 +29,4 @@ digests, `decode.maxTokens` carries `verdict` and `sorting`, `retries` carries `
 `sortingJson` and `sortingCorrection`, and an `error.code` is `verdict_…`, `sorting_…`, or
 `abandoned_after_retries` when the row was given up on after its retries. `error.refusal` repeats a
 provider's own refusal code (`context_length_exceeded`, `content_filter`, `unsupported_language`)
-when there was one, and `metrics.refusals` counts them.
+when there was one, and every report's `metrics.refusals` counts them, `{}` where there were none.

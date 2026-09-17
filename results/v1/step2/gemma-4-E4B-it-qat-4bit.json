@@ -59,7 +59,8 @@
   "errorsByCode": {
    "sorting_schema_rejected": 8,
    "verdict_schema_rejected": 4
-  }
+  },
+  "refusals": {}
  },
  "verdicts": [
   {

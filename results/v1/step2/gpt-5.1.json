@@ -58,7 +58,8 @@
    "done": 95,
    "quiet": 1
   },
-  "errorsByCode": {}
+  "errorsByCode": {},
+  "refusals": {}
  },
  "verdicts": [
   {

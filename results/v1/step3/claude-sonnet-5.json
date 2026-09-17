@@ -61,7 +61,8 @@
    "verdict_truncated": 1,
    "sorting_truncated": 2,
    "abandoned_after_retries": 1
-  }
+  },
+  "refusals": {}
  },
  "verdicts": [
   {

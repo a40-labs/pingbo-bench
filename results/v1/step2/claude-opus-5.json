@@ -59,7 +59,8 @@
   },
   "errorsByCode": {
    "sorting_no_json_object": 10
-  }
+  },
+  "refusals": {}
  },
  "verdicts": [
   {

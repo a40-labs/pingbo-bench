@@ -60,7 +60,8 @@
    "sorting_no_json_object": 159,
    "sorting_schema_rejected": 44,
    "verdict_schema_rejected": 1
-  }
+  },
+  "refusals": {}
  },
  "verdicts": [
   {

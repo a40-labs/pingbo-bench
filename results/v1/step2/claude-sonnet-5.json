@@ -62,7 +62,8 @@
    "abandoned_after_retries": 2,
    "sorting_error": 5,
    "sorting_truncated": 1
-  }
+  },
+  "refusals": {}
  },
  "verdicts": [
   {

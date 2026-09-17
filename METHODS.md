@@ -162,14 +162,18 @@ A check of the two-way labels against what recipients did.
 ## Limitations
 
 - **Label noise.** The annotators agreed on the four-way label 44%
-  of the time and on the two-way question 70%. On
-  24 of the 100 adjudicated emails the judge's own
-  answer disagrees with the label on the two-way question — 5% of the
-  508 if that rate held across the set, which it need not: those emails were
-  chosen for disagreement, and the judge is not ground truth. Nothing here bounds how many labels
-  are wrong. No score near the top should be read as exact.
-- **The contested set is not a sample.** The re-judged emails are the sharpest disagreements, so
-  the result says the four-way labels are unreliable where contested, not how often they are wrong.
+  of the time and on the two-way question 70%. The judge disagreed
+  with 24 of the 100 two-way labels it re-read. Those
+  24 rows are 4.7% of the 508 graded here.
+  That is a count of rows found in doubt, not an error rate: the 100 were
+  chosen for disagreement, the judge is another model, and the remaining
+  408 emails were never re-read. Nothing here says how many labels are wrong,
+  in either direction. No score near the top should be read as exact.
+- **The re-judging says who disagreed, not who was right.** The re-read emails are the sharpest
+  disagreements in the set, not a sample of it, and the judge is a model of the same kind as the
+  ones whose answers it was weighing. It records that a third reader sided with the models on most
+  contested emails. It does not establish that those labels are wrong, that the models are right,
+  or how often either holds away from the contested set.
 - **Runs are not repeatable.** Models are not deterministic, even with decoding pinned as far as
   each provider allows, and 23 of the 32 ran at their provider's own default. Measured during
   development on identical inputs: two pipeline runs of `claude-sonnet-5` differed on 34 of 508
