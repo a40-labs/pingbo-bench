@@ -1242,7 +1242,7 @@
   {
    "status": "reproducible",
    "id": "adjudication.p",
-   "text": "is 0.0000000042",
+   "text": "is 4.2e-9",
    "where": "Appendix",
    "value": 4.2e-9,
    "significant": 2,
