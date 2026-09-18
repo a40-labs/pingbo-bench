@@ -111,7 +111,7 @@ Generated from `claims/claims.json`; `npm run verify` checks them all.
 | `adjudication.chance` | would have split about 25 and 25 | 25 | Figure A1 | context | Half of the 50 decided sheets: the expectation under no preference, not a measurement. |
 | `adjudication.controlsAgree` | it agreed with the dataset every time (43 out of 43) | 43 | Appendix; Figure A1 | reproducible | `npm run verify -- --id adjudication.controlsAgree` |
 | `adjudication.oneIn` | about once in 240 million runs | 240 | Appendix; Figure A1 | reproducible | `npm run verify -- --id adjudication.oneIn` |
-| `adjudication.p` | is 0.0000000042 | 4.2e-9 | Appendix | reproducible | `npm run verify -- --id adjudication.p` |
+| `adjudication.p` | is 4.2e-9 | 4.2e-9 | Appendix | reproducible | `npm run verify -- --id adjudication.p` |
 | `adjudication.alpha` | against the usual bar of 0.05 | 0.05 | Appendix | context | A convention, not a measurement. |
 | `annotators.bothLabelled` | Both of them labelled 1,115 of the 1,145 emails | 1,115 | Appendix | reproducible, needs `build:data` | `npm run verify -- --id annotators.bothLabelled` |
 | `annotators.disagreed` | and they disagreed on 607 | 607 | Appendix | reproducible, needs `build:data` | `npm run verify -- --id annotators.disagreed` |
